@@ -932,10 +932,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  zoomSpeed: 10
-  zoomDir: {x: 0, y: 0, z: 0}
+  zoomSpeed: 100
+  verticalSpeed: 10
   center: {fileID: 481582493}
   rotator: {fileID: 2146639440}
+  camVerticalDir: 0
 --- !u!1 &496791204
 GameObject:
   m_ObjectHideFlags: 0
