@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
-{
+public class NewBehaviourScript : MonoBehaviour {
+    public ItemChecker ic;
     public GameObject placeableItem;
     Camera cam;
-    public Material red;
-    public Material green;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         GetRefs();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         PlaceObject();
     }
 
@@ -25,17 +22,10 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     void PlaceObject() {
-        CanPlace();
-    }
-
-    bool CanPlace() {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity)) {
-            placeableItem.transform.position = new Vector3(Mathf.Round(hit.point.x), 0.1f, Mathf.Round(hit.point.z));
-            placeableItem.GetComponent<MeshRenderer>().materials[0] = red;
-        } else {
-            placeableItem.GetComponent<MeshRenderer>().materials[0] = green;
+        if(Physics.Raycast(ray, out RaycastHit hit)) {
+            placeableItem.transform.position = new Vector3(Mathf.Round(hit.point.x) + 0.5f, 0.5f, Mathf.Round(hit.point.z) + 0.5f);
+            ic.CanPlace();
         }
-        return true;
     }
 }
