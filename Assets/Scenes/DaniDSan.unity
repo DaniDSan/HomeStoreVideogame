@@ -151,6 +151,11 @@ PrefabInstance:
       propertyPath: detectingLayer.m_Bits
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: -3718611220413422738, guid: a9fe3b00aeefc0b4d8492e2624e82f33,
+        type: 3}
+      propertyPath: detectingLayers.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 1689872608549195437, guid: a9fe3b00aeefc0b4d8492e2624e82f33,
         type: 3}
       propertyPath: m_Name
