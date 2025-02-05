@@ -28,7 +28,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""id"": ""3faf46ae-187f-456a-9d39-9944729f2354"",
             ""actions"": [
                 {
-                    ""name"": ""RotationDir"",
+                    ""name"": ""CamRotationDir"",
                     ""type"": ""Value"",
                     ""id"": ""79b3da5a-bf9b-44e3-a5ba-85f037abd2a2"",
                     ""expectedControlType"": ""Axis"",
@@ -45,7 +45,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotationDir"",
+                    ""action"": ""CamRotationDir"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -56,7 +56,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotationDir"",
+                    ""action"": ""CamRotationDir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -67,7 +67,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotationDir"",
+                    ""action"": ""CamRotationDir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -78,7 +78,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotationDir"",
+                    ""action"": ""CamRotationDir"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -89,7 +89,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotationDir"",
+                    ""action"": ""CamRotationDir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -100,7 +100,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RotationDir"",
+                    ""action"": ""CamRotationDir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -127,7 +127,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
 }");
         // CustomizeApartment
         m_CustomizeApartment = asset.FindActionMap("CustomizeApartment", throwIfNotFound: true);
-        m_CustomizeApartment_RotationDir = m_CustomizeApartment.FindAction("RotationDir", throwIfNotFound: true);
+        m_CustomizeApartment_CamRotationDir = m_CustomizeApartment.FindAction("CamRotationDir", throwIfNotFound: true);
         // None
         m_None = asset.FindActionMap("None", throwIfNotFound: true);
         m_None_NullAction = m_None.FindAction("NullAction", throwIfNotFound: true);
@@ -192,12 +192,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     // CustomizeApartment
     private readonly InputActionMap m_CustomizeApartment;
     private List<ICustomizeApartmentActions> m_CustomizeApartmentActionsCallbackInterfaces = new List<ICustomizeApartmentActions>();
-    private readonly InputAction m_CustomizeApartment_RotationDir;
+    private readonly InputAction m_CustomizeApartment_CamRotationDir;
     public struct CustomizeApartmentActions
     {
         private @Controls m_Wrapper;
         public CustomizeApartmentActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @RotationDir => m_Wrapper.m_CustomizeApartment_RotationDir;
+        public InputAction @CamRotationDir => m_Wrapper.m_CustomizeApartment_CamRotationDir;
         public InputActionMap Get() { return m_Wrapper.m_CustomizeApartment; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -207,16 +207,16 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CustomizeApartmentActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CustomizeApartmentActionsCallbackInterfaces.Add(instance);
-            @RotationDir.started += instance.OnRotationDir;
-            @RotationDir.performed += instance.OnRotationDir;
-            @RotationDir.canceled += instance.OnRotationDir;
+            @CamRotationDir.started += instance.OnCamRotationDir;
+            @CamRotationDir.performed += instance.OnCamRotationDir;
+            @CamRotationDir.canceled += instance.OnCamRotationDir;
         }
 
         private void UnregisterCallbacks(ICustomizeApartmentActions instance)
         {
-            @RotationDir.started -= instance.OnRotationDir;
-            @RotationDir.performed -= instance.OnRotationDir;
-            @RotationDir.canceled -= instance.OnRotationDir;
+            @CamRotationDir.started -= instance.OnCamRotationDir;
+            @CamRotationDir.performed -= instance.OnCamRotationDir;
+            @CamRotationDir.canceled -= instance.OnCamRotationDir;
         }
 
         public void RemoveCallbacks(ICustomizeApartmentActions instance)
@@ -282,7 +282,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public NoneActions @None => new NoneActions(this);
     public interface ICustomizeApartmentActions
     {
-        void OnRotationDir(InputAction.CallbackContext context);
+        void OnCamRotationDir(InputAction.CallbackContext context);
     }
     public interface INoneActions
     {
