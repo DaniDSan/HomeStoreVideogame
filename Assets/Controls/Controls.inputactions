@@ -1,0 +1,105 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "CustomizeApartment",
+            "id": "3faf46ae-187f-456a-9d39-9944729f2354",
+            "actions": [
+                {
+                    "name": "RotationDir",
+                    "type": "Value",
+                    "id": "79b3da5a-bf9b-44e3-a5ba-85f037abd2a2",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "7c76bd48-2dba-458d-9744-b4d61faf1f80",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationDir",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5b332e01-68a7-45ae-b3c8-75f0e4467651",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationDir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "9f9c0f54-89aa-4955-9408-618eb04330eb",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationDir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "ab3c8a5e-9eba-4993-8eaa-562c05f5cca2",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationDir",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "200ff806-33cf-4588-a962-4637a131a809",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationDir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "cab8c7a0-aaa1-4a2c-8502-58cef87647e2",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationDir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "None",
+            "id": "f8b7983d-db8a-4fff-b8cb-a14c31f5d259",
+            "actions": [
+                {
+                    "name": "NullAction",
+                    "type": "Button",
+                    "id": "62c599b8-df42-4a88-80d7-9766517cbab4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}

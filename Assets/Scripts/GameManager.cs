@@ -19,9 +19,6 @@ public struct Screen
 
 public class GameManager : MonoBehaviour
 {
-    [Header("General")]
-    public bool onApartment;
-
     [Header("Dinero")]
     [SerializeField] private float currentMoney;
 
