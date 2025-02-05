@@ -25,8 +25,8 @@ public class NewBehaviourScript : MonoBehaviour {
     void PlaceObject() {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit hit)) {
-            placeHolderItem.transform.position = new Vector3(Mathf.Round(hit.point.x) + 0.5f, 0.5f, Mathf.Round(hit.point.z) + 0.5f);
-            if(ic.CanPlace() && Input.GetMouseButton(0)) {
+            placeHolderItem.transform.position = new Vector3(Mathf.Round(hit.point.x), 0.1f, Mathf.Round(hit.point.z));
+            if(ic.CanPlace() && Input.GetMouseButtonDown(0)) {
                 Instantiate(placeableItem, placeHolderItem.transform.position, Quaternion.identity);
             }
         }
