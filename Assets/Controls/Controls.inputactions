@@ -6,7 +6,7 @@
             "id": "3faf46ae-187f-456a-9d39-9944729f2354",
             "actions": [
                 {
-                    "name": "RotationDir",
+                    "name": "CamRotationDir",
                     "type": "Value",
                     "id": "79b3da5a-bf9b-44e3-a5ba-85f037abd2a2",
                     "expectedControlType": "Axis",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationDir",
+                    "action": "CamRotationDir",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -34,7 +34,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationDir",
+                    "action": "CamRotationDir",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -45,7 +45,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationDir",
+                    "action": "CamRotationDir",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -56,7 +56,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationDir",
+                    "action": "CamRotationDir",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -67,7 +67,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationDir",
+                    "action": "CamRotationDir",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -78,7 +78,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RotationDir",
+                    "action": "CamRotationDir",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
