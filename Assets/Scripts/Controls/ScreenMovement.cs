@@ -8,7 +8,7 @@ public class ScreenMovement : MonoBehaviour
 
     [SerializeField] private float zoomSpeed;
 
-    public Vector3 zoomDir;
+    [SerializeField] private float verticalSpeed;
 
     [Header("CamReferences")]
     //Centro que corresponde al apartamento que se este visualizando.
@@ -17,11 +17,11 @@ public class ScreenMovement : MonoBehaviour
     //Rotador de la camara.
     [SerializeField] private Transform rotator;
 
-    //Dirección a la que tiene que rotar la cámara.
-    //1->Derecha.
-    //0->Quieta.
-    //-1->Izquierda.
-    private float camDir;
+    private float camHorizontalDir;
+
+    private float camZoomDir;
+
+    [SerializeField] private float camVerticalDir;
 
     //Referencia a la camara.
     private Transform cam;
@@ -30,37 +30,51 @@ public class ScreenMovement : MonoBehaviour
     {
         cam = Camera.main.transform;
 
-        zoomDir = center.position - cam.position;
-
-        zoomDir.Normalize();
-
         //Initialise.
         rotator.position = new Vector3(center.position.x, cam.position.y, center.position.z);
+
+        cam.SetParent(rotator);
     }
 
     private void Update()
     {
-        camDir = ControlsManager.instance.c.CustomizeApartment.CamRotationDir.ReadValue<float>();
-
-        cam.SetParent(rotator);
-        
-        cam.LookAt(center);
+        ReadInputs();
 
         RotateCamera();
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            cam.Translate(cam.forward * zoomSpeed * Time.deltaTime, Space.World);
-        }
+        ZoomCamera();
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            cam.Translate(-cam.forward * zoomSpeed * Time.deltaTime, Space.World);
-        }
+        MoveCamera();
+    }
+
+    private void ReadInputs()
+    {
+        //Movimiento horizontal de la cámara alrededor del centro de rotación.
+        //Forma más explicada.
+        //float camHorizontalDirPrimary = ControlsManager.instance.c.CustomizeApartment.CamRotationDirPrimary.ReadValue<float>();
+        //float camHorizontalDirSecondary = ControlsManager.instance.c.CustomizeApartment.CamRotationDirSecondary.ReadValue<float>();
+        //camHorizontalDir = Mathf.Clamp(camHorizontalDirPrimary + camHorizontalDirSecondary, -1f, 1f);
+        camHorizontalDir = Mathf.Clamp(ControlsManager.instance.c.CustomizeApartment.CamRotationDirPrimary.ReadValue<float>() + ControlsManager.instance.c.CustomizeApartment.CamRotationDirSecondary.ReadValue<float>(), -1f, 1f);
+
+        camVerticalDir = Mathf.Clamp(ControlsManager.instance.c.CustomizeApartment.CamVerticalMovementPrimary.ReadValue<float>() + ControlsManager.instance.c.CustomizeApartment.CamVerticalMovementSecondary.ReadValue<float>(), -1f, 1f);
+
+        camZoomDir = Mathf.Clamp(ControlsManager.instance.c.CustomizeApartment.CamZoomDir.ReadValue<float>(),-1f,1f);
     }
 
     private void RotateCamera()
     {
-        rotator.Rotate(Vector3.down * camDir * rotationSpeed * Time.deltaTime);
+        cam.LookAt(center);
+
+        rotator.Rotate(Vector3.down * camHorizontalDir * rotationSpeed * Time.deltaTime);
+    }
+
+    private void ZoomCamera()
+    {
+        cam.Translate(cam.forward * camZoomDir * zoomSpeed * Time.deltaTime, Space.World);
+    }
+
+    private void MoveCamera()
+    {
+        cam.Translate(Vector3.up * camVerticalDir * verticalSpeed * Time.deltaTime, Space.World);
     }
 }

@@ -28,9 +28,45 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""id"": ""3faf46ae-187f-456a-9d39-9944729f2354"",
             ""actions"": [
                 {
-                    ""name"": ""CamRotationDir"",
+                    ""name"": ""CamRotationDirPrimary"",
                     ""type"": ""Value"",
                     ""id"": ""79b3da5a-bf9b-44e3-a5ba-85f037abd2a2"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamRotationDirSecondary"",
+                    ""type"": ""Value"",
+                    ""id"": ""e126c546-fdc3-465c-a7fc-378de12cf950"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamZoomDir"",
+                    ""type"": ""Value"",
+                    ""id"": ""38b8e711-40d0-4a6f-95c4-8fe4ae6a1590"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamVerticalMovementPrimary"",
+                    ""type"": ""Value"",
+                    ""id"": ""e268d26b-00dd-419c-866d-34c5d5cdd62d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamVerticalMovementSecondary"",
+                    ""type"": ""Value"",
+                    ""id"": ""2c0b6f2e-d92c-48d7-97f8-1e203c717677"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -40,45 +76,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": ""1D Axis"",
-                    ""id"": ""7c76bd48-2dba-458d-9744-b4d61faf1f80"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CamRotationDir"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""5b332e01-68a7-45ae-b3c8-75f0e4467651"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CamRotationDir"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""9f9c0f54-89aa-4955-9408-618eb04330eb"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CamRotationDir"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
                     ""id"": ""ab3c8a5e-9eba-4993-8eaa-562c05f5cca2"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CamRotationDir"",
+                    ""action"": ""CamRotationDirPrimary"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -89,7 +92,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CamRotationDir"",
+                    ""action"": ""CamRotationDirPrimary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -100,7 +103,273 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CamRotationDir"",
+                    ""action"": ""CamRotationDirPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1d38b25f-9908-4e02-b7b9-aaa8cbe70482"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirSecondary"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""2560e54e-1b76-46c1-9a58-0875f7c40850"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""08ea2e0b-0b71-44e9-83a2-571b11ee70df"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""94708d80-806c-4b11-87a0-3a0ead918dcf"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamZoomDir"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""964b5eb2-1ff2-40b0-9fd7-d3d9e8783b58"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamZoomDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9a6ad1ed-caa6-4828-8472-cfc378d36adf"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamZoomDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""f019ae34-f37e-48be-81d7-a7ee14f1432c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamVerticalMovementPrimary"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""d5435179-4d32-4b33-9de8-1d52faad8898"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamVerticalMovementPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6fbb4ad5-bb4c-47b9-990c-268a5ceaf521"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamVerticalMovementPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""76843847-963b-4943-97b7-86a7b4fa4b0f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamVerticalMovementSecondary"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""acc2d8df-edd8-4dca-8d12-e559090811ff"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamVerticalMovementSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3d28f9ab-81da-4e61-8eb7-4c7580068801"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamVerticalMovementSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""CustomizeApartment1"",
+            ""id"": ""17d0bdb4-44c9-4462-8e9a-f4d9440a42b4"",
+            ""actions"": [
+                {
+                    ""name"": ""CamRotationDirPrimary"",
+                    ""type"": ""Value"",
+                    ""id"": ""11b6a759-9f70-4204-8673-b595e661a526"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamRotationDirSecondary"",
+                    ""type"": ""Value"",
+                    ""id"": ""b1ad95f4-56e2-4279-85a9-2f41cd195e27"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CamZoomDir"",
+                    ""type"": ""Value"",
+                    ""id"": ""fe4b1d2e-f4d9-46bd-9421-754afac00868"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""889d2cca-c49d-4919-bda3-e518447f2a97"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirPrimary"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""034a8137-fd56-45b7-b120-7f93c90b884b"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""7b7ee06a-7ea7-41fe-ba59-e0deb5bc6965"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirPrimary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""dfde467b-efbf-4006-9360-c472de4d0b0a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirSecondary"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""18604737-c4b5-4471-91d6-fcf0876290cf"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ec15e511-18c3-436c-a324-b3206a0ff4ce"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamRotationDirSecondary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""7c771f7c-f662-45a9-ad2e-3dd65d76c7c5"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamZoomDir"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""04b8c8dc-e5a6-46af-bba5-4b88046b0e04"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamZoomDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""4c88d0f5-8d2c-427e-aeb5-37820bb9ca0b"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CamZoomDir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -127,7 +396,16 @@ public partial class @Controls: IInputActionCollection2, IDisposable
 }");
         // CustomizeApartment
         m_CustomizeApartment = asset.FindActionMap("CustomizeApartment", throwIfNotFound: true);
-        m_CustomizeApartment_CamRotationDir = m_CustomizeApartment.FindAction("CamRotationDir", throwIfNotFound: true);
+        m_CustomizeApartment_CamRotationDirPrimary = m_CustomizeApartment.FindAction("CamRotationDirPrimary", throwIfNotFound: true);
+        m_CustomizeApartment_CamRotationDirSecondary = m_CustomizeApartment.FindAction("CamRotationDirSecondary", throwIfNotFound: true);
+        m_CustomizeApartment_CamZoomDir = m_CustomizeApartment.FindAction("CamZoomDir", throwIfNotFound: true);
+        m_CustomizeApartment_CamVerticalMovementPrimary = m_CustomizeApartment.FindAction("CamVerticalMovementPrimary", throwIfNotFound: true);
+        m_CustomizeApartment_CamVerticalMovementSecondary = m_CustomizeApartment.FindAction("CamVerticalMovementSecondary", throwIfNotFound: true);
+        // CustomizeApartment1
+        m_CustomizeApartment1 = asset.FindActionMap("CustomizeApartment1", throwIfNotFound: true);
+        m_CustomizeApartment1_CamRotationDirPrimary = m_CustomizeApartment1.FindAction("CamRotationDirPrimary", throwIfNotFound: true);
+        m_CustomizeApartment1_CamRotationDirSecondary = m_CustomizeApartment1.FindAction("CamRotationDirSecondary", throwIfNotFound: true);
+        m_CustomizeApartment1_CamZoomDir = m_CustomizeApartment1.FindAction("CamZoomDir", throwIfNotFound: true);
         // None
         m_None = asset.FindActionMap("None", throwIfNotFound: true);
         m_None_NullAction = m_None.FindAction("NullAction", throwIfNotFound: true);
@@ -192,12 +470,20 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     // CustomizeApartment
     private readonly InputActionMap m_CustomizeApartment;
     private List<ICustomizeApartmentActions> m_CustomizeApartmentActionsCallbackInterfaces = new List<ICustomizeApartmentActions>();
-    private readonly InputAction m_CustomizeApartment_CamRotationDir;
+    private readonly InputAction m_CustomizeApartment_CamRotationDirPrimary;
+    private readonly InputAction m_CustomizeApartment_CamRotationDirSecondary;
+    private readonly InputAction m_CustomizeApartment_CamZoomDir;
+    private readonly InputAction m_CustomizeApartment_CamVerticalMovementPrimary;
+    private readonly InputAction m_CustomizeApartment_CamVerticalMovementSecondary;
     public struct CustomizeApartmentActions
     {
         private @Controls m_Wrapper;
         public CustomizeApartmentActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @CamRotationDir => m_Wrapper.m_CustomizeApartment_CamRotationDir;
+        public InputAction @CamRotationDirPrimary => m_Wrapper.m_CustomizeApartment_CamRotationDirPrimary;
+        public InputAction @CamRotationDirSecondary => m_Wrapper.m_CustomizeApartment_CamRotationDirSecondary;
+        public InputAction @CamZoomDir => m_Wrapper.m_CustomizeApartment_CamZoomDir;
+        public InputAction @CamVerticalMovementPrimary => m_Wrapper.m_CustomizeApartment_CamVerticalMovementPrimary;
+        public InputAction @CamVerticalMovementSecondary => m_Wrapper.m_CustomizeApartment_CamVerticalMovementSecondary;
         public InputActionMap Get() { return m_Wrapper.m_CustomizeApartment; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -207,16 +493,40 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CustomizeApartmentActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CustomizeApartmentActionsCallbackInterfaces.Add(instance);
-            @CamRotationDir.started += instance.OnCamRotationDir;
-            @CamRotationDir.performed += instance.OnCamRotationDir;
-            @CamRotationDir.canceled += instance.OnCamRotationDir;
+            @CamRotationDirPrimary.started += instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.performed += instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.canceled += instance.OnCamRotationDirPrimary;
+            @CamRotationDirSecondary.started += instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.performed += instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.canceled += instance.OnCamRotationDirSecondary;
+            @CamZoomDir.started += instance.OnCamZoomDir;
+            @CamZoomDir.performed += instance.OnCamZoomDir;
+            @CamZoomDir.canceled += instance.OnCamZoomDir;
+            @CamVerticalMovementPrimary.started += instance.OnCamVerticalMovementPrimary;
+            @CamVerticalMovementPrimary.performed += instance.OnCamVerticalMovementPrimary;
+            @CamVerticalMovementPrimary.canceled += instance.OnCamVerticalMovementPrimary;
+            @CamVerticalMovementSecondary.started += instance.OnCamVerticalMovementSecondary;
+            @CamVerticalMovementSecondary.performed += instance.OnCamVerticalMovementSecondary;
+            @CamVerticalMovementSecondary.canceled += instance.OnCamVerticalMovementSecondary;
         }
 
         private void UnregisterCallbacks(ICustomizeApartmentActions instance)
         {
-            @CamRotationDir.started -= instance.OnCamRotationDir;
-            @CamRotationDir.performed -= instance.OnCamRotationDir;
-            @CamRotationDir.canceled -= instance.OnCamRotationDir;
+            @CamRotationDirPrimary.started -= instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.performed -= instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.canceled -= instance.OnCamRotationDirPrimary;
+            @CamRotationDirSecondary.started -= instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.performed -= instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.canceled -= instance.OnCamRotationDirSecondary;
+            @CamZoomDir.started -= instance.OnCamZoomDir;
+            @CamZoomDir.performed -= instance.OnCamZoomDir;
+            @CamZoomDir.canceled -= instance.OnCamZoomDir;
+            @CamVerticalMovementPrimary.started -= instance.OnCamVerticalMovementPrimary;
+            @CamVerticalMovementPrimary.performed -= instance.OnCamVerticalMovementPrimary;
+            @CamVerticalMovementPrimary.canceled -= instance.OnCamVerticalMovementPrimary;
+            @CamVerticalMovementSecondary.started -= instance.OnCamVerticalMovementSecondary;
+            @CamVerticalMovementSecondary.performed -= instance.OnCamVerticalMovementSecondary;
+            @CamVerticalMovementSecondary.canceled -= instance.OnCamVerticalMovementSecondary;
         }
 
         public void RemoveCallbacks(ICustomizeApartmentActions instance)
@@ -234,6 +544,68 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public CustomizeApartmentActions @CustomizeApartment => new CustomizeApartmentActions(this);
+
+    // CustomizeApartment1
+    private readonly InputActionMap m_CustomizeApartment1;
+    private List<ICustomizeApartment1Actions> m_CustomizeApartment1ActionsCallbackInterfaces = new List<ICustomizeApartment1Actions>();
+    private readonly InputAction m_CustomizeApartment1_CamRotationDirPrimary;
+    private readonly InputAction m_CustomizeApartment1_CamRotationDirSecondary;
+    private readonly InputAction m_CustomizeApartment1_CamZoomDir;
+    public struct CustomizeApartment1Actions
+    {
+        private @Controls m_Wrapper;
+        public CustomizeApartment1Actions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CamRotationDirPrimary => m_Wrapper.m_CustomizeApartment1_CamRotationDirPrimary;
+        public InputAction @CamRotationDirSecondary => m_Wrapper.m_CustomizeApartment1_CamRotationDirSecondary;
+        public InputAction @CamZoomDir => m_Wrapper.m_CustomizeApartment1_CamZoomDir;
+        public InputActionMap Get() { return m_Wrapper.m_CustomizeApartment1; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CustomizeApartment1Actions set) { return set.Get(); }
+        public void AddCallbacks(ICustomizeApartment1Actions instance)
+        {
+            if (instance == null || m_Wrapper.m_CustomizeApartment1ActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CustomizeApartment1ActionsCallbackInterfaces.Add(instance);
+            @CamRotationDirPrimary.started += instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.performed += instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.canceled += instance.OnCamRotationDirPrimary;
+            @CamRotationDirSecondary.started += instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.performed += instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.canceled += instance.OnCamRotationDirSecondary;
+            @CamZoomDir.started += instance.OnCamZoomDir;
+            @CamZoomDir.performed += instance.OnCamZoomDir;
+            @CamZoomDir.canceled += instance.OnCamZoomDir;
+        }
+
+        private void UnregisterCallbacks(ICustomizeApartment1Actions instance)
+        {
+            @CamRotationDirPrimary.started -= instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.performed -= instance.OnCamRotationDirPrimary;
+            @CamRotationDirPrimary.canceled -= instance.OnCamRotationDirPrimary;
+            @CamRotationDirSecondary.started -= instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.performed -= instance.OnCamRotationDirSecondary;
+            @CamRotationDirSecondary.canceled -= instance.OnCamRotationDirSecondary;
+            @CamZoomDir.started -= instance.OnCamZoomDir;
+            @CamZoomDir.performed -= instance.OnCamZoomDir;
+            @CamZoomDir.canceled -= instance.OnCamZoomDir;
+        }
+
+        public void RemoveCallbacks(ICustomizeApartment1Actions instance)
+        {
+            if (m_Wrapper.m_CustomizeApartment1ActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICustomizeApartment1Actions instance)
+        {
+            foreach (var item in m_Wrapper.m_CustomizeApartment1ActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CustomizeApartment1ActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CustomizeApartment1Actions @CustomizeApartment1 => new CustomizeApartment1Actions(this);
 
     // None
     private readonly InputActionMap m_None;
@@ -282,7 +654,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public NoneActions @None => new NoneActions(this);
     public interface ICustomizeApartmentActions
     {
-        void OnCamRotationDir(InputAction.CallbackContext context);
+        void OnCamRotationDirPrimary(InputAction.CallbackContext context);
+        void OnCamRotationDirSecondary(InputAction.CallbackContext context);
+        void OnCamZoomDir(InputAction.CallbackContext context);
+        void OnCamVerticalMovementPrimary(InputAction.CallbackContext context);
+        void OnCamVerticalMovementSecondary(InputAction.CallbackContext context);
+    }
+    public interface ICustomizeApartment1Actions
+    {
+        void OnCamRotationDirPrimary(InputAction.CallbackContext context);
+        void OnCamRotationDirSecondary(InputAction.CallbackContext context);
+        void OnCamZoomDir(InputAction.CallbackContext context);
     }
     public interface INoneActions
     {
