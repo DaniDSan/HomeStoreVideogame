@@ -13,8 +13,11 @@ public class NewBehaviourScript : MonoBehaviour {
     public Material red;
     public Material green;
 
+    public Color colorRed;
+    public Color colorGreen;
+
     [Range(0f, 1.0f)]
-    public float colliderSize = 0.8f;
+    public float colliderSizeOffset = 0.8f;
 
     // Start is called before the first frame update
     void Start() {
@@ -69,20 +72,29 @@ public class NewBehaviourScript : MonoBehaviour {
     }
 
     bool CanPlace() {
-        Collider[] colliders = Physics.OverlapBox(placeHolderItem.transform.position, Vector3.one * colliderSize / 2);
+        BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
+        Vector3 colliderSize = boxCollider.size;
+        Collider[] colliders = Physics.OverlapBox(placeHolderItem.transform.position, colliderSize * colliderSizeOffset / 2, tempItem.transform.rotation);
         if(colliders.Length == 1) {
             foreach(Collider collider in colliders) {
                 if(collider.CompareTag("Floor")) {
                     placeHolderItem.GetComponentInChildren<MeshRenderer>().material = green;
+                    tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorGreen; // Verde con transparencia
                     return true;
                 }
             }
         }
         placeHolderItem.GetComponentInChildren<MeshRenderer>().material = red;
+        tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorRed; // Rojo con trnasparencia
         return false;
     }
 
     private void OnDrawGizmos() {
-        Gizmos.DrawWireCube(placeHolderItem.transform.position, Vector3.one * colliderSize);
+        BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
+        Vector3 colliderSize = boxCollider.size;
+        Gizmos.color = Color.yellow;
+        Gizmos.matrix = Matrix4x4.TRS(placeHolderItem.transform.position, tempItem.transform.rotation, Vector3.one);
+        Gizmos.DrawWireCube(Vector3.zero, colliderSize * colliderSizeOffset);
     }
 }
+
