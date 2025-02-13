@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour {
     public GameObject placeHolderItem;
     public GameObject placeableItem;
+    public GameObject visualRef;
     GameObject tempItem;
     Camera cam;
 
@@ -59,6 +61,7 @@ public class NewBehaviourScript : MonoBehaviour {
     void RotateItem() {
         if(Input.GetMouseButtonDown(1)) {
             tempItem.transform.Rotate(0, 90, 0);
+            visualRef.transform.Rotate(0, 0, 90);
         }
     }
 
@@ -74,7 +77,8 @@ public class NewBehaviourScript : MonoBehaviour {
     bool CanPlace() {
         BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
         Vector3 colliderSize = boxCollider.size;
-        Collider[] colliders = Physics.OverlapBox(placeHolderItem.transform.position, colliderSize * colliderSizeOffset / 2, tempItem.transform.rotation);
+        visualRef.transform.localScale = new Vector3(visualRef.transform.localScale.x, colliderSize.z, visualRef.transform.localScale.z);
+        Collider[] colliders = Physics.OverlapBox(tempItem.transform.position, colliderSize * colliderSizeOffset / 2, tempItem.transform.rotation);
         if(colliders.Length == 1) {
             foreach(Collider collider in colliders) {
                 if(collider.CompareTag("Floor")) {
@@ -93,7 +97,7 @@ public class NewBehaviourScript : MonoBehaviour {
         BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
         Vector3 colliderSize = boxCollider.size;
         Gizmos.color = Color.yellow;
-        Gizmos.matrix = Matrix4x4.TRS(placeHolderItem.transform.position, tempItem.transform.rotation, Vector3.one);
+        Gizmos.matrix = Matrix4x4.TRS(tempItem.transform.position, tempItem.transform.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, colliderSize * colliderSizeOffset);
     }
 }

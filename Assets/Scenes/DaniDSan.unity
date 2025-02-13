@@ -735,8 +735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeHolderItem: {fileID: 110704426}
-  placeableItem: {fileID: 6607230755554335277, guid: 901dd8d97e54d964896b5d314cbfeb8a,
+  placeableItem: {fileID: 7719519143138677307, guid: 5f4f369d910a8be488183839fa5ccd65,
     type: 3}
+  visualRef: {fileID: 727768510}
   red: {fileID: 2100000, guid: 7bfcbfcfdd5f4b746b08bc87298da173, type: 2}
   green: {fileID: 2100000, guid: 3e975397ddc1fc64fa622c07f16ace48, type: 2}
   colorRed: {r: 1, g: 0, b: 0, a: 0}
