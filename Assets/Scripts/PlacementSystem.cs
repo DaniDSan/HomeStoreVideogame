@@ -18,9 +18,6 @@ public class NewBehaviourScript : MonoBehaviour {
     public Color colorRed;
     public Color colorGreen;
 
-    [Range(0f, 1.0f)]
-    public float colliderSizeOffset = 0.8f;
-
     // Start is called before the first frame update
     void Start() {
         GetRefs();
@@ -75,7 +72,15 @@ public class NewBehaviourScript : MonoBehaviour {
     }
 
     bool CanPlace() {
-        BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
+        if(GetComponentInChildren<ItemChecker>().canPlace) {
+            placeHolderItem.GetComponentInChildren<MeshRenderer>().material = green;
+            tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorGreen; // Verde con transparencia
+            return true;
+        }
+        placeHolderItem.GetComponentInChildren<MeshRenderer>().material = red;
+        tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorRed; // Rojo con trnasparencia
+        return false;
+        /*BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
         Vector3 colliderSize = boxCollider.size;
         visualRef.transform.localScale = new Vector3(visualRef.transform.localScale.x, colliderSize.z, visualRef.transform.localScale.z);
         Collider[] colliders = Physics.OverlapBox(tempItem.transform.position, colliderSize * colliderSizeOffset / 2, tempItem.transform.rotation);
@@ -90,15 +95,15 @@ public class NewBehaviourScript : MonoBehaviour {
         }
         placeHolderItem.GetComponentInChildren<MeshRenderer>().material = red;
         tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorRed; // Rojo con trnasparencia
-        return false;
+        return false;*/
     }
 
-    private void OnDrawGizmos() {
+    /*private void OnDrawGizmos() {
         BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
         Vector3 colliderSize = boxCollider.size;
         Gizmos.color = Color.yellow;
         Gizmos.matrix = Matrix4x4.TRS(tempItem.transform.position, tempItem.transform.rotation, Vector3.one);
         Gizmos.DrawWireCube(Vector3.zero, colliderSize * colliderSizeOffset);
-    }
+    }*/
 }
 

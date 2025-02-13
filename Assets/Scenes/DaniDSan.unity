@@ -742,7 +742,6 @@ MonoBehaviour:
   green: {fileID: 2100000, guid: 3e975397ddc1fc64fa622c07f16ace48, type: 2}
   colorRed: {r: 1, g: 0, b: 0, a: 0}
   colorGreen: {r: 0, g: 1, b: 0, a: 0}
-  colliderSizeOffset: 0.8
 --- !u!4 &2127741991
 Transform:
   m_ObjectHideFlags: 0
