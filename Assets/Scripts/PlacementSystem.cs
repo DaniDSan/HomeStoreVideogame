@@ -57,8 +57,9 @@ public class NewBehaviourScript : MonoBehaviour {
 
     void RotateItem() {
         if(Input.GetMouseButtonDown(1)) {
-            tempItem.transform.Rotate(0, 90, 0);
-            visualRef.transform.Rotate(0, 0, 90);
+            //tempItem.transform.Rotate(0, 90, 0);
+            placeHolderItem.transform.Rotate(0, 90, 0);
+            //visualRef.transform.Rotate(0, 0, 90);
         }
     }
 
@@ -67,12 +68,24 @@ public class NewBehaviourScript : MonoBehaviour {
         if(isShowing == false) {
             isShowing = true;
             tempItem = Instantiate(placeableItem, placeHolderItem.transform.position, placeableItem.transform.rotation, placeHolderItem.transform);
-            tempItem.GetComponentInChildren<BoxCollider>().enabled = false;
+            BoxCollider[] boxColliders = tempItem.GetComponentsInChildren<BoxCollider>();
+            visualRef.transform.localScale = new Vector3(boxColliders[0].size.x, -boxColliders[0].size.z, 1f);
+            print(visualRef.transform.localScale);
+            foreach(BoxCollider boxCollider in boxColliders) { boxCollider.enabled = false; }
         }
     }
 
     bool CanPlace() {
-        if(GetComponentInChildren<ItemChecker>().canPlace) {
+        bool canPlace = false;
+        ItemChecker[] itemCheckers = GetComponentsInChildren<ItemChecker>();
+        for(int i = 0; i < itemCheckers.Length; i++) {
+            if(!itemCheckers[i].canPlace) {
+                canPlace = false; break;
+            } else {
+                canPlace = true;
+            }
+        }
+        if(canPlace) {
             placeHolderItem.GetComponentInChildren<MeshRenderer>().material = green;
             tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorGreen; // Verde con transparencia
             return true;
@@ -80,30 +93,6 @@ public class NewBehaviourScript : MonoBehaviour {
         placeHolderItem.GetComponentInChildren<MeshRenderer>().material = red;
         tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorRed; // Rojo con trnasparencia
         return false;
-        /*BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
-        Vector3 colliderSize = boxCollider.size;
-        visualRef.transform.localScale = new Vector3(visualRef.transform.localScale.x, colliderSize.z, visualRef.transform.localScale.z);
-        Collider[] colliders = Physics.OverlapBox(tempItem.transform.position, colliderSize * colliderSizeOffset / 2, tempItem.transform.rotation);
-        if(colliders.Length == 1) {
-            foreach(Collider collider in colliders) {
-                if(collider.CompareTag("Floor")) {
-                    placeHolderItem.GetComponentInChildren<MeshRenderer>().material = green;
-                    tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorGreen; // Verde con transparencia
-                    return true;
-                }
-            }
-        }
-        placeHolderItem.GetComponentInChildren<MeshRenderer>().material = red;
-        tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorRed; // Rojo con trnasparencia
-        return false;*/
     }
-
-    /*private void OnDrawGizmos() {
-        BoxCollider boxCollider = placeableItem.GetComponentInChildren<BoxCollider>();
-        Vector3 colliderSize = boxCollider.size;
-        Gizmos.color = Color.yellow;
-        Gizmos.matrix = Matrix4x4.TRS(tempItem.transform.position, tempItem.transform.rotation, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, colliderSize * colliderSizeOffset);
-    }*/
 }
 

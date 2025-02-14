@@ -14,6 +14,7 @@ public class ItemChecker : MonoBehaviour {
 
     void CheckCollisions() {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
+
         Vector3 colliderSize = boxCollider.size;
         Collider[] colliders = Physics.OverlapBox(transform.position, colliderSize * colliderSizeOffset / 2, transform.rotation);
         if(colliders.Length == 1) {
@@ -34,7 +35,7 @@ public class ItemChecker : MonoBehaviour {
         Vector3 colliderSize = boxCollider.size;
         Gizmos.color = Color.yellow;
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, colliderSize * colliderSizeOffset);
+        Gizmos.DrawWireCube(Vector3.zero, colliderSize * (colliderSizeOffset + 0.2f));
     }
 }
 
