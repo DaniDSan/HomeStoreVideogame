@@ -3,7 +3,7 @@ using UnityEditor;
 using System.IO;
 
 public class AddBoxColliderToPrefabs : EditorWindow {
-    private string subfolderName = "Chairs"; // Valor por defecto
+    private string subfolderName = ""; // Valor por defecto
 
     [MenuItem("Tools/Agregar BoxCollider Hijo a Prefabs")]
     public static void ShowWindow() {

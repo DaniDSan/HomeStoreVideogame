@@ -67,7 +67,7 @@ public class NewBehaviourScript : MonoBehaviour {
     void ItemPrevisualizer() {
         if(isShowing == false) {
             isShowing = true;
-            tempItem = Instantiate(placeableItem, placeHolderItem.transform.position, placeableItem.transform.rotation, placeHolderItem.transform);
+            tempItem = Instantiate(placeableItem, new Vector3(placeHolderItem.transform.position.x, placeableItem.transform.position.y, placeHolderItem.transform.position.z), placeableItem.transform.rotation, placeHolderItem.transform);
             BoxCollider[] boxColliders = tempItem.GetComponentsInChildren<BoxCollider>();
             visualRef.transform.localScale = new Vector3(boxColliders[0].size.x, -boxColliders[0].size.z, 1f);
             print(visualRef.transform.localScale);

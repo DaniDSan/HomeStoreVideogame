@@ -3,7 +3,7 @@ using UnityEditor;
 using System.IO;
 
 public class AddItemScript : EditorWindow {
-    private string subfolderName = "Chairs";
+    private string subfolderName = "";
 
     [MenuItem("Tools/Add ItemChecker to Prefabs")]
     public static void ShowWindow() {
