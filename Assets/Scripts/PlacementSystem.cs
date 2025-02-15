@@ -50,16 +50,14 @@ public class NewBehaviourScript : MonoBehaviour {
     void SetItem() {
         if(Input.GetMouseButtonDown(0)) {
             Instantiate(placeableItem,
-                new Vector3(placeHolderItem.transform.position.x, placeableItem.transform.position.y, placeHolderItem.transform.position.z),  // La altura sera la el objeto que vamos a poner
+                new Vector3(tempItem.transform.position.x, placeableItem.transform.position.y, tempItem.transform.position.z),  // La altura sera la el objeto que vamos a poner
                 tempItem.transform.rotation);
         }
     }
 
     void RotateItem() {
         if(Input.GetMouseButtonDown(1)) {
-            //tempItem.transform.Rotate(0, 90, 0);
             placeHolderItem.transform.Rotate(0, 90, 0);
-            //visualRef.transform.Rotate(0, 0, 90);
         }
     }
 
@@ -69,8 +67,13 @@ public class NewBehaviourScript : MonoBehaviour {
             isShowing = true;
             tempItem = Instantiate(placeableItem, new Vector3(placeHolderItem.transform.position.x, placeableItem.transform.position.y, placeHolderItem.transform.position.z), placeableItem.transform.rotation, placeHolderItem.transform);
             BoxCollider[] boxColliders = tempItem.GetComponentsInChildren<BoxCollider>();
-            visualRef.transform.localScale = new Vector3(boxColliders[0].size.x, -boxColliders[0].size.z, 1f);
-            print(visualRef.transform.localScale);
+            if(boxColliders[0].size != Vector3.one) {
+                AdjustPositionBySize(boxColliders[0]);
+            } else {
+                tempItem.transform.localPosition = Vector3.zero;
+                visualRef.transform.localPosition = Vector3.zero;
+            }
+            visualRef.transform.localScale = new Vector3(boxColliders[0].size.x, boxColliders[0].size.z, 1f);
             foreach(BoxCollider boxCollider in boxColliders) { boxCollider.enabled = false; }
         }
     }
@@ -93,6 +96,19 @@ public class NewBehaviourScript : MonoBehaviour {
         placeHolderItem.GetComponentInChildren<MeshRenderer>().material = red;
         tempItem.GetComponentInChildren<MeshRenderer>().material.color = colorRed; // Rojo con trnasparencia
         return false;
+    }
+
+    void AdjustPositionBySize(BoxCollider boxCollider) {
+        Vector3 tempVect = Vector3.zero;
+        if(boxCollider.size.x % 2 == 0) {
+            tempVect.x = boxCollider.size.x / 2 - 0.5f;
+        }
+        if(boxCollider.size.z % 2 == 0) {
+            tempVect.z = boxCollider.size.z / 2 - 0.5f;
+        }
+
+        tempItem.transform.localPosition = tempVect;
+        visualRef.transform.localPosition = tempVect;
     }
 }
 
