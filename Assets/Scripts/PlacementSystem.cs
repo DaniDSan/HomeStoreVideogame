@@ -70,7 +70,7 @@ public class NewBehaviourScript : MonoBehaviour {
             if(boxColliders[0].size != Vector3.one) {
                 AdjustPositionBySize(boxColliders[0]);
             } else {
-                tempItem.transform.localPosition = Vector3.zero;
+                tempItem.transform.localPosition = new Vector3(placeableItem.transform.position.x, placeableItem.transform.position.y, placeableItem.transform.position.z); // Reseteamos la posicion del objeto si es de 1 bloque de tamaño
                 visualRef.transform.localPosition = Vector3.zero;
             }
             visualRef.transform.localScale = new Vector3(boxColliders[0].size.x, boxColliders[0].size.z, 1f);
@@ -99,7 +99,7 @@ public class NewBehaviourScript : MonoBehaviour {
     }
 
     void AdjustPositionBySize(BoxCollider boxCollider) {
-        Vector3 tempVect = Vector3.zero;
+        Vector3 tempVect = new Vector3(0f, placeableItem.transform.position.y, 0f);
         if(boxCollider.size.x % 2 == 0) {
             tempVect.x = boxCollider.size.x / 2 - 0.5f;
         }
@@ -108,7 +108,7 @@ public class NewBehaviourScript : MonoBehaviour {
         }
 
         tempItem.transform.localPosition = tempVect;
-        visualRef.transform.localPosition = tempVect;
+        visualRef.transform.localPosition = new Vector3(tempVect.x, 0f, tempVect.z);
     }
 }
 
