@@ -17,12 +17,13 @@ public class ItemChecker : MonoBehaviour {
 
         Vector3 colliderSize = boxCollider.size;
         Collider[] colliders = Physics.OverlapBox(transform.position, colliderSize * colliderSizeOffset / 2, transform.rotation);
-        if(colliders.Length == 1) {
+        if(colliders.Length >= 1) {
             foreach(Collider collider in colliders) {
                 if(collider.CompareTag("Floor")) {
                     canPlace = true;
                 } else {
                     canPlace = false;
+                    return;
                 }
             }
         } else {
