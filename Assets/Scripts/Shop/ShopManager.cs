@@ -9,7 +9,8 @@ public class ShopManager : MonoBehaviour {
 
     public ShopItemSO[] shopItemSOs;
     public List<GameObject> shopPanels;
-    public RenderTexture[] renderTextures;
+    public ShopConfigurationPreview shopConfigurationPreview;
+    public List<RenderTexture> renderTextures;
     public List<Button> purchaseButtons;
 
     private void Start() {
@@ -21,13 +22,17 @@ public class ShopManager : MonoBehaviour {
             shopPanels.Add(Instantiate(prefabPanel, content));
         }
 
+        int renderIndex = 0;
         for(int i = 0; i < shopItemSOs.Length; i++) {
             int index = i;
-            shopPanels[i].GetComponent<ShopTemplate>().priceTxt.text = shopItemSOs[i].price.ToString();
-            shopPanels[i].GetComponent<ShopTemplate>().previewImg.texture = renderTextures[i];
+            ShopTemplate template = shopPanels[i].GetComponent<ShopTemplate>();
+            template.priceTxt.text = shopItemSOs[i].price.ToString();
+            template.previewImg.texture = renderTextures[renderIndex];
+            renderIndex = (renderIndex + 1) % renderTextures.Count;
 
+            shopConfigurationPreview.actaulPrefabs.Add(shopItemSOs[i].prefabItem);
 
-            purchaseButtons.Add(shopPanels[i].GetComponent<ShopTemplate>().buyBtn);
+            purchaseButtons.Add(template.buyBtn);
             purchaseButtons[i].onClick.AddListener(() => BuyItem(index));
         }
     }
