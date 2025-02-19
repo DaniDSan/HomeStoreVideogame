@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a758fe096e7e93419645625f369cb27, type: 3}
-  m_Name: Object
+  m_Name: Object 1
   m_EditorClassIdentifier: 
-  prefabItem: {fileID: 4296794212182652793, guid: 7092cdf1df638f547823157cc16f06aa,
+  prefabItem: {fileID: 4370929377056721135, guid: ee176896c41507a4aa02b7c5546fd356,
     type: 3}
-  price: 15
+  price: 5
