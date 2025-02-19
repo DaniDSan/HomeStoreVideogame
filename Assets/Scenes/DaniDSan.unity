@@ -1521,6 +1521,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1182383885}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &860626967
 GameObject:
@@ -1845,7 +1857,6 @@ MonoBehaviour:
   - {fileID: 8400000, guid: 5b7e3c9a314fc6a44afe56f0a4775649, type: 2}
   - {fileID: 8400000, guid: 5b7e3c9a314fc6a44afe56f0a4775649, type: 2}
   purchaseButtons: []
-  shopConfigurationPreview: {fileID: 1182383887}
 --- !u!1 &1119050779
 GameObject:
   m_ObjectHideFlags: 0
