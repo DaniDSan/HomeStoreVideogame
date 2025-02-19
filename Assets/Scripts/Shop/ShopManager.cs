@@ -26,6 +26,7 @@ public class ShopManager : MonoBehaviour {
             shopPanels[i].GetComponent<ShopTemplate>().priceTxt.text = shopItemSOs[i].price.ToString();
             shopPanels[i].GetComponent<ShopTemplate>().previewImg.texture = renderTextures[i];
 
+
             purchaseButtons.Add(shopPanels[i].GetComponent<ShopTemplate>().buyBtn);
             purchaseButtons[i].onClick.AddListener(() => BuyItem(index));
         }
