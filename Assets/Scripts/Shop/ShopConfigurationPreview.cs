@@ -8,40 +8,27 @@ public class ShopConfigurationPreview : MonoBehaviour {
     public List<GameObject> actaulPrefabs; // Objeto que mostraremos
     GameObject[] tempObjects;
 
-    int actualItem;
+    int nextItem;
     int prevItem;
     int nextTemplate = 0;
     int prevTemplate = 0;
 
     public float rotationVelocity = 40f;
 
-    private void Start() {
+    private void Awake() {
         tempObjects = new GameObject[previewPositions.Length];
-        for(int i = 0; i < actaulPrefabs.Count; i++) {
-            ShowPreview(actaulPrefabs[i], i);
-        }
 
-        actualItem = previewPositions.Length - 1;
+        // El indice del siguiente item a msotrar sera el del final del numero de camaras que tenemos
+        nextItem = previewPositions.Length - 1;
     }
 
     private void Update() {
-        // Rotar todos los objetos en sus posiciones
         foreach(Transform previewPosition in previewPositions) {
             previewPosition.transform.Rotate(Vector3.up, rotationVelocity * Time.deltaTime);
         }
-
-        // Desplazarse a la derecha al presionar "E"
-        if(Input.GetKeyDown(KeyCode.E)) {
-            ScrollRight();
-        }
-
-        // Desplazarse a la izquierda al presionar "Q"
-        if(Input.GetKeyDown(KeyCode.Q)) {
-            ScrollLeft();
-        }
     }
 
-    void ShowPreview(GameObject prefab, int positionIndex) {
+    public void ShowPreview(GameObject prefab, int positionIndex) {
         if(positionIndex > previewPositions.Length - 1) {
             return;
         }
@@ -56,25 +43,37 @@ public class ShopConfigurationPreview : MonoBehaviour {
         tempObjects[positionIndex].transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
 
-    void ScrollRight() {
+    public void ScrollRight() {
+        // Si el anterior template es menor a 0 significa que no hay templates anteriores y salimos del metodo
         if(prevTemplate <= 0) {
             return;
         }
-        // Calcular el nuevo índice para el último objeto
-        prevItem = actualItem - previewPositions.Length;
-        print(prevItem);
+        // Hacemos un calculo para sacar el indice del prefab que tenemos que mostar como anterior
+        prevItem = nextItem - previewPositions.Length;
         prevItem = (prevItem + actaulPrefabs.Count) % actaulPrefabs.Count;
-        actualItem--;
+
+        // Si el indice del item que tenemos que msotrar como siguiente tiene un valor por debajo de 0 le reiniciamos el valor al final de la lista, para que de vueltas ciclicas
+        if(--nextItem < 0) {
+            nextItem = actaulPrefabs.Count - 1;
+        }
         nextTemplate--;
         ShowPreview(actaulPrefabs[prevItem], --prevTemplate);
     }
 
-    void ScrollLeft() {
-        // Calcular el nuevo índice para el primer objeto
-        actualItem = (actualItem + 1) % actaulPrefabs.Count;
+    public void ScrollLeft() {
+        // Hacemos que de vueltas de manera ciclica al array de items
+        nextItem = (nextItem + 1) % actaulPrefabs.Count;
+        // Indicamos cual es el item anterior que tiene que mostrar, aumentando su indice, porque cada vez que lancemos esto el item debera ser un anterior mas
         prevItem++;
         prevTemplate++;
-        // Mostrar el nuevo objeto en la primera posición
-        ShowPreview(actaulPrefabs[actualItem], nextTemplate++);
+
+        ShowPreview(actaulPrefabs[nextItem], nextTemplate++);
+    }
+
+    public void ResetIndex() {
+        nextItem = previewPositions.Length - 1;
+        nextTemplate = 0;
+        prevItem = 0;
+        prevTemplate = 0;
     }
 }

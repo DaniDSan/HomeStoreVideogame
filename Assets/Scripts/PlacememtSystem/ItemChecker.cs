@@ -16,7 +16,9 @@ public class ItemChecker : MonoBehaviour {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
 
         Vector3 colliderSize = boxCollider.size;
-        Collider[] colliders = Physics.OverlapBox(transform.position, colliderSize * colliderSizeOffset / 2, transform.rotation);
+        Vector3 adjustedSize = colliderSize * colliderSizeOffset;
+
+        Collider[] colliders = Physics.OverlapBox(transform.position, adjustedSize / 2, transform.rotation);
         if(colliders.Length >= 1) {
             foreach(Collider collider in colliders) {
                 if(collider.CompareTag("Floor")) {

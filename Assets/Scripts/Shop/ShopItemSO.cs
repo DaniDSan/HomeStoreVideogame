@@ -7,4 +7,5 @@ public class ShopItemSO : ScriptableObject
 {
     public GameObject prefabItem;
     public int price;
+    public string category;
 }

@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class PlacementSystem : MonoBehaviour {
     public GameObject placeHolderItem;
     public GameObject placeableItem;
     public GameObject visualRef;
     GameObject tempItem;
     Camera cam;
 
-    bool isShowing = false;
+    public bool isShowing = false;
 
     public Material red;
     public Material green;
 
     public Color colorRed;
     public Color colorGreen;
+
+    public static PlacementSystem Instance;
+
+    private void Awake() {
+        if(Instance == null) {
+            Instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start() {
@@ -33,6 +41,9 @@ public class NewBehaviourScript : MonoBehaviour {
     }
 
     void PlaceHolderControl() {
+        if(placeableItem == null) {
+            return;
+        }
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit hit)) {
             placeHolderItem.SetActive(true);
@@ -64,6 +75,9 @@ public class NewBehaviourScript : MonoBehaviour {
     // Mostramos el objeto que vamos a colocar y le cambiamos el color segun se pueda colocar o no
     void ItemPrevisualizer() {
         if(isShowing == false) {
+            if(tempItem != null) {
+                Destroy(tempItem.gameObject);
+            }
             isShowing = true;
             tempItem = Instantiate(placeableItem, new Vector3(placeHolderItem.transform.position.x, placeableItem.transform.position.y, placeHolderItem.transform.position.z), placeableItem.transform.rotation, placeHolderItem.transform);
             BoxCollider[] boxColliders = tempItem.GetComponentsInChildren<BoxCollider>();
