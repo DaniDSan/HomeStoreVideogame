@@ -79,7 +79,7 @@ public class PlacementSystem : MonoBehaviour {
                 Destroy(tempItem.gameObject);
             }
             isShowing = true;
-            tempItem = Instantiate(placeableItem, new Vector3(placeHolderItem.transform.position.x, placeableItem.transform.position.y, placeHolderItem.transform.position.z), placeableItem.transform.rotation, placeHolderItem.transform);
+            tempItem = Instantiate(placeableItem, new Vector3(placeHolderItem.transform.position.x, placeableItem.transform.position.y, placeHolderItem.transform.position.z), placeHolderItem.transform.rotation, placeHolderItem.transform);
             BoxCollider[] boxColliders = tempItem.GetComponentsInChildren<BoxCollider>();
             if(boxColliders[0].size != Vector3.one) {
                 AdjustPositionBySize(boxColliders[0]);
