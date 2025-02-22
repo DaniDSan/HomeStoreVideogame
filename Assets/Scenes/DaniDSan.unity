@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.0010815}
+  m_AnchoredPosition: {x: 0, y: -0.0010815}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &14779049
@@ -4453,7 +4453,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 70
   m_Viewport: {fileID: 2117102957}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -4559,8 +4559,10 @@ MonoBehaviour:
   isShowing: 0
   red: {fileID: 2100000, guid: 7bfcbfcfdd5f4b746b08bc87298da173, type: 2}
   green: {fileID: 2100000, guid: 3e975397ddc1fc64fa622c07f16ace48, type: 2}
+  blue: {fileID: 2100000, guid: 6922c138690ae5d45a20905c5952c493, type: 2}
   colorRed: {r: 1, g: 0, b: 0, a: 0}
   colorGreen: {r: 0, g: 1, b: 0, a: 0}
+  colorBlue: {r: 0, g: 1, b: 1, a: 0}
 --- !u!1 &2128759673
 GameObject:
   m_ObjectHideFlags: 0

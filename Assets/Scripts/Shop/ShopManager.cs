@@ -81,20 +81,16 @@ public class ShopManager : MonoBehaviour {
             Button buyButton = template.buyBtn;
             int index = purchaseButtons.Count;
             purchaseButtons.Add(buyButton);
-            buyButton.onClick.AddListener(() => BuyItem(shopItem));
+            buyButton.onClick.AddListener(() => SelectItem(shopItem));
 
             shopConfigurationPreview.ShowPreview(shopItem.prefabItem, shopConfigurationPreview.actaulPrefabs.Count - 1);
         }
     }
 
     // Método para comprar un ítem
-    void BuyItem(ShopItemSO shopItem) {
-        print(shopItem.price.ToString());
-        if(PlacementSystem.Instance.placeableItem != null) {
-            PlacementSystem.Instance.placeableItem = null;
-            PlacementSystem.Instance.isShowing = false;
-        }
-        PlacementSystem.Instance.placeableItem = shopItem.prefabItem;
+    void SelectItem(ShopItemSO shopItem) {
+        PlacementSystem.Instance.CancelPreview();
+        PlacementSystem.Instance.placeableItem = shopItem;
     }
 
     // Método para reiniciar la posición del ScrollRect
