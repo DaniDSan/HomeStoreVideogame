@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a758fe096e7e93419645625f369cb27, type: 3}
   m_Name: Bed 20
   m_EditorClassIdentifier: 
-  prefabItem: {fileID: 7656194643201444087, guid: 6efc1b263631ed2429f3f052038e6c88,
+  prefabItem: {fileID: 8293056240166751365, guid: af1de3ac14331c5419679b807e36a17f,
     type: 3}
   price: 70
   category: 

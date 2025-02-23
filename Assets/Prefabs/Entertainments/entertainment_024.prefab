@@ -77,6 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7639233026793185851}
+  - component: {fileID: -5100091677652172818}
   m_Layer: 0
   m_Name: entertainment_024
   m_TagString: Untagged
@@ -101,6 +102,19 @@ Transform:
   - {fileID: 2580085309982207292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5100091677652172818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414926271786163258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: f4d0f15f78c4f9444bf94763906f3c6d, type: 2}
 --- !u!1001 &7576488529917751001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 5133276644420691491, guid: da61ca00e0bbe6e4bbc6e3f7e7a98d1e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.2616576
       objectReference: {fileID: 0}
     - target: {fileID: 5133276644420691491, guid: da61ca00e0bbe6e4bbc6e3f7e7a98d1e,
         type: 3}

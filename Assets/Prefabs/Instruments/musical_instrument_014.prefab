@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4669668847927833342}
+  - component: {fileID: -3353102095109228482}
   m_Layer: 0
   m_Name: musical_instrument_014
   m_TagString: Untagged
@@ -116,6 +117,19 @@ Transform:
   - {fileID: 6290217815894732492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3353102095109228482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401687098175300001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 07377bc2b260893468cc83354395b7d0, type: 2}
 --- !u!1 &4987264790428516740
 GameObject:
   m_ObjectHideFlags: 0

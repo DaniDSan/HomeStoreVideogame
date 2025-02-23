@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1176621563546603885}
+  - component: {fileID: 820375500326033903}
   m_Layer: 0
   m_Name: training_item_017
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 8936741458515141281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820375500326033903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63607710338392384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 64c8bb222a0a0e6408f2ea9c866fbfaf, type: 2}
 --- !u!1 &3111562923394739088
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 1198103779025263354, guid: 7afd9868074e2fb4c962b47b9c7c1816,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.115891
       objectReference: {fileID: 0}
     - target: {fileID: 1198103779025263354, guid: 7afd9868074e2fb4c962b47b9c7c1816,
         type: 3}

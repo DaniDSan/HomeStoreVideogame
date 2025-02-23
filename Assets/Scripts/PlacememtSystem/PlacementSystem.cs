@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Playables;
+using UnityEngine.UIElements;
 
 public class PlacementSystem : MonoBehaviour {
     public GameObject placeHolderItem;
@@ -10,6 +8,7 @@ public class PlacementSystem : MonoBehaviour {
     public GameObject visualRef;
     private GameObject tempItem;
     private GameObject draggedItem;
+    public Image sellIcon;
     private Camera cam;
 
     bool isShowing = false;
@@ -132,7 +131,7 @@ public class PlacementSystem : MonoBehaviour {
         if(boxColliders[0].size != Vector3.one) {
             AdjustPositionBySize(boxColliders[0]);
         } else {
-            tempItem.transform.localPosition = Vector3.zero;
+            tempItem.transform.localPosition = new Vector3(0f, tempItem.transform.position.y, 0f);
             visualRef.transform.localPosition = Vector3.zero;
         }
 
@@ -165,7 +164,9 @@ public class PlacementSystem : MonoBehaviour {
         Color targetColor = canPlace ? colorGreen : colorRed;
 
         placeHolderItem.GetComponentInChildren<MeshRenderer>().material = targetMaterial;
-        tempItem.GetComponentInChildren<MeshRenderer>().material.color = targetColor;
+
+        foreach(MeshRenderer tempItems in tempItem.GetComponentsInChildren<MeshRenderer>())
+            tempItems.material.color = targetColor;
     }
 
     private void AdjustPositionBySize(BoxCollider boxCollider) {
@@ -178,8 +179,8 @@ public class PlacementSystem : MonoBehaviour {
             tempVect.z = boxCollider.size.z / 2 - 0.5f;
         }
 
-        tempItem.transform.localPosition = tempVect;
-        visualRef.transform.localPosition = new Vector3(tempVect.x, 0f, tempVect.z);
+        tempItem.transform.localPosition = new Vector3(tempVect.x, tempItem.transform.position.y, tempVect.z);
+        visualRef.transform.localPosition = tempVect;
     }
 
     public void CancelPreview() {
@@ -207,7 +208,9 @@ public class PlacementSystem : MonoBehaviour {
                 draggedItem = parentObject;
 
                 originMaterial = draggedItem.GetComponentInChildren<MeshRenderer>().material;
-                draggedItem.GetComponentInChildren<MeshRenderer>().material = blue;
+
+                foreach(MeshRenderer draggedItems in draggedItem.GetComponentsInChildren<MeshRenderer>())
+                    draggedItems.material = blue;
 
                 placeableItem = parentObject.GetComponent<ItemData>().shopItemSO;
                 placeHolderItem.SetActive(true);
@@ -216,7 +219,8 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     void CancelDragItem() {
-        draggedItem.GetComponentInChildren<MeshRenderer>().material = originMaterial;
+        foreach(MeshRenderer draggedItems in draggedItem.GetComponentsInChildren<MeshRenderer>())
+            draggedItems.material = originMaterial;
         draggedItem.GetComponentInChildren<BoxCollider>().enabled = true;
         draggedItem = null;
         isDragging = false;

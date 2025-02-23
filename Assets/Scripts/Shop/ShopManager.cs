@@ -24,6 +24,8 @@ public class ShopManager : MonoBehaviour {
     // Paneles actuales cargados en escena
     private List<GameObject> currentPanels = new List<GameObject>();
 
+    bool isShowing = false;
+
     private void Start() {
         // Cargar la primera categoría por defecto
         if(categories.Count > 0) {

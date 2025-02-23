@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a758fe096e7e93419645625f369cb27, type: 3}
+  m_Name: Closet 20
+  m_EditorClassIdentifier: 
+  prefabItem: {fileID: 4609161854616346632, guid: a46ed9aa09f45dc4fb683a9412cfa484,
+    type: 3}
+  price: 0

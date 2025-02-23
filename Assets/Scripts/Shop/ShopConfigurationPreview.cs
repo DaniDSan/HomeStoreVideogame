@@ -57,7 +57,7 @@ public class ShopConfigurationPreview : MonoBehaviour {
             nextItem = actaulPrefabs.Count - 1;
         }
         nextTemplate--;
-        ShowPreview(actaulPrefabs[prevItem], --prevTemplate);
+        ShowPreview(actaulPrefabs[prevItem], --prevTemplate % previewPositions.Length);
     }
 
     public void ScrollLeft() {
@@ -67,7 +67,7 @@ public class ShopConfigurationPreview : MonoBehaviour {
         prevItem++;
         prevTemplate++;
 
-        ShowPreview(actaulPrefabs[nextItem], nextTemplate++);
+        ShowPreview(actaulPrefabs[nextItem], nextTemplate++ % previewPositions.Length);
     }
 
     public void ResetIndex() {

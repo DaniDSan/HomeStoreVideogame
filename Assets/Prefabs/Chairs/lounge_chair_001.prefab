@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7934445298266029134}
+  - component: {fileID: 3437137441540776554}
   m_Layer: 0
   m_Name: lounge_chair_001
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 6744520709509159276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3437137441540776554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517810144133700412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 66093bf8f3f1ce74ca22c388c541a29c, type: 2}
 --- !u!1001 &8165610984352695316
 PrefabInstance:
   m_ObjectHideFlags: 0

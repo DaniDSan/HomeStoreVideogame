@@ -77,6 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375686883823200888}
+  - component: {fileID: 4690308141299603715}
   m_Layer: 0
   m_Name: closet_027
   m_TagString: Untagged
@@ -101,6 +102,19 @@ Transform:
   - {fileID: 2803401345516262201}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4690308141299603715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834123119481743014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 6627f6cbca7e53242a12b94a65f0e3f1, type: 2}
 --- !u!1001 &7985738968993829855
 PrefabInstance:
   m_ObjectHideFlags: 0

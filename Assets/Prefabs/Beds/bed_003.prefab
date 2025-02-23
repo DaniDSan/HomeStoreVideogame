@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3429300584294521980}
+  - component: {fileID: 8247467268757034913}
   m_Layer: 0
   m_Name: bed_003
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 3924454628301660699}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8247467268757034913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495082039591413430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: fed687067798e2948ac0e3392507caee, type: 2}
 --- !u!1 &9171030265864475578
 GameObject:
   m_ObjectHideFlags: 0
