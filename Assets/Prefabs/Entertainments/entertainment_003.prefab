@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3056705117029716117}
   m_Layer: 0
   m_Name: entertainment_003
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

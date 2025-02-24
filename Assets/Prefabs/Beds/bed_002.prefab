@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 2486588515867259177}
   m_Layer: 0
   m_Name: bed_002
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

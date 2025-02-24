@@ -21,7 +21,14 @@ public class ItemChecker : MonoBehaviour {
         Collider[] colliders = Physics.OverlapBox(transform.position, adjustedSize / 2, transform.rotation);
         if(colliders.Length >= 1) {
             foreach(Collider collider in colliders) {
-                if(collider.CompareTag("Floor")) {
+                if(transform.CompareTag("Wall")) {
+                    if(collider.CompareTag("Floor")) {
+                        canPlace = true;
+                        return;
+                    } else {
+                        canPlace = false;
+                    }
+                } else if(collider.CompareTag("Floor")) {
                     canPlace = true;
                 } else {
                     canPlace = false;

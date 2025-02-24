@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lounge_chair_010
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c5d6074f55313947a4e0924f5d04830,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

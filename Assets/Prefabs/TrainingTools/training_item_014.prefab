@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2348086409134928192}
   m_Layer: 0
   m_Name: ColliderObject (1)
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 551710944975969635}
   m_Layer: 0
   m_Name: training_item_014
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4980011810819554913}
   m_Layer: 0
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: training_item_014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974354815342919406, guid: 6723a6370c6f07b48b7e201d8cb8382a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     - target: {fileID: 4353975926192661588, guid: 6723a6370c6f07b48b7e201d8cb8382a,
         type: 3}

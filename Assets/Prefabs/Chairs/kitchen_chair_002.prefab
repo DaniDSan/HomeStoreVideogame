@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_chair_002
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0b777c3a4c91e6a45a68c732a59626ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

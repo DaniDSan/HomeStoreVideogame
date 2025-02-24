@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: -5116631880701794727}
   m_Layer: 0
   m_Name: closet_014
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

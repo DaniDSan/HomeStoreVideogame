@@ -96,10 +96,6 @@ public class PlacementSystem : MonoBehaviour {
             new Vector3(tempItem.transform.position.x, placeableItem.prefabItem.transform.position.y, tempItem.transform.position.z),
             tempItem.transform.rotation);
 
-        Transform colliderObjectTransform = newItem.transform.Find("ColliderObject");
-
-        colliderObjectTransform.gameObject.tag = "Placeable";
-
         if(!isDragging) {
             print(placeableItem.price);
         } else {
@@ -124,6 +120,12 @@ public class PlacementSystem : MonoBehaviour {
             new Vector3(placeHolderItem.transform.position.x, placeableItem.prefabItem.transform.position.y, placeHolderItem.transform.position.z),
             placeHolderItem.transform.rotation,
             placeHolderItem.transform);
+
+        if(tempItem.CompareTag("Wall") || tempItem.CompareTag("WallObject")) {
+            visualRef.SetActive(false);
+        } else {
+            visualRef.SetActive(true);
+        }
     }
 
     private void SetupColliderVisualization() {
@@ -163,7 +165,9 @@ public class PlacementSystem : MonoBehaviour {
         Material targetMaterial = canPlace ? green : red;
         Color targetColor = canPlace ? colorGreen : colorRed;
 
-        placeHolderItem.GetComponentInChildren<MeshRenderer>().material = targetMaterial;
+        if(visualRef.activeSelf) {
+            placeHolderItem.GetComponentInChildren<MeshRenderer>().material = targetMaterial;
+        }
 
         foreach(MeshRenderer tempItems in tempItem.GetComponentsInChildren<MeshRenderer>())
             tempItems.material.color = targetColor;
@@ -201,7 +205,7 @@ public class PlacementSystem : MonoBehaviour {
 
     private void TryPickupItem(GameObject hitObject) {
         if(!isDragging) {
-            if(hitObject.CompareTag("Placeable")) {
+            if(hitObject.CompareTag("Placeable") || hitObject.CompareTag("WallObject")) {
                 isDragging = true;
                 hitObject.GetComponent<BoxCollider>().enabled = false;
                 GameObject parentObject = hitObject.GetComponentInParent<ItemData>().gameObject;

@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 4870882166766486088}
   m_Layer: 0
   m_Name: entertainment_025
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

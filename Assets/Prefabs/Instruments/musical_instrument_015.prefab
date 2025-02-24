@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3972988098579942455}
   m_Layer: 0
   m_Name: musical_instrument_015
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

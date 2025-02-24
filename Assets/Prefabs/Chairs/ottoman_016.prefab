@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ottoman_016
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74805baa18e29944bb32e8c2298724d5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
