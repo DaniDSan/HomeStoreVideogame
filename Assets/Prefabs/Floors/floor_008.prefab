@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 332371880565678540}
   - component: {fileID: 3722490021017308563}
   - component: {fileID: 1434050320463271602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2494461761609583293}
   - component: {fileID: -288553779828130490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor_008
-  m_TagString: Floor
+  m_TagString: UpperFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 6804480283065079165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -127,6 +127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floor_008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731570501616563970, guid: 7bba9d5d69ec6d34da145c1a2a9a8a4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5395940045748317624, guid: 7bba9d5d69ec6d34da145c1a2a9a8a4f,
         type: 3}

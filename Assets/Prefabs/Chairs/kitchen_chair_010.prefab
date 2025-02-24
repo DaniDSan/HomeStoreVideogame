@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2524217201433696919}
   - component: {fileID: 3916006340548760040}
   - component: {fileID: 8087111939727624921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchen_chair_010
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41a1ac608e6bd65428d0c95864286a7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 41a1ac608e6bd65428d0c95864286a7b,
         type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3274916389396679932}
   - component: {fileID: 4470126392832000845}
   - component: {fileID: 7085815767802486771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206174083109906253}
   - component: {fileID: 4735353645623229388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: training_item_021
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -197,6 +197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: training_item_022
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808099849226691792, guid: 577e259043e17d244875cbec85af8f88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

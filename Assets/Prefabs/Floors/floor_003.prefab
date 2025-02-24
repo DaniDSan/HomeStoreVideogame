@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7005381486769480287}
   - component: {fileID: 819687298827783803}
   - component: {fileID: 5129047986349338946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5612476705777664086}
   - component: {fileID: -5943766971360913615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: floor_003
-  m_TagString: Floor
+  m_TagString: UpperFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 8355603994107605930}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: floor_003
+      objectReference: {fileID: 0}
+    - target: {fileID: 780536587100955180, guid: 6249d61d0da861041a4ae5f6175ba673,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

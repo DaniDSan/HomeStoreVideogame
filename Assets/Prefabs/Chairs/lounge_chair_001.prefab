@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7934445298266029134}
   - component: {fileID: 3437137441540776554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lounge_chair_001
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -54,6 +54,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7934445298266029134}
     m_Modifications:
+    - target: {fileID: 3018092071045686388, guid: 901dd8d97e54d964896b5d314cbfeb8a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3227755148341271928, guid: 901dd8d97e54d964896b5d314cbfeb8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -108,6 +113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lounge_chair_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719519143138677307, guid: 901dd8d97e54d964896b5d314cbfeb8a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

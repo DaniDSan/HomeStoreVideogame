@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8051881925776513812}
   - component: {fileID: 5239648152366402134}
   - component: {fileID: 5389346954551093366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: musical_instrument_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6703103210046782804}
   - component: {fileID: 6973269761805551123}
   - component: {fileID: 8045894319865882173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5262813824249312251}
   - component: {fileID: -2576047766035860412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: musical_instrument_002
   m_TagString: Placeable
   m_Icon: {fileID: 0}

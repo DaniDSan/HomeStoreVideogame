@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6796314680656940909}
   - component: {fileID: 4384114502802312501}
   - component: {fileID: 7916733011590221345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_ceiling_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 91955b225e5dcea409c6fd53bbb65237,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 91955b225e5dcea409c6fd53bbb65237,
         type: 3}

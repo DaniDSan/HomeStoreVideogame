@@ -176,11 +176,12 @@ public class PlacementSystem : MonoBehaviour {
     private void AdjustPositionBySize(BoxCollider boxCollider) {
         Vector3 tempVect = Vector3.zero;
 
-        if(boxCollider.size.x % 2 == 0) {
+        if(Mathf.RoundToInt(boxCollider.size.x) % 2 == 0) {
             tempVect.x = boxCollider.size.x / 2 - 0.5f;
         }
-        if(boxCollider.size.z % 2 == 0) {
+        if(Mathf.RoundToInt(boxCollider.size.z) % 2 == 0) {
             tempVect.z = boxCollider.size.z / 2 - 0.5f;
+
         }
 
         tempItem.transform.localPosition = new Vector3(tempVect.x, tempItem.transform.position.y, tempVect.z);
@@ -205,7 +206,7 @@ public class PlacementSystem : MonoBehaviour {
 
     private void TryPickupItem(GameObject hitObject) {
         if(!isDragging) {
-            if(hitObject.CompareTag("Placeable") || hitObject.CompareTag("WallObject")) {
+            if(LayerMask.LayerToName(hitObject.layer) == "PlaceableObject") {
                 isDragging = true;
                 hitObject.GetComponent<BoxCollider>().enabled = false;
                 GameObject parentObject = hitObject.GetComponentInParent<ItemData>().gameObject;

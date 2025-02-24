@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4553524606723410458}
   - component: {fileID: 248382136396801893}
   - component: {fileID: -3605888397341145255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: office_chair_004
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53a9e5367e043684b9781e187f476ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 53a9e5367e043684b9781e187f476ed8,
         type: 3}

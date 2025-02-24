@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5723180021672326186}
   - component: {fileID: -3581568298804727027}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lounge_chair_005
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -58,6 +58,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lounge_chair_005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555585748031047432, guid: 02c6f678d33db1940b5cf34f02a494d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991105680048416453, guid: 02c6f678d33db1940b5cf34f02a494d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9074853597144505778, guid: 02c6f678d33db1940b5cf34f02a494d8,
         type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2147438309153273241}
   - component: {fileID: 8732391444538625060}
   - component: {fileID: 3461233749264218941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,9 +78,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6143412788664252120}
   - component: {fileID: 2350574034337050381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls_006
-  m_TagString: Walls
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Walls_006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940512566256705268, guid: 2a6a9cead262c6a4f9b37411cc44d4a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5754450974737810510, guid: 2a6a9cead262c6a4f9b37411cc44d4a0,
         type: 3}

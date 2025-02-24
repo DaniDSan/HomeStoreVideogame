@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2137474012331729190}
   - component: {fileID: 3784867441075985538}
   - component: {fileID: 2348086409134928192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject (1)
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4365483895221353553}
   - component: {fileID: 551710944975969635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: training_item_014
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4406904223452789611}
   - component: {fileID: 4865233036002650382}
   - component: {fileID: 4980011810819554913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -196,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: training_item_014
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974354815342919406, guid: 6723a6370c6f07b48b7e201d8cb8382a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3974354815342919406, guid: 6723a6370c6f07b48b7e201d8cb8382a,
         type: 3}

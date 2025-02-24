@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1301955398364504579}
   - component: {fileID: 3099090825443089034}
   - component: {fileID: 3083954953114845607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lounge_chair_010
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c5d6074f55313947a4e0924f5d04830,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9c5d6074f55313947a4e0924f5d04830,
         type: 3}

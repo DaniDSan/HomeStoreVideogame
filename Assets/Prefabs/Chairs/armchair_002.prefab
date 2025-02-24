@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8708394598995734153}
   - component: {fileID: 3943217171433209841}
   - component: {fileID: -1844419523915774997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: armchair_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b033ea79e8f909428bc1ef188763a26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b033ea79e8f909428bc1ef188763a26,
         type: 3}

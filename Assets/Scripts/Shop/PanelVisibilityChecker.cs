@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PanelVisibilityChecker : MonoBehaviour {
-    public RectTransform scrollView;
+    RectTransform scrollView;
     ShopConfigurationPreview shopConfigurationPreview;
 
     private bool isVisible = false;
 
-    void Start() {
-        shopConfigurationPreview = GameObject.Find("ShopItemObjects").GetComponent<ShopConfigurationPreview>();
+    void OnEnable() {
+        shopConfigurationPreview = GameObject.Find("ShopPreviewItemObjects").GetComponent<ShopConfigurationPreview>();
         scrollView = transform.GetComponentInParent<ScrollRect>().viewport;
     }
 

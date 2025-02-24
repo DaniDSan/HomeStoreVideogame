@@ -14,29 +14,37 @@ public class ItemChecker : MonoBehaviour {
 
     void CheckCollisions() {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
-
-        Vector3 colliderSize = boxCollider.size;
-        Vector3 adjustedSize = colliderSize * colliderSizeOffset;
+        Vector3 adjustedSize = boxCollider.size * colliderSizeOffset;
 
         Collider[] colliders = Physics.OverlapBox(transform.position, adjustedSize / 2, transform.rotation);
-        if(colliders.Length >= 1) {
+        canPlace = false;
+
+        if(colliders.Length > 0) {
+            bool foundValidSurface = false;
+
             foreach(Collider collider in colliders) {
-                if(transform.CompareTag("Wall")) {
-                    if(collider.CompareTag("Floor")) {
-                        canPlace = true;
+                if(CompareTag("UpperFloor")) {
+                    if(collider.CompareTag("UpperFloor")) {
+                        canPlace = false;
                         return;
                     } else {
-                        canPlace = false;
+                        foundValidSurface = true;
                     }
-                } else if(collider.CompareTag("Floor")) {
-                    canPlace = true;
+                } else if(CompareTag("Carpet")) {
+                    if(collider.CompareTag("Carpet")) {
+                        canPlace = false;
+                        return;
+                    } else {
+                        foundValidSurface = true;
+                    }
+                } else if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor")) {
+                    foundValidSurface = true;
                 } else {
                     canPlace = false;
                     return;
                 }
             }
-        } else {
-            canPlace = false;
+            canPlace = foundValidSurface;
         }
     }
 
@@ -48,5 +56,3 @@ public class ItemChecker : MonoBehaviour {
         Gizmos.DrawWireCube(Vector3.zero, colliderSize * (colliderSizeOffset + 0.2f));
     }
 }
-
-

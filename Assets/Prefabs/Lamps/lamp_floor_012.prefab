@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8469155775647492996}
   - component: {fileID: 5265794386187815535}
   - component: {fileID: 7706601276766971688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lamp_floor_012
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fecb5390f6ecdd442bc5da681df6395a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fecb5390f6ecdd442bc5da681df6395a,
         type: 3}

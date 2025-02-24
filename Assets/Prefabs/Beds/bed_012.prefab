@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5046692433427118963}
   - component: {fileID: -8492109918715325860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bed_012
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 8792132541209268536}
   - component: {fileID: 7983328361243128343}
   - component: {fileID: 2167367339596227452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,6 +127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bed_012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293768957645573851, guid: e989d9ae926f4f14dbb8c12021e11408,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6637220812894508129, guid: e989d9ae926f4f14dbb8c12021e11408,
         type: 3}

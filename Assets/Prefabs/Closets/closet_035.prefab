@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5960360548845625817}
   - component: {fileID: 6174403904530333664}
   - component: {fileID: 1768572105178679531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234398309434178473}
   - component: {fileID: -5819518691627438862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: closet_035
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -127,6 +127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: closet_035
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025545789138217668, guid: d4903eaaa5e6ba04abaf752ae480613d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5689598738163265662, guid: d4903eaaa5e6ba04abaf752ae480613d,
         type: 3}
@@ -214,6 +219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: closet_036
       objectReference: {fileID: 0}
+    - target: {fileID: 4623681430611509016, guid: e6f5ddc9cb1d4f1438dab45b8a679ddc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5431707765000856994, guid: e6f5ddc9cb1d4f1438dab45b8a679ddc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -288,6 +298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: closet_036 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4623681430611509016, guid: e6f5ddc9cb1d4f1438dab45b8a679ddc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5431707765000856994, guid: e6f5ddc9cb1d4f1438dab45b8a679ddc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -361,6 +376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: closet_036 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623681430611509016, guid: e6f5ddc9cb1d4f1438dab45b8a679ddc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5431707765000856994, guid: e6f5ddc9cb1d4f1438dab45b8a679ddc,
         type: 3}

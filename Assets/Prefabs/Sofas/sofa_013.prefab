@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7561202677616497143}
   - component: {fileID: 7972379800536426885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sofa_013
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 24953161986354454}
   - component: {fileID: 1144088838163563726}
   - component: {fileID: 8090332100497210913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa_013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327007870763507087, guid: f7b0ba306cb95ad49b2e124c2efa4e58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

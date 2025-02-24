@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588815857400132107}
   - component: {fileID: -4741455863094703122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: closet_031
   m_TagString: Placeable
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 3377393373747094827}
   - component: {fileID: 5685663825487152071}
   - component: {fileID: 8325777005904116558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,6 +177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: closet_031
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346605621269711913, guid: 68f674e50212f62418fd429315ba8677,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

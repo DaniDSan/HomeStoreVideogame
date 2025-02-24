@@ -4,15 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Floor
   - Placeable
   - Wall
   - WallObject
+  - FloorBase
+  - Floor
+  - UpperFloor
+  - Carpet
+  - Walls
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Floor
+  - Outlined Objects
   - Water
   - UI
   - PlaceableObject

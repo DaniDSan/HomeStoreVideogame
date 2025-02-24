@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6922374893685539817}
   - component: {fileID: 7609924198895399169}
   - component: {fileID: 5132177933495986091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ottoman_015
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 709ffefab196c7240b3826d60689db26,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 709ffefab196c7240b3826d60689db26,
         type: 3}
