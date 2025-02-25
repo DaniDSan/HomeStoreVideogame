@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlace: 0
   colliderSizeOffset: 0.8
+  edgeTolerance: 0.1
 --- !u!1 &2869341225011282373
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ GameObject:
   - component: {fileID: 2350574034337050381}
   m_Layer: 6
   m_Name: Walls_006
-  m_TagString: Wall
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

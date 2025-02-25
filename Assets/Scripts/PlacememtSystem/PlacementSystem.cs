@@ -38,6 +38,10 @@ public class PlacementSystem : MonoBehaviour {
         HandlePlacementFlow();
         HandleCancelPlacement();
         HandleReplaceItem();
+
+        if(placeableItem == null) {
+            OutlineHandler.Instance.OutlineCheck();
+        }
     }
 
     private void HandlePlacementFlow() {
@@ -75,7 +79,7 @@ public class PlacementSystem : MonoBehaviour {
 
     private void ShowPlaceholder(RaycastHit hit) {
         placeHolderItem.SetActive(true);
-        placeHolderItem.transform.position = new Vector3(Mathf.Round(hit.point.x), 0.01f, Mathf.Round(hit.point.z));
+        placeHolderItem.transform.position = new Vector3(Mathf.Round(hit.point.x), visualRef.transform.position.y, Mathf.Round(hit.point.z));
         ItemPrevisualizer();
     }
 
@@ -205,6 +209,7 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     private void TryPickupItem(GameObject hitObject) {
+        OutlineHandler.Instance.ResetOutline();
         if(!isDragging) {
             if(LayerMask.LayerToName(hitObject.layer) == "PlaceableObject") {
                 isDragging = true;

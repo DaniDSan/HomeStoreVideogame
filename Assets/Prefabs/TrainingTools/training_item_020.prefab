@@ -78,6 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992606991544665240}
   - component: {fileID: -633683637129043351}
+  - component: {fileID: -7345671635550547250}
   m_Layer: 6
   m_Name: training_item_020
   m_TagString: Placeable
@@ -115,6 +116,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopItemSO: {fileID: 11400000, guid: 576eec526811ae842a4a7ba2a1c95855, type: 2}
+--- !u!114 &-7345671635550547250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540163228669698260}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: -3381165360291552475, guid: 42f6d0910dfb3b84fad0b5d3fabcad2c, type: 3}
+  bakeValues:
+  - data:
+    - {x: -0.56973183, y: -0.5773505, z: -0.58486927}
+    - {x: -0.56973183, y: 0.5773505, z: -0.58486927}
+    - {x: 0.58486944, y: 0.57735, z: -0.56973207}
+    - {x: 0.58486944, y: -0.57735, z: -0.56973207}
+    - {x: -0.56973183, y: 0.5773505, z: -0.58486927}
+    - {x: -0.5848693, y: 0.57735014, z: 0.5697321}
+    - {x: 0.569732, y: 0.57735044, z: 0.58486915}
+    - {x: 0.58486944, y: 0.57735, z: -0.56973207}
+    - {x: -0.5848693, y: 0.57735014, z: 0.5697321}
+    - {x: -0.5848693, y: -0.57735014, z: 0.5697321}
+    - {x: 0.569732, y: -0.57735044, z: 0.58486915}
+    - {x: 0.569732, y: 0.57735044, z: 0.58486915}
+    - {x: 0.58486944, y: -0.57735, z: -0.56973207}
+    - {x: 0.58486944, y: 0.57735, z: -0.56973207}
+    - {x: 0.569732, y: 0.57735044, z: 0.58486915}
+    - {x: 0.569732, y: -0.57735044, z: 0.58486915}
+    - {x: -0.5848693, y: -0.57735014, z: 0.5697321}
+    - {x: -0.5848693, y: 0.57735014, z: 0.5697321}
+    - {x: -0.56973183, y: 0.5773505, z: -0.58486927}
+    - {x: -0.56973183, y: -0.5773505, z: -0.58486927}
+    - {x: 0.569732, y: -0.57735044, z: 0.58486915}
+    - {x: -0.5848693, y: -0.57735014, z: 0.5697321}
+    - {x: -0.56973183, y: -0.5773505, z: -0.58486927}
+    - {x: 0.58486944, y: -0.57735, z: -0.56973207}
 --- !u!1001 &6474470458132880823
 PrefabInstance:
   m_ObjectHideFlags: 0

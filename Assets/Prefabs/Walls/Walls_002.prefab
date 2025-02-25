@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -153623688591684197}
   m_Layer: 6
   m_Name: Walls_002
-  m_TagString: Wall
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlace: 0
   colliderSizeOffset: 0.8
+  edgeTolerance: 0.1
 --- !u!1001 &2051543430987216024
 PrefabInstance:
   m_ObjectHideFlags: 0
