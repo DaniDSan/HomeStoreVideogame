@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1531507173043262813}
   - component: {fileID: -8717984603242761294}
+  - component: {fileID: -3661203590704591222}
   m_Layer: 6
   m_Name: Walls_008
-  m_TagString: Placeable
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopItemSO: {fileID: 11400000, guid: 12ffa554685528a43b7e0c1097a3f7c9, type: 2}
+--- !u!114 &-3661203590704591222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409152661961026743}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: 2876362924381490321, guid: bfe391e1e2adfeb4c9da371a878f570e, type: 3}
+  bakeValues:
+  - data:
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
 --- !u!1 &2832408553746711198
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +105,7 @@ GameObject:
   - component: {fileID: 896915052766263427}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +144,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.54, y: 4, z: 0}
+  m_Size: {x: 1, y: 4, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &896915052766263427
 MonoBehaviour:
@@ -115,7 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlace: 0
   colliderSizeOffset: 0.8
-  edgeTolerance: 0.1
 --- !u!1001 &3130574495632809558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,10 +178,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2335071745172831074, guid: 25ce7345eb5b3244c936831bcdecdcda,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
     - target: {fileID: 3110870023726670296, guid: 25ce7345eb5b3244c936831bcdecdcda,
         type: 3}
       propertyPath: m_RootOrder
       value: 1614
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110870023726670296, guid: 25ce7345eb5b3244c936831bcdecdcda,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3110870023726670296, guid: 25ce7345eb5b3244c936831bcdecdcda,
         type: 3}

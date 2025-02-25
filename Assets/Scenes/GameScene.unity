@@ -2459,7 +2459,12 @@ PrefabInstance:
     - target: {fileID: 1456146392534268838, guid: 6ce401daa360ff64e8975be0b3621826,
         type: 3}
       propertyPath: m_TagString
-      value: Walls
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100762639738664568, guid: 6ce401daa360ff64e8975be0b3621826,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.05
       objectReference: {fileID: 0}
     - target: {fileID: 4100762639738664568, guid: 6ce401daa360ff64e8975be0b3621826,
         type: 3}
@@ -2519,12 +2524,12 @@ PrefabInstance:
     - target: {fileID: 4434281415813856522, guid: 6ce401daa360ff64e8975be0b3621826,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6972808268928892220, guid: 6ce401daa360ff64e8975be0b3621826,
         type: 3}
       propertyPath: m_TagString
-      value: Walls
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

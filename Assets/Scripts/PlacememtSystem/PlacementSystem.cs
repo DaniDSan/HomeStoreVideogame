@@ -22,6 +22,9 @@ public class PlacementSystem : MonoBehaviour {
     public Color colorRed;
     public Color colorGreen;
 
+    [SerializeField]
+    ParticleSystem placeParticles;
+
     public static PlacementSystem Instance;
 
     private void Awake() {
@@ -92,6 +95,7 @@ public class PlacementSystem : MonoBehaviour {
     private void TryPlaceItem() {
         if(CanPlace() && Input.GetMouseButtonDown(0)) {
             PlaceItem();
+            ParticlesHandler.Instance.PlayEffect(tempItem);
         }
     }
 
@@ -180,12 +184,12 @@ public class PlacementSystem : MonoBehaviour {
     private void AdjustPositionBySize(BoxCollider boxCollider) {
         Vector3 tempVect = Vector3.zero;
 
+        print(boxCollider.size.z);
         if(Mathf.RoundToInt(boxCollider.size.x) % 2 == 0) {
             tempVect.x = boxCollider.size.x / 2 - 0.5f;
         }
         if(Mathf.RoundToInt(boxCollider.size.z) % 2 == 0) {
             tempVect.z = boxCollider.size.z / 2 - 0.5f;
-
         }
 
         tempItem.transform.localPosition = new Vector3(tempVect.x, tempItem.transform.position.y, tempVect.z);
@@ -223,6 +227,7 @@ public class PlacementSystem : MonoBehaviour {
                     draggedItems.material = blue;
 
                 placeableItem = parentObject.GetComponent<ItemData>().shopItemSO;
+                placeHolderItem.transform.rotation = hitObject.transform.rotation;
                 placeHolderItem.SetActive(true);
             }
         }

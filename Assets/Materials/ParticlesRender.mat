@@ -7,9 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OutlineMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 9b7fc844a4669c4468e22c3fc041eadf,
-    type: 3}
+  m_Name: ParticlesRender
+  m_Shader: {fileID: 4800000, guid: 88796f969ab0c8c45bb49878479a08b1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

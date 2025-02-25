@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3909400900106144682}
   - component: {fileID: 8328933640552432892}
   - component: {fileID: 7407035916093305823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: WallObject
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 474365133682762227}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.99}
+  m_LocalPosition: {x: 0, y: 0, z: -0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5439548550424871104}
   - component: {fileID: 6996296788409145520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: picture_003
   m_TagString: WallObject
   m_Icon: {fileID: 0}
@@ -127,6 +127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: picture_003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045438993522298974, guid: db66b2f1c0def35418b1e3a9314008cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5045438993522298974, guid: db66b2f1c0def35418b1e3a9314008cb,
         type: 3}

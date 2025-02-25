@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8358862866228190085}
   - component: {fileID: -153623688591684197}
+  - component: {fileID: 4554956632547599783}
   m_Layer: 6
   m_Name: Walls_002
-  m_TagString: Placeable
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.01}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5812716279160661493}
   - {fileID: 2860560716488997036}
@@ -47,6 +48,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopItemSO: {fileID: 11400000, guid: 4e460bef1ad00734a8517900b2079bc2, type: 2}
+--- !u!114 &4554956632547599783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361187351445411548}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 1
+  bakeKeys:
+  - {fileID: -4473302558800109318, guid: e3d04bb281c17fd4baeeded80ec0ef79, type: 3}
+  bakeValues:
+  - data:
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
+    - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+    - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
+    - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
 --- !u!1 &7688854845360711011
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +105,7 @@ GameObject:
   - component: {fileID: 5410476290236172225}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Walls
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +144,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4, y: 4, z: 0}
+  m_Size: {x: 1, y: 4, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5410476290236172225
 MonoBehaviour:
@@ -115,7 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlace: 0
   colliderSizeOffset: 0.8
-  edgeTolerance: 0.1
 --- !u!1001 &2051543430987216024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 5159350448330066903, guid: eb41e0f1df1af954aa7ff3871cc75e03,
         type: 3}
       propertyPath: m_TagString
-      value: Walls
+      value: Placeable
       objectReference: {fileID: 0}
     - target: {fileID: 5535593858735739245, guid: eb41e0f1df1af954aa7ff3871cc75e03,
         type: 3}
@@ -147,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 5535593858735739245, guid: eb41e0f1df1af954aa7ff3871cc75e03,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5535593858735739245, guid: eb41e0f1df1af954aa7ff3871cc75e03,
         type: 3}
@@ -202,6 +246,11 @@ PrefabInstance:
     - target: {fileID: 5535593858735739245, guid: eb41e0f1df1af954aa7ff3871cc75e03,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535593858735739245, guid: eb41e0f1df1af954aa7ff3871cc75e03,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

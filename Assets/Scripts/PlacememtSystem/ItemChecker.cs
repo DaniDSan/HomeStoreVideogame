@@ -8,8 +8,27 @@ public class ItemChecker : MonoBehaviour {
     [Range(0f, 1.0f)]
     public float colliderSizeOffset = 0.8f;
 
+    float colliderReducedSize = 0.001f;
+
+    void Start() {
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        Vector3 reduction = Vector3.one * colliderReducedSize;
+
+        if(!boxCollider.CompareTag("FloorBase")) {
+            if(boxCollider.size.x == 0) reduction.x = 0f;
+            if(boxCollider.size.y == 0) reduction.y = 0f;
+            if(boxCollider.size.z == 0) reduction.z = 0f;
+
+            boxCollider.size -= reduction;
+        }
+    }
+
     private void Update() {
-        CheckCollisions();
+        if(CompareTag("WallObject")) {
+            CheckWalls();
+        } else {
+            CheckCollisions();
+        }
     }
 
     void CheckCollisions() {
@@ -45,6 +64,24 @@ public class ItemChecker : MonoBehaviour {
                 }
             }
             canPlace = foundValidSurface;
+        }
+    }
+
+    void CheckWalls() {
+        Debug.DrawRay(transform.position, -transform.forward * 0.1f, Color.blue);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, -transform.forward, 0.1f);
+
+        if(hits.Length > 0) {
+            foreach(RaycastHit hit in hits) {
+                if(hit.collider.CompareTag("Wall")) {
+                    canPlace = true;
+                } else {
+                    canPlace = false;
+                    return;
+                }
+            }
+        } else {
+            canPlace = false;
         }
     }
 
