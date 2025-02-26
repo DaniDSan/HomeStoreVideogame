@@ -10,6 +10,10 @@ public class ItemChecker : MonoBehaviour {
 
     float colliderReducedSize = 0.001f;
 
+    public float range;
+
+    public float offset;
+
     void Start() {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         Vector3 reduction = Vector3.one * colliderReducedSize;
@@ -68,10 +72,11 @@ public class ItemChecker : MonoBehaviour {
     }
 
     void CheckWalls() {
-        Debug.DrawRay(transform.position, -transform.forward * 0.1f, Color.blue);
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, -transform.forward, 0.1f);
+        Debug.DrawRay(transform.position + new Vector3(0f, 0f, offset), -transform.forward * range, Color.blue);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0f, 0f, offset), -transform.forward, range);
 
         if(hits.Length > 0) {
+            print("AASDAD");
             foreach(RaycastHit hit in hits) {
                 if(hit.collider.CompareTag("Wall")) {
                     canPlace = true;

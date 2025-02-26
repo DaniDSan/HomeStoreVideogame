@@ -184,7 +184,6 @@ public class PlacementSystem : MonoBehaviour {
     private void AdjustPositionBySize(BoxCollider boxCollider) {
         Vector3 tempVect = Vector3.zero;
 
-        print(boxCollider.size.z);
         if(Mathf.RoundToInt(boxCollider.size.x) % 2 == 0) {
             tempVect.x = boxCollider.size.x / 2 - 0.5f;
         }
