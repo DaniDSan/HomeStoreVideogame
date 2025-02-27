@@ -13,6 +13,7 @@ public class PlacementSystem : MonoBehaviour {
 
     bool isShowing = false;
     bool isDragging = false;
+    public bool isSelling = false;
 
     private Material originMaterial;
     public Material red;
@@ -38,9 +39,11 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     void Update() {
-        HandlePlacementFlow();
-        HandleCancelPlacement();
-        HandleReplaceItem();
+        if(!isSelling) {
+            HandlePlacementFlow();
+            HandleCancelPlacement();
+            HandleReplaceItem();
+        }
 
         if(placeableItem == null) {
             OutlineHandler.Instance.OutlineCheck();

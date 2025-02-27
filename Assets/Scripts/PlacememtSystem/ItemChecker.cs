@@ -10,9 +10,7 @@ public class ItemChecker : MonoBehaviour {
 
     float colliderReducedSize = 0.001f;
 
-    public float range;
-
-    public float offset;
+    float range = 0.6f;
 
     void Start() {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
@@ -36,12 +34,8 @@ public class ItemChecker : MonoBehaviour {
     }
 
     void CheckCollisions() {
-        BoxCollider boxCollider = GetComponent<BoxCollider>();
-        Vector3 adjustedSize = boxCollider.size * colliderSizeOffset;
-
-        Collider[] colliders = Physics.OverlapBox(transform.position, adjustedSize / 2, transform.rotation);
         canPlace = false;
-
+        Collider[] colliders = GetOverlapBox();
         if(colliders.Length > 0) {
             bool foundValidSurface = false;
 
@@ -72,22 +66,33 @@ public class ItemChecker : MonoBehaviour {
     }
 
     void CheckWalls() {
-        Debug.DrawRay(transform.position + new Vector3(0f, 0f, offset), -transform.forward * range, Color.blue);
-        RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0f, 0f, offset), -transform.forward, range);
+        Collider[] colliders = GetOverlapBox();
+        foreach(Collider collider in colliders) {
+            if(!collider.CompareTag("Wall")) {
+                canPlace = false;
+                return;
+            }
+        }
+
+        Debug.DrawRay(transform.position, -transform.forward * range, Color.blue);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0.001f, 0f, 0f), -transform.forward, range); // Aplciamos esta suma en x porque estamos reudicenmdo el tamaño de los colldieres en general en 0.001f para poder colocar las paredes
 
         if(hits.Length > 0) {
-            print("AASDAD");
             foreach(RaycastHit hit in hits) {
                 if(hit.collider.CompareTag("Wall")) {
                     canPlace = true;
-                } else {
-                    canPlace = false;
-                    return;
                 }
             }
         } else {
             canPlace = false;
         }
+    }
+
+    Collider[] GetOverlapBox() {
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+        Vector3 adjustedSize = boxCollider.size * colliderSizeOffset;
+        Collider[] colliders = Physics.OverlapBox(transform.position, adjustedSize / 2, transform.rotation);
+        return colliders;
     }
 
     private void OnDrawGizmos() {

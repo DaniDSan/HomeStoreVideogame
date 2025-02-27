@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1870408597494895479}
   - component: {fileID: 6883447252159321801}
+  - component: {fileID: -3987066902738851190}
   m_Layer: 6
   m_Name: picture_045
   m_TagString: WallObject
@@ -47,6 +48,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopItemSO: {fileID: 11400000, guid: 8c58fc0f321f8a04c85435f535bac8a6, type: 2}
+--- !u!114 &-3987066902738851190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832099872902030014}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &3677393243628070929
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 3677393243628070929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

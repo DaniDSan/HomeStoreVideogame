@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5854282927054572455}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: WallObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 4, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5854282927054572455
 MonoBehaviour:
@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPlace: 0
   colliderSizeOffset: 0.8
+  range: 0.6
 --- !u!1 &4378111098353940105
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 4378111098353940105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -152,6 +153,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3682274342795078038, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
+        type: 3}
+      propertyPath: m_TagString
+      value: WallObject
+      objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -165,32 +171,32 @@ PrefabInstance:
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4058237691457024812, guid: 0687d0a1df47a0b4a9bd35c4f0e30e3c,
         type: 3}
