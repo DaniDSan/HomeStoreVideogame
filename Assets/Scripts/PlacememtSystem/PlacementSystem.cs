@@ -42,7 +42,7 @@ public class PlacementSystem : MonoBehaviour {
         if(!isSelling) {
             HandlePlacementFlow();
             HandleCancelPlacement();
-            HandleReplaceItem();
+            HandleDragItem();
         } else {
             CancelPreview();
         }
@@ -66,9 +66,9 @@ public class PlacementSystem : MonoBehaviour {
         }
     }
 
-    private void HandleReplaceItem() {
+    private void HandleDragItem() {
         if(Input.GetMouseButtonDown(0)) {
-            ReplaceItem();
+            DargItem();
         }
     }
 
@@ -134,7 +134,7 @@ public class PlacementSystem : MonoBehaviour {
             placeHolderItem.transform.rotation,
             placeHolderItem.transform);
 
-        if(tempItem.CompareTag("Wall") || tempItem.CompareTag("WallObject")) {
+        if(tempItem.CompareTag("Wall")) {
             visualRef.SetActive(false);
         } else {
             visualRef.SetActive(true);
@@ -206,7 +206,7 @@ public class PlacementSystem : MonoBehaviour {
         placeHolderItem.SetActive(false);
     }
 
-    private void ReplaceItem() {
+    private void DargItem() {
         if(placeableItem != null) return;
 
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);

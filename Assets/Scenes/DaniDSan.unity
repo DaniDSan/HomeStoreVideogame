@@ -123,6 +123,140 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3875933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3875934}
+  - component: {fileID: 3875936}
+  - component: {fileID: 3875935}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3875934
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875933}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 189485342}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.3367004, y: 0.00025558472}
+  m_SizeDelta: {x: 3.9899979, y: -0.42200089}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3875935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Ba\xF1o"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &3875936
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875933}
+  m_CullTransparentMesh: 1
 --- !u!1 &14779047
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +791,143 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db53497747d039a4e829e74a71190259, type: 3}
+--- !u!1 &189485341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 189485342}
+  - component: {fileID: 189485345}
+  - component: {fileID: 189485344}
+  - component: {fileID: 189485343}
+  m_Layer: 5
+  m_Name: ToggleBathrooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &189485342
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189485341}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3875934}
+  m_Father: {fileID: 917122551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1839.5453, y: -52.236702}
+  m_SizeDelta: {x: 160.90909, y: 51.578}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &189485343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 189485344}
+  toggleTransition: 1
+  graphic: {fileID: 0}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986871106}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: LoadPanelsForCategory
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bathrooms
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &189485344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &189485345
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189485341}
+  m_CullTransparentMesh: 1
 --- !u!1001 &210656213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3965,6 +4236,7 @@ RectTransform:
   - {fileID: 969647375}
   - {fileID: 82216825}
   - {fileID: 1168720934}
+  - {fileID: 189485342}
   m_Father: {fileID: 986871103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -4827,6 +5099,24 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f36a4767d504b6944a80f6cc02061f06, type: 2}
   - name: Floors
     shopItemSOs:
+    - {fileID: 11400000, guid: ad6b5b099809fee47b1ec987881a08a3, type: 2}
+    - {fileID: 11400000, guid: 8167f8dfa291f394e81d2a14c21b9e24, type: 2}
+    - {fileID: 11400000, guid: e608a6afceadc0f49987493b713dedd7, type: 2}
+    - {fileID: 11400000, guid: 47097621d0fa5944492d7a7c34cf4ae9, type: 2}
+    - {fileID: 11400000, guid: bccf8a7526cb9054fb5eb9c956ca39fd, type: 2}
+    - {fileID: 11400000, guid: 9a14c2beb570efb48a5e903946332af9, type: 2}
+    - {fileID: 11400000, guid: 3ba8e224785907b4a9c581f98472245b, type: 2}
+    - {fileID: 11400000, guid: 1e4e6a14c4bdba74d9582c4930a4d306, type: 2}
+    - {fileID: 11400000, guid: 116252d4ecbced444be610b5d10dc133, type: 2}
+    - {fileID: 11400000, guid: 767a96884e88ab94dac3af64ce5d4984, type: 2}
+    - {fileID: 11400000, guid: 05aa1bf4c8fd56944be5cf22bcbbd169, type: 2}
+    - {fileID: 11400000, guid: 55d51ecaf23598849ae9356ca20769f5, type: 2}
+    - {fileID: 11400000, guid: 0db11eba2e06cf440b2d35324acaa64f, type: 2}
+    - {fileID: 11400000, guid: 1a51fc65b93fe5147a3d8a5b7f45dbbc, type: 2}
+    - {fileID: 11400000, guid: b0077a75bff1c224aa92ddac5b724a0f, type: 2}
+    - {fileID: 11400000, guid: a5bca5251f984e14bbb71c40462244f7, type: 2}
+    - {fileID: 11400000, guid: 564c6bdee669aa04092c8a72c17e5e9e, type: 2}
+    - {fileID: 11400000, guid: 59e655daffe21224ba89c32c439b58dc, type: 2}
     - {fileID: 11400000, guid: 37fb2b29391faf946baca701bc5c4439, type: 2}
     - {fileID: 11400000, guid: 2359c42935b5bfa40bbb606f5b5f80a8, type: 2}
     - {fileID: 11400000, guid: 44b03ab4c0dbcf147ae66efadc046d10, type: 2}
@@ -4876,6 +5166,31 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 649eb2137dcfae44c8fcaea5f5d3c1d2, type: 2}
     - {fileID: 11400000, guid: dfce9f87558caa449b98804c8b7e2092, type: 2}
     - {fileID: 11400000, guid: d6761d82f4e66bf40a5badc12fe12b42, type: 2}
+  - name: Bathrooms
+    shopItemSOs:
+    - {fileID: 11400000, guid: 9e1705769ef5f554cb5c955ddae5f877, type: 2}
+    - {fileID: 11400000, guid: 58e796aa74df2454d80bc715c2529b18, type: 2}
+    - {fileID: 11400000, guid: 08ec1c3196fcec94799e0673da9198ea, type: 2}
+    - {fileID: 11400000, guid: 7bd8da135aeb3734ea822493c3100592, type: 2}
+    - {fileID: 11400000, guid: ce7193d24bcb1a04b9cd5ce8443b9485, type: 2}
+    - {fileID: 11400000, guid: d621fd204807b7043ba8100d0fb0f3aa, type: 2}
+    - {fileID: 11400000, guid: 02e5097ecba18da408e87867b723476e, type: 2}
+    - {fileID: 11400000, guid: b23c914fbc586fe44b19493348d44768, type: 2}
+    - {fileID: 11400000, guid: e8b785d0aa15ec94994b992e31a7905c, type: 2}
+    - {fileID: 11400000, guid: 32ba6fa3542e89c4185931348b2fd689, type: 2}
+    - {fileID: 11400000, guid: a4424f58ba5b98744b42a3e935a07c4f, type: 2}
+    - {fileID: 11400000, guid: 8cb3d485fb3859e408d3d23b472eb2c2, type: 2}
+    - {fileID: 11400000, guid: 119332c69b0412f42ac63f5976137f79, type: 2}
+    - {fileID: 11400000, guid: 4b5a22e1be4bf03418eb4598df4eb2d9, type: 2}
+    - {fileID: 11400000, guid: a8fd145a8acd2e041997b5d8226a3d76, type: 2}
+    - {fileID: 11400000, guid: b6d893c68e629fa448812b4c8149d29a, type: 2}
+    - {fileID: 11400000, guid: 03f3d043feae56b4a8df38024b6e4d47, type: 2}
+    - {fileID: 11400000, guid: 86f5c0f328aed2944a13239f630b850c, type: 2}
+    - {fileID: 11400000, guid: aa32c37a8d7dd20478ed9681d4a5c927, type: 2}
+    - {fileID: 11400000, guid: aa2f77fdb99c6ff4a9e1bce26a9dc8ac, type: 2}
+    - {fileID: 11400000, guid: c195e8b40fea1fc4484ced55052e555e, type: 2}
+    - {fileID: 11400000, guid: ebfba54e84e33d14a945eca8e780215c, type: 2}
+    - {fileID: 11400000, guid: d769811ad4d85664bbe1c1de59cba55c, type: 2}
   sellHandler: {fileID: 2091355398}
 --- !u!1 &1067450882
 GameObject:

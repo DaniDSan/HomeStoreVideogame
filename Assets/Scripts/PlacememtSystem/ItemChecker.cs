@@ -54,6 +54,13 @@ public class ItemChecker : MonoBehaviour {
                     } else {
                         foundValidSurface = true;
                     }
+                } else if(CompareTag("Floor")) {
+                    if(collider.CompareTag("Floor")) {
+                        canPlace = false;
+                        return;
+                    } else {
+                        foundValidSurface = true;
+                    }
                 } else if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor")) {
                     foundValidSurface = true;
                 } else {
@@ -67,15 +74,14 @@ public class ItemChecker : MonoBehaviour {
 
     void CheckWalls() {
         Collider[] colliders = GetOverlapBox();
-        foreach(Collider collider in colliders) {
-            if(!collider.CompareTag("Wall")) {
-                canPlace = false;
-                return;
-            }
+
+        if(colliders.Length > 0) {
+            canPlace = false;
+            return;
         }
 
         Debug.DrawRay(transform.position, -transform.forward * range, Color.blue);
-        RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0.001f, 0f, 0f), -transform.forward, range); // Aplciamos esta suma en x porque estamos reudicenmdo el tamaño de los colldieres en general en 0.001f para poder colocar las paredes
+        RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0.001f, 0f, 0.001f), -transform.forward, range); // Aplciamos esta suma en x porque estamos reudicenmdo el tamaño de los colldieres en general en 0.001f para poder colocar las paredes
 
         if(hits.Length > 0) {
             foreach(RaycastHit hit in hits) {
