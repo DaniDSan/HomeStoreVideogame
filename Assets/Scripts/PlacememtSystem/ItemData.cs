@@ -11,7 +11,7 @@ public class ItemData : MonoBehaviour {
         if(gameObject.tag != lastTag) // Solo actualiza si el tag cambia
         {
             lastTag = gameObject.tag;
-            //ChangeTagRecursively(transform, lastTag);
+            ChangeTagRecursively(transform, lastTag);
         }
     }
 

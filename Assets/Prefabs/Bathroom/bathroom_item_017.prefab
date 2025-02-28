@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 994162467724275738}
   - component: {fileID: 6620198930309655181}
   - component: {fileID: 5734798851132936571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,9 +77,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9082130258418914801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bathroom_item_017
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bathroom_item_017
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933386556072763808, guid: ed37f0be80149d94b8c308dd783796f1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

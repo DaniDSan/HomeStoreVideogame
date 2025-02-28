@@ -18,7 +18,7 @@ public class OutlineHandler : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity)) {
+        if(Physics.Raycast(ray, out hit)) {
             if(LayerMask.LayerToName(hit.collider.gameObject.layer) == "PlaceableObject") {
                 GameObject hitObject = hit.collider.gameObject;
                 GameObject parentObject = hitObject.GetComponentInParent<ItemData>()?.gameObject;

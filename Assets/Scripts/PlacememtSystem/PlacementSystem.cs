@@ -43,6 +43,8 @@ public class PlacementSystem : MonoBehaviour {
             HandlePlacementFlow();
             HandleCancelPlacement();
             HandleReplaceItem();
+        } else {
+            CancelPreview();
         }
 
         if(placeableItem == null) {
@@ -108,7 +110,7 @@ public class PlacementSystem : MonoBehaviour {
             tempItem.transform.rotation);
 
         if(!isDragging) {
-            print(placeableItem.price);
+            print("Llamar metodo restar dinero " + placeableItem.price);
         } else {
             CancelPreview();
             Destroy(draggedItem);
