@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CanvasHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-    public Toggle shopToggle;
+    public GameObject shopToggle;
     Animator shopToggleAnimator;
 
     public GameObject objectToDisable; // Arrastra el GameObject a desactivar en el Inspector.
@@ -22,7 +22,7 @@ public class CanvasHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     void Start() {
         shopToggleAnimator = shopToggle.GetComponent<Animator>();
-        shopToggle.onValueChanged.AddListener(ToggleShopAnimation);
+        shopToggle.GetComponentInChildren<Toggle>().onValueChanged.AddListener(ToggleShopAnimation);
     }
 
     public void ToggleShopAnimation(bool isOn) {
