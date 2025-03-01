@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6704434725701377517}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Placeable
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 6106751560473984343, guid: 16672a3496ad9304194051e23adf7d56,
         type: 3}
       propertyPath: m_TagString
-      value: Placeable
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6914250957994682349, guid: 16672a3496ad9304194051e23adf7d56,
         type: 3}

@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 5049603062852218774}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -449,6 +449,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7299566060156353202, guid: 7aa337904d50ab1449fcd410cb7dc77f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     - target: {fileID: 7928186941964394504, guid: 7aa337904d50ab1449fcd410cb7dc77f,
         type: 3}

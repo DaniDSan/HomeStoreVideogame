@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 474158849551190195}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Carpet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: -7345671635550547250}
   m_Layer: 6
   m_Name: training_item_020
-  m_TagString: Placeable
+  m_TagString: Carpet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,6 +177,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022284871926925626, guid: 9e41a55c66f6fea4a8db8cbf55498409,
+        type: 3}
+      propertyPath: m_TagString
+      value: Carpet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656113105482388352, guid: 9e41a55c66f6fea4a8db8cbf55498409,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7656113105482388352, guid: 9e41a55c66f6fea4a8db8cbf55498409,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7656113105482388352, guid: 9e41a55c66f6fea4a8db8cbf55498409,
         type: 3}

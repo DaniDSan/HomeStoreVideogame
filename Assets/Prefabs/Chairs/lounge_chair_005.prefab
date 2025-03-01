@@ -321,10 +321,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8555585748031047432, guid: 02c6f678d33db1940b5cf34f02a494d8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
     - target: {fileID: 8991105680048416453, guid: 02c6f678d33db1940b5cf34f02a494d8,
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991105680048416453, guid: 02c6f678d33db1940b5cf34f02a494d8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     - target: {fileID: 9074853597144505778, guid: 02c6f678d33db1940b5cf34f02a494d8,
         type: 3}

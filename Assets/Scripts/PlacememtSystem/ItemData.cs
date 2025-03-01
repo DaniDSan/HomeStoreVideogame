@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-[ExecuteInEditMode]
+
 public class ItemData : MonoBehaviour {
     public ShopItemSO shopItemSO;
 
-    private string lastTag; // Para detectar cambios en el Inspector
+    [ContextMenu("Change Children Tags")]
+    private void ChangeTags() {
+        if(gameObject == null) return;
 
-    void Update() {
-        if(gameObject.tag != lastTag) // Solo actualiza si el tag cambia
-        {
-            lastTag = gameObject.tag;
-            ChangeTagRecursively(transform, lastTag);
-        }
-    }
+        string parentTag = gameObject.tag;
+        Transform[] children = GetComponentsInChildren<Transform>(true);
 
-    void ChangeTagRecursively(Transform obj, string newTag) {
-        obj.gameObject.tag = newTag;
-        foreach(Transform child in obj) {
-            ChangeTagRecursively(child, newTag);
+        Undo.RecordObject(this, "Change Children Tags");
+
+        foreach(Transform child in children) {
+            if(child != transform) // Evitar cambiar el padre
+            {
+                Undo.RecordObject(child.gameObject, "Change Child Tag");
+                child.gameObject.tag = parentTag;
+            }
         }
+
+        Debug.Log("Tags updated for all children.");
     }
 }

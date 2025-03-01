@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SellHandler : MonoBehaviour {
     [SerializeField]
     Image sellIconImg;
+
     private void Update() {
         sellIconImg.color = PlacementSystem.Instance.isSelling ? Color.green : Color.white;
         SellItem();
@@ -21,6 +22,7 @@ public class SellHandler : MonoBehaviour {
             if(Physics.Raycast(ray, out RaycastHit hit)) {
                 if(LayerMask.LayerToName(hit.collider.gameObject.layer) == "PlaceableObject") {
                     // TODO: restar dinero
+                    AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
                     print(hit.collider.GetComponentInParent<ItemData>().shopItemSO.price);
                     Destroy(hit.collider.GetComponentInParent<ItemData>().gameObject);
                 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7085815767802486771}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: UpperFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 611229701749693482}
   m_Layer: 6
   m_Name: training_item_021
-  m_TagString: Placeable
+  m_TagString: UpperFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 7426473018626440810, guid: 577e259043e17d244875cbec85af8f88,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 7426473018626440810, guid: 577e259043e17d244875cbec85af8f88,
         type: 3}
@@ -776,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 7426473018626440810, guid: 577e259043e17d244875cbec85af8f88,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7808099849226691792, guid: 577e259043e17d244875cbec85af8f88,
         type: 3}
@@ -787,6 +787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808099849226691792, guid: 577e259043e17d244875cbec85af8f88,
+        type: 3}
+      propertyPath: m_TagString
+      value: UpperFloor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

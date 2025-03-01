@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 118839369352315721}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: UpperFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: -7355545436439902364}
   m_Layer: 6
   m_Name: training_item_022
-  m_TagString: Placeable
+  m_TagString: UpperFloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -650,6 +650,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8427978495827318328, guid: b9c244defb56703448601b63dbafdba0,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427978495827318328, guid: b9c244defb56703448601b63dbafdba0,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -707,6 +712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9204761039350746242, guid: b9c244defb56703448601b63dbafdba0,
+        type: 3}
+      propertyPath: m_TagString
+      value: UpperFloor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

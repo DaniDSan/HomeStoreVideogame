@@ -73,8 +73,6 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     private void PlaceHolderControl() {
-        if(placeableItem == null) return;
-
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit hit)) {
             ShowPlaceholder(hit);
@@ -93,6 +91,7 @@ public class PlacementSystem : MonoBehaviour {
 
     private void RotateItem() {
         if(Input.GetMouseButtonDown(1)) {
+            AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.rotateSFX);
             placeHolderItem.transform.Rotate(0, 90, 0);
         }
     }
@@ -105,6 +104,7 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     private void PlaceItem() {
+        AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.placeSFX);
         GameObject newItem = Instantiate(placeableItem.prefabItem,
             new Vector3(tempItem.transform.position.x, placeableItem.prefabItem.transform.position.y, tempItem.transform.position.z),
             tempItem.transform.rotation);

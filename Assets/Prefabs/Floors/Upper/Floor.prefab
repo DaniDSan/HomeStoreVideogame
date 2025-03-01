@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 2840827099102855043}
   m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: UpperFloor
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 4940512566256705268, guid: 2a6a9cead262c6a4f9b37411cc44d4a0,
         type: 3}
       propertyPath: m_TagString
-      value: UpperFloor
+      value: Floor
       objectReference: {fileID: 0}
     - target: {fileID: 5754450974737810510, guid: 2a6a9cead262c6a4f9b37411cc44d4a0,
         type: 3}

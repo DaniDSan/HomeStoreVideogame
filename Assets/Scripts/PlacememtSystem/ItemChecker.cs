@@ -16,11 +16,12 @@ public class ItemChecker : MonoBehaviour {
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         Vector3 reduction = Vector3.one * colliderReducedSize;
 
-        if(!boxCollider.CompareTag("FloorBase")) {
+        if(boxCollider.CompareTag("FloorBase") || boxCollider.CompareTag("Wall")) {
+            return;
+        } else {
             if(boxCollider.size.x == 0) reduction.x = 0f;
             if(boxCollider.size.y == 0) reduction.y = 0f;
             if(boxCollider.size.z == 0) reduction.z = 0f;
-
             boxCollider.size -= reduction;
         }
     }
@@ -81,7 +82,7 @@ public class ItemChecker : MonoBehaviour {
         }
 
         Debug.DrawRay(transform.position, -transform.forward * range, Color.blue);
-        RaycastHit[] hits = Physics.RaycastAll(transform.position + new Vector3(0.001f, 0f, 0.001f), -transform.forward, range); // Aplciamos esta suma en x porque estamos reudicenmdo el tamaño de los colldieres en general en 0.001f para poder colocar las paredes
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, -transform.forward, range);
 
         if(hits.Length > 0) {
             foreach(RaycastHit hit in hits) {

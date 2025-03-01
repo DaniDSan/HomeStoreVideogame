@@ -394,6 +394,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3018092071045686388, guid: 901dd8d97e54d964896b5d314cbfeb8a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
+      objectReference: {fileID: 0}
     - target: {fileID: 3227755148341271928, guid: 901dd8d97e54d964896b5d314cbfeb8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,6 +458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719519143138677307, guid: 901dd8d97e54d964896b5d314cbfeb8a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
