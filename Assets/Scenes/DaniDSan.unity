@@ -4999,8 +4999,8 @@ MonoBehaviour:
       soundVolume: 1
     placeSFX:
       clip: {fileID: 8300000, guid: 9e04ee9ee008f5e4a8d0f011c550da25, type: 3}
-      pitch: 0.8
-      randomizeRange: 0.15
+      pitch: 0.5
+      randomizeRange: 0.12
       isRandomize: 1
       soundVolume: 0.7
     sellSFX:
