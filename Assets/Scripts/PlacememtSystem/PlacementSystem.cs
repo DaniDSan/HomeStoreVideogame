@@ -8,7 +8,6 @@ public class PlacementSystem : MonoBehaviour {
     public GameObject visualRef;
     private GameObject tempItem;
     private GameObject draggedItem;
-    public Image sellIcon;
     private Camera cam;
 
     bool isShowing = false;
@@ -84,8 +83,8 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     private void ShowPlaceholder(RaycastHit hit) {
-        placeHolderItem.SetActive(true);
         placeHolderItem.transform.position = new Vector3(Mathf.Round(hit.point.x), visualRef.transform.position.y, Mathf.Round(hit.point.z));
+        placeHolderItem.SetActive(true);
         ItemPrevisualizer();
     }
 
@@ -220,19 +219,20 @@ public class PlacementSystem : MonoBehaviour {
         OutlineHandler.Instance.ResetOutline();
         if(!isDragging) {
             if(LayerMask.LayerToName(hitObject.layer) == "PlaceableObject") {
-                isDragging = true;
                 hitObject.GetComponent<BoxCollider>().enabled = false;
+
                 GameObject parentObject = hitObject.GetComponentInParent<ItemData>().gameObject;
+                placeableItem = parentObject.GetComponent<ItemData>().shopItemSO;
+                placeHolderItem.transform.rotation = hitObject.transform.rotation;
+
                 draggedItem = parentObject;
+                isDragging = true;
+                placeHolderItem.SetActive(true);
 
                 originMaterial = draggedItem.GetComponentInChildren<MeshRenderer>().material;
 
                 foreach(MeshRenderer draggedItems in draggedItem.GetComponentsInChildren<MeshRenderer>())
                     draggedItems.material = blue;
-
-                placeableItem = parentObject.GetComponent<ItemData>().shopItemSO;
-                placeHolderItem.transform.rotation = hitObject.transform.rotation;
-                placeHolderItem.SetActive(true);
             }
         }
     }

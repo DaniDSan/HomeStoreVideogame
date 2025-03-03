@@ -24,9 +24,6 @@ public class ShopManager : MonoBehaviour {
     // Paneles actuales cargados en escena
     private List<GameObject> currentPanels = new List<GameObject>();
 
-    [SerializeField]
-    SellHandler sellHandler;
-
     private void Start() {
         // Cargar la primera categoría por defecto
         if(categories.Count > 0) {
@@ -92,9 +89,9 @@ public class ShopManager : MonoBehaviour {
 
     // Método para comprar un ítem
     void SelectItem(ShopItemSO shopItem) {
+        PlacementSystem.Instance.isSelling = false;
         PlacementSystem.Instance.CancelPreview();
         PlacementSystem.Instance.placeableItem = shopItem;
-        PlacementSystem.Instance.isSelling = false;
     }
 
     // Método para reiniciar la posición del ScrollRect
