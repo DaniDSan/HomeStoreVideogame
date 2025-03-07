@@ -7,7 +7,41 @@ using UnityEngine.SceneManagement;
 
 public enum ScreenName
 {
-    MainMenu,Pause,Options,CharacterSelector,World
+    MainMenu,Pause,Options,CharacterSelector,World,Podium
+}
+
+public enum SurpriseType
+{
+    AddMoney,RemoveMoney,Optional
+}
+
+public enum HomeState
+{
+    Bad,Neutral,Good
+}
+
+public struct Surprise
+{
+    [Header("DefaultData")]
+    public SurpriseType type;
+
+    public int amount;
+
+    [TextArea(2,5)]
+    public string text;
+
+    [Header("Optional")]
+    public bool optional;
+
+    public SurpriseType leftOptionType;
+
+    [TextArea(2, 5)]
+    public string leftOptionText;
+
+    public SurpriseType rightOptionType;
+
+    [TextArea(2, 5)]
+    public string rightOptionText;
 }
 
 [System.Serializable]
@@ -29,16 +63,29 @@ public struct Character
 }
 
 [System.Serializable]
-public struct HomeData
+public class HomeData
 {
+    //Referencia al punto en el que se encuentra esa casa en el mundo.
+    public Image worldReference;
+
+    //Variable donde se almacena el precio que va a tener la casa.
     public int playerPrice;
 
-    //Si true esta en venta, en caso contrario en subasta.
-    public bool sale;
+    //Si true, esta casa es propiedad del jugador.
+    public bool bought;
 
+    //Precio minimo que puede tener la casa.
     public int minPrice;
 
+    //Precio maximo que puede tener la casa.
     public int maxPrice;
+
+    [Range(0, 100)]
+    //Probabilidad de que al comprar la casa aparezca alguan sorpresa.
+    public int surpriseProbability;
+
+    //Estado en el que se encuentra la casa.
+    public HomeState state = HomeState.Bad;
 }
 
 public class GameManager : MonoBehaviour
@@ -58,7 +105,7 @@ public class GameManager : MonoBehaviour
     [Header("Personajes")]
     [SerializeField] private Character[] characters;
 
-    [Header("Precios casas")]
+    [Header("Compra casas")]
     [SerializeField] private int playerLevel = 1;
 
     [SerializeField] public List<HomeData> tier1Home;
@@ -67,13 +114,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI homePriceText;
 
-    [SerializeField] private Image buyButton;
+    [SerializeField] private Button buyButton;
 
-    [SerializeField] private Sprite canBuyButtonSprite;
+    [SerializeField] private HomeData currentHomeData;
 
-    [SerializeField] private Sprite cantBuyButtonSprite;
+    [Header("Venta casas")]
+    [SerializeField] private GameObject sellHomePanel;
 
-    private HomeData currentHomeData;
+    [SerializeField] private TextMeshProUGUI costText;
+
+    [Header("Sorpresas")]
+    [SerializeField] private Surprise[] surprises;
 
     [Header("CharacterUI")]
     [SerializeField] private Image playerImage;
@@ -108,6 +159,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (buyHomePanel.activeInHierarchy) buyHomePanel.SetActive(false);
+            else if (sellHomePanel.activeInHierarchy) sellHomePanel.SetActive(false);
+            else if (currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
             else if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
             else if (currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
         }
@@ -217,14 +270,14 @@ public class GameManager : MonoBehaviour
 
     private void UpdateMoneyTexts()
     {
-        moneyText.text = currentMoney.ToString("N0");
+        moneyText.text = currentMoney.ToString("N0") + "$";
     }
 
-    public HomeData GetHomeData()
+    public HomeData GetHomeData(int tier)
     {
         HomeData homeData = new HomeData();
 
-        switch (playerLevel)
+        switch (tier)
         {
             case 1: homeData.playerPrice = tier1Home[Random.Range(0, tier1Home.Count)].playerPrice;
                 break;
@@ -234,16 +287,43 @@ public class GameManager : MonoBehaviour
 
     public void ShowHomeData(HomeData homeData)
     {
-        //Comprobamos si el jugador puede comprar la casa.
-        if(currentMoney >= homeData.playerPrice)
-        {
-
-        }
-
         currentHomeData = homeData;
 
-        homePriceText.text = homeData.playerPrice.ToString("N0") + "$";
+        //Comprobamos si la casa a la que se quiere acceder ha sido comprada por el jugador.
+        if (homeData.bought)
+        {
+            costText.text = homeData.playerPrice.ToString("N0") + "$";
 
-        buyHomePanel.SetActive(true);
+            sellHomePanel.SetActive(true);
+        }
+        else
+        {
+            //Comprobamos si el jugador puede comprar la casa.
+            buyButton.interactable = currentMoney >= homeData.playerPrice ? true : false;
+
+            homePriceText.text = homeData.playerPrice.ToString("N0") + "$";
+
+            buyHomePanel.SetActive(true);
+        }
+    }
+
+    public void BuyHome()
+    {
+        RemoveMoney(currentHomeData.playerPrice);
+
+        currentHomeData.bought = true;
+
+        InstantiateHome();
+    }
+
+    public void SellHome()
+    {
+
+    }
+
+    //Bureg
+    public void InstantiateHome()
+    {
+        Debug.Log("Se deberia instancia la casa");
     }
 }
