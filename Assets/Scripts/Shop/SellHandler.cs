@@ -43,6 +43,8 @@ public class SellHandler : MonoBehaviour {
         }
         if(Input.GetKeyDown(KeyCode.Escape)) {
             PlacementSystem.Instance.isSelling = false;
+            PlacementSystem.Instance.isSelectingKitchen = false;
+            PlacementSystem.Instance.isSelectingBathroom = false;
             sellIconCursor.SetActive(false);
         }
         //ChangeIcon();

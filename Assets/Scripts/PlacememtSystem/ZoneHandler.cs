@@ -45,6 +45,8 @@ public class ZoneHandler : MonoBehaviour {
     }
 
     private void SetToOther() {
+        if(!PlacementSystem.Instance.isSelectingKitchen && !PlacementSystem.Instance.isSelectingBathroom) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("Floor")) {
             ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();

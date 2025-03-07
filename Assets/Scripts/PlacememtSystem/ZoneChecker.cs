@@ -21,20 +21,19 @@ public class ZoneChecker : MonoBehaviour {
 
     public void ActivateZone(Zone newZone) {
         zone = newZone;
+        StartRaycast();
     }
 
-    private void StartRaycast() {
+    public void StartRaycast() {
         Vector3 rayOrigin = transform.position + Vector3.down;
         Debug.DrawRay(rayOrigin, Vector3.up * 5f, Color.red);
 
         RaycastHit[] hits = Physics.RaycastAll(rayOrigin, Vector3.up, 5f);
 
         foreach(RaycastHit hit in hits) {
-            if(hit.collider.CompareTag("Floor")) {
-                ItemData parentData = hit.collider.GetComponentInParent<ItemData>();
-                if(parentData != null && IsValidCategory(parentData.shopItemSO.category)) {
-                    print("A");
-                }
+            ItemData parentData = hit.collider.GetComponentInParent<ItemData>();
+            if(parentData != null && IsValidCategory(parentData.shopItemSO.category)) {
+                print("A");
             }
         }
     }

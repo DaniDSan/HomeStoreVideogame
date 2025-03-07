@@ -89,6 +89,8 @@ public class ShopManager : MonoBehaviour {
 
     // Método para comprar un ítem
     void SelectItem(ShopItemSO shopItem) {
+        PlacementSystem.Instance.isSelectingBathroom = false;
+        PlacementSystem.Instance.isSelectingKitchen = false;
         PlacementSystem.Instance.isSelling = false;
         PlacementSystem.Instance.CancelPreview();
         PlacementSystem.Instance.placeableItem = shopItem;

@@ -6977,6 +6977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41945df128454e445abc11e333f393b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneVisualRef: {fileID: 522351007764590385, guid: 0869f933cbdd341478f9416c4cb54b17,
+    type: 3}
 --- !u!4 &1148018801
 Transform:
   m_ObjectHideFlags: 0

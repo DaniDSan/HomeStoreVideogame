@@ -15,3 +15,4 @@ MonoBehaviour:
   prefabItem: {fileID: 3251783473440050637, guid: 8d6f74d76fe629549a7547fd2f2e224a,
     type: 3}
   price: 0
+  category: kitchen

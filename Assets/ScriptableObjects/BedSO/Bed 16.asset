@@ -15,4 +15,4 @@ MonoBehaviour:
   prefabItem: {fileID: 3498685702376523443, guid: ec5dd6cdab7d669409c97e74df851e63,
     type: 3}
   price: 70
-  category: 
+  category: bed
