@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3643213079628847828}
   - component: {fileID: 1737241504258753431}
   - component: {fileID: 8849819622610491064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,9 +77,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3623736606398293168}
-  m_Layer: 0
+  - component: {fileID: 7588593913807315664}
+  - component: {fileID: 1836082095972599147}
+  m_Layer: 6
   m_Name: tv_wall_003
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +103,37 @@ Transform:
   - {fileID: 3643213079628847828}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7588593913807315664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345407219912748374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: d8d26896979a1a648a14714fe46a6b04, type: 2}
+--- !u!114 &1836082095972599147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345407219912748374}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &176316465893423417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +201,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: electronics_034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662632776728996656, guid: 64c10a92176180547ae28f83f876f320,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662632776728996656, guid: 64c10a92176180547ae28f83f876f320,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -242,6 +285,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tv_wall_003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6410323629649027689, guid: 7ee5b1d7cd4f91040b2f51761e1ec663,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6410323629649027689, guid: 7ee5b1d7cd4f91040b2f51761e1ec663,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

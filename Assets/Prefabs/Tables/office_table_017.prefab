@@ -77,6 +77,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8810583445114433415}
+  - component: {fileID: -4920367657408568951}
+  - component: {fileID: -3268665063960085506}
   m_Layer: 0
   m_Name: office_table_017
   m_TagString: Untagged
@@ -101,6 +103,37 @@ Transform:
   - {fileID: 4585471330894639576}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4920367657408568951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701360174368268525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 82908673a7ba9054ea2f1e316c0d7c8b, type: 2}
+--- !u!114 &-3268665063960085506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701360174368268525}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1374952299582161991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4154126940313977784, guid: 7f6d4030bf19c6b48900160d83a47b93,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154126940313977784, guid: 7f6d4030bf19c6b48900160d83a47b93,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -127,7 +165,7 @@ PrefabInstance:
     - target: {fileID: 4154126940313977784, guid: 7f6d4030bf19c6b48900160d83a47b93,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.164
       objectReference: {fileID: 0}
     - target: {fileID: 4154126940313977784, guid: 7f6d4030bf19c6b48900160d83a47b93,
         type: 3}

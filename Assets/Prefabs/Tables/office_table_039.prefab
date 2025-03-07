@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7404752040216843409}
+  - component: {fileID: 814275805915965115}
+  - component: {fileID: 8249104443399576437}
   m_Layer: 0
   m_Name: office_table_039
   m_TagString: Untagged
@@ -33,6 +35,37 @@ Transform:
   - {fileID: 1798771527818747792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &814275805915965115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723456212186674646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 10b999162e8231d4b81b6615fb19c40e, type: 2}
+--- !u!114 &8249104443399576437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723456212186674646}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4850645345049747892
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: office_table_039
+      objectReference: {fileID: 0}
+    - target: {fileID: 8814858393621546860, guid: dea6b0dfb8c5a4540adedefef5360d20,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8814858393621546860, guid: dea6b0dfb8c5a4540adedefef5360d20,
         type: 3}

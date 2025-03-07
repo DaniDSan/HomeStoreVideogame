@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6891563642834836362}
   - component: {fileID: 2415518050259729355}
   - component: {fileID: 2855529200872233304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject (1)
-  m_TagString: Untagged
+  m_TagString: WallObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,9 +79,9 @@ GameObject:
   - component: {fileID: 4491058157253141880}
   - component: {fileID: 3480240483646070856}
   - component: {fileID: 4756016898942588946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,9 +145,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595192297856257876}
-  m_Layer: 0
+  - component: {fileID: -6973733031753421819}
+  - component: {fileID: -1022054823313513000}
+  m_Layer: 6
   m_Name: tv_wall_006
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +172,37 @@ Transform:
   - {fileID: 6891563642834836362}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6973733031753421819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6948340774536135750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: b55f263ed74a98f4e8a1d0350477477d, type: 2}
+--- !u!114 &-1022054823313513000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6948340774536135750}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &373385339652451704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +215,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tv_wall_006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762871433174864230, guid: c19d6faa99cfbe6448eab5b82e52e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762871433174864230, guid: c19d6faa99cfbe6448eab5b82e52e2a7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     - target: {fileID: 3250578869866335196, guid: c19d6faa99cfbe6448eab5b82e52e2a7,
         type: 3}
