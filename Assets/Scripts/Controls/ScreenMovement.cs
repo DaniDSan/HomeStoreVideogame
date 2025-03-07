@@ -31,7 +31,7 @@ public class ScreenMovement : MonoBehaviour
         cam = Camera.main.transform;
 
         //Initialise.
-        rotator.position = new Vector3(center.position.x, cam.position.y, center.position.z);
+        //rotator.position = new Vector3(center.position.x, cam.position.y, center.position.z);
 
         cam.SetParent(rotator);
     }

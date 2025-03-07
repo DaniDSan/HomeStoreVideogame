@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 public enum ScreenName {
     MainMenu, Pause, Options, CharacterSelector, World, Podium
@@ -79,6 +80,16 @@ public class HomeData {
 
     //Estado en el que se encuentra la casa.
     public HomeState state = HomeState.Bad;
+
+    //Cantidad que se suma al precio de la casa cuando se vende si esta en mal estado.
+    public int badSellValue = -20000;
+
+    //Cantidad que se suma al precio de la casa cuando se vende si esta en un estado normal.
+    //Si se han hecho pocas mejoras.
+    public int normalSellValue = 5000;
+
+    //Cantidad que se suma al precio de la casa cuando se vende si esta en muy buen estado.
+    public int goodSellValue = 50000;
 }
 
 public class GameManager : MonoBehaviour {
@@ -288,6 +299,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void BuyHome() {
+        Debug.Log("Comprando casa");
+
         RemoveMoney(currentHomeData.playerPrice);
 
         currentHomeData.bought = true;
@@ -296,6 +309,20 @@ public class GameManager : MonoBehaviour {
     }
 
     public void SellHome() {
+        int sellValue = 0;
+        //Comprobamos el estado de la casa actual del jugador.
+        switch (currentHomeData.state)
+        {
+            case HomeState.Bad: sellValue = currentHomeData.playerPrice + currentHomeData.badSellValue;
+                break;
+            case HomeState.Neutral: sellValue = currentHomeData.playerPrice + currentHomeData.normalSellValue;
+                break;
+            case HomeState.Good: sellValue = currentHomeData.playerPrice + currentHomeData.goodSellValue;
+                break;
+        }
+
+
+        //Bureg.
         Debug.Log("Llamar a agregar dinero");
         Camera.main.transform.position = cameraStartPos;
         Destroy(tempHouse);
@@ -313,14 +340,22 @@ public class GameManager : MonoBehaviour {
     public void EditHome() {
         cameraStartPos = Camera.main.transform.position;
         Camera.main.transform.position = instatiateHousePos.position + offsetCameraEditMode;
-        foreach(GameObject objectToActivate in objectsToActivate) {
+
+        //Hacemos que el skybox pase a ser de tipo color.
+        Camera.main.clearFlags = CameraClearFlags.SolidColor;
+
+        foreach (GameObject objectToActivate in objectsToActivate) {
             objectToActivate.SetActive(true);
         }
     }
 
     public void ExitEditHome() {
         Camera.main.transform.position = cameraStartPos;
-        foreach(GameObject objectToActivate in objectsToActivate) {
+
+        //Hacemos que el skybox vuelva a la normalidad.
+        Camera.main.clearFlags = CameraClearFlags.Skybox;
+
+        foreach (GameObject objectToActivate in objectsToActivate) {
             objectToActivate.SetActive(false);
         }
     }
