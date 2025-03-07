@@ -15,3 +15,4 @@ MonoBehaviour:
   prefabItem: {fileID: 958382257456086283, guid: b8e7caa5e35ca9d4d81554fa3e0f504f,
     type: 3}
   price: 0
+  category: bathroom

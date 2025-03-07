@@ -62,7 +62,7 @@ public class ItemChecker : MonoBehaviour {
                     } else {
                         foundValidSurface = true;
                     }
-                } else if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor")) {
+                } else if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor") || collider.CompareTag("Zone Checker")) {
                     foundValidSurface = true;
                 } else {
                     canPlace = false;

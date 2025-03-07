@@ -11,6 +11,7 @@ TagManager:
   - Floor
   - UpperFloor
   - Carpet
+  - Zone Checker
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - PlaceableObject
-  - 
+  - DefaultObject
   - 
   - 
   - 

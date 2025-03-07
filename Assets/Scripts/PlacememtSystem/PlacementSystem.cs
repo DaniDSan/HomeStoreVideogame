@@ -13,6 +13,8 @@ public class PlacementSystem : MonoBehaviour {
     bool isShowing = false;
     bool isDragging = false;
     public bool isSelling = false;
+    public bool isSelectingKitchen;
+    public bool isSelectingBathroom;
 
     private Material originMaterial;
     public Material red;
@@ -38,7 +40,7 @@ public class PlacementSystem : MonoBehaviour {
     }
 
     void Update() {
-        if(!isSelling) {
+        if(!isSelling && !isSelectingKitchen && !isSelectingBathroom) {
             HandlePlacementFlow();
             HandleCancelPlacement();
             HandleDragItem();

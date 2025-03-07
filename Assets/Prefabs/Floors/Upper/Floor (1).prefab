@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 4080808333223325246}
   - component: {fileID: -8470071387077267695}
   - component: {fileID: -5026180079291086125}
+  - component: {fileID: -4563951053617031232}
   m_Layer: 6
   m_Name: Floor (1)
   m_TagString: Floor
@@ -134,6 +135,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &-4563951053617031232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216798721226960117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171c06de2a2c2e4591d61b0c38b8a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: 2
 --- !u!1001 &4342817540840779452
 PrefabInstance:
   m_ObjectHideFlags: 0
