@@ -5797,6 +5797,15 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e0b226556d88aad48ac232e18b7f48a2, type: 2}
     - {fileID: 11400000, guid: 33fe8415cb425654b8e2b3ee3c428242, type: 2}
     - {fileID: 11400000, guid: b2bc648208ed50a4da658bb467c9b8f2, type: 2}
+    - {fileID: 11400000, guid: d8d26896979a1a648a14714fe46a6b04, type: 2}
+    - {fileID: 11400000, guid: b55f263ed74a98f4e8a1d0350477477d, type: 2}
+    - {fileID: 11400000, guid: 132dfe3795656d54085e9378bfb34386, type: 2}
+    - {fileID: 11400000, guid: 704da48969ae4d44385b2a061763815f, type: 2}
+    - {fileID: 11400000, guid: 43157ae10df47ed4881935878e206dd6, type: 2}
+    - {fileID: 11400000, guid: 0e72dbb0e5bd1b244942038da00e375b, type: 2}
+    - {fileID: 11400000, guid: 23131b1eb3a908a4a88d146bcc6028ae, type: 2}
+    - {fileID: 11400000, guid: 3616e0981d45b0a49a6ec65b1ab84ce7, type: 2}
+    - {fileID: 11400000, guid: 273c5ed7a3ba2774c970bd550e83456a, type: 2}
   - name: Sofas
     shopItemSOs:
     - {fileID: 11400000, guid: 8e4881839909d46408c9b6d834a95144, type: 2}
