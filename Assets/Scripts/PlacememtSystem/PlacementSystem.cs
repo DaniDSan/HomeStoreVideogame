@@ -9,6 +9,7 @@ public class PlacementSystem : MonoBehaviour {
     private GameObject tempItem;
     private GameObject draggedItem;
     private Camera cam;
+    [SerializeField] GameObject house;
 
     bool isShowing = false;
     bool isDragging = false;
@@ -108,7 +109,7 @@ public class PlacementSystem : MonoBehaviour {
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.placeSFX);
         GameObject newItem = Instantiate(placeableItem.prefabItem,
             new Vector3(tempItem.transform.position.x, placeableItem.prefabItem.transform.position.y, tempItem.transform.position.z),
-            tempItem.transform.rotation);
+            tempItem.transform.rotation, house.transform);
 
         if(!isDragging) {
             print("Llamar metodo restar dinero " + placeableItem.price);

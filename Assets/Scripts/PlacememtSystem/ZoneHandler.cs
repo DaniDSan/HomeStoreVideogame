@@ -4,12 +4,14 @@ public class ZoneHandler : MonoBehaviour {
     [SerializeField]
     GameObject zoneVisualRef;
 
+    [SerializeField] LayerMask layerMask;
+
     void Update() {
         if(Input.GetMouseButton(0)) {
             HandleZoneSelection();
         }
 
-        if(Input.GetMouseButtonDown(1)) // Clic derecho
+        if(Input.GetMouseButton(1)) // Clic derecho
         {
             SetToOther(); // Cambiar a Zone.Other solo si hay una zona seleccionada
         }
@@ -19,7 +21,7 @@ public class ZoneHandler : MonoBehaviour {
         if(!PlacementSystem.Instance.isSelectingKitchen && !PlacementSystem.Instance.isSelectingBathroom) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("Floor")) {
+        if(Physics.Raycast(ray, out RaycastHit hit, layerMask) && hit.collider.CompareTag("FloorBase")) {
             ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
             if(zoneChecker == null) return;
             if(zoneChecker.zoneVisualInstance == null) {
@@ -48,10 +50,15 @@ public class ZoneHandler : MonoBehaviour {
         if(!PlacementSystem.Instance.isSelectingKitchen && !PlacementSystem.Instance.isSelectingBathroom) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("Floor")) {
+        if(Physics.Raycast(ray, out RaycastHit hit, layerMask) && hit.collider.CompareTag("FloorBase")) {
             ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
             if(zoneChecker != null) {
                 zoneChecker.ActivateZone(Zone.Other); // Activar Zone.Other
+            }
+
+            if(zoneChecker.zoneVisualInstance != null) {
+                // Instanciar el objeto solo si no hay uno ya
+                Destroy(zoneChecker.zoneVisualInstance);
             }
         }
     }
