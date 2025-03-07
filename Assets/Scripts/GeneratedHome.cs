@@ -5,20 +5,27 @@ using UnityEngine.UI;
 
 public class GeneratedHome : MonoBehaviour
 {
+    public int tier;
+
     public HomeData homeData;
 
     private Button button;
 
     private void Awake()
     {
-        homeData = GameManager.instance.GetHomeData();
-
         button = GetComponent<Button>();
 
-        button.onClick.AddListener(ShowHomeData);
+        button.onClick.AddListener(ShowHome);
     }
 
-    public void ShowHomeData()
+    private void Start()
+    {
+        homeData = GameManager.instance.GetHomeData(tier);
+
+        homeData.worldReference = GetComponent<Image>();
+    }
+
+    public void ShowHome()
     {
         GameManager.instance.ShowHomeData(homeData);
     }
