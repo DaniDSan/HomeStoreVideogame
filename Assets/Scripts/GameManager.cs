@@ -105,6 +105,13 @@ public class GameManager : MonoBehaviour
     [Header("Personajes")]
     [SerializeField] private Character[] characters;
 
+    [Header("Top")]
+    [SerializeField] private TextMeshProUGUI topText;
+
+    [SerializeField] private Image topSprite;
+
+    [SerializeField] private Transform topContainer;
+
     [Header("Compra casas")]
     [SerializeField] private int playerLevel = 1;
 
@@ -201,8 +208,10 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Se ha elegido un personaje");
 
                 playerImage.sprite = character.sprite;
+                topSprite.sprite = character.sprite;
 
                 playerName.text = character.name;
+                topText.text = character.name;
 
                 break;
             }
