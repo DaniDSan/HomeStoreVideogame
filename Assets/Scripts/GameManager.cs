@@ -28,6 +28,19 @@ public struct Character
     public Sprite sprite;
 }
 
+[System.Serializable]
+public struct HomeData
+{
+    public int playerPrice;
+
+    //Si true esta en venta, en caso contrario en subasta.
+    public bool sale;
+
+    public int minPrice;
+
+    public int maxPrice;
+}
+
 public class GameManager : MonoBehaviour
 {
     [Header("Dinero")]
@@ -45,10 +58,30 @@ public class GameManager : MonoBehaviour
     [Header("Personajes")]
     [SerializeField] private Character[] characters;
 
+    [Header("Precios casas")]
+    [SerializeField] private int playerLevel = 1;
+
+    [SerializeField] public List<HomeData> tier1Home;
+
+    [SerializeField] private GameObject buyHomePanel;
+
+    [SerializeField] private TextMeshProUGUI homePriceText;
+
+    [SerializeField] private Image buyButton;
+
+    [SerializeField] private Sprite canBuyButtonSprite;
+
+    [SerializeField] private Sprite cantBuyButtonSprite;
+
+    private HomeData currentHomeData;
+
     [Header("CharacterUI")]
     [SerializeField] private Image playerImage;
 
     [SerializeField] private TextMeshProUGUI playerName;
+
+    [Header("EstadisticasJugador")]
+    [SerializeField] private int sales;
 
     public static GameManager instance;
 
@@ -74,7 +107,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
+            if (buyHomePanel.activeInHierarchy) buyHomePanel.SetActive(false);
+            else if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
             else if (currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
         }
     }
@@ -184,5 +218,32 @@ public class GameManager : MonoBehaviour
     private void UpdateMoneyTexts()
     {
         moneyText.text = currentMoney.ToString("N0");
+    }
+
+    public HomeData GetHomeData()
+    {
+        HomeData homeData = new HomeData();
+
+        switch (playerLevel)
+        {
+            case 1: homeData.playerPrice = tier1Home[Random.Range(0, tier1Home.Count)].playerPrice;
+                break;
+        }
+        return homeData;
+    }
+
+    public void ShowHomeData(HomeData homeData)
+    {
+        //Comprobamos si el jugador puede comprar la casa.
+        if(currentMoney >= homeData.playerPrice)
+        {
+
+        }
+
+        currentHomeData = homeData;
+
+        homePriceText.text = homeData.playerPrice.ToString("N0") + "$";
+
+        buyHomePanel.SetActive(true);
     }
 }
