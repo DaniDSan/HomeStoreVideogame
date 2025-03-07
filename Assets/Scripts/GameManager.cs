@@ -14,9 +14,9 @@ public enum SurpriseType {
     AddMoney, RemoveMoney, Optional
 }
 
-public enum HomeState {
-    Bad, Neutral, Good
-}
+//public enum HomeState {
+//    Bad, Neutral, Good
+//}
 
 public struct Surprise {
     [Header("DefaultData")]
@@ -79,7 +79,7 @@ public class HomeData {
     public int surpriseProbability;
 
     //Estado en el que se encuentra la casa.
-    public HomeState state = HomeState.Bad;
+    public HouseScoreEnum state = HouseScoreEnum.bad;
 
     //Cantidad que se suma al precio de la casa cuando se vende si esta en mal estado.
     public int badSellValue = -20000;
@@ -150,6 +150,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Transform instatiateHousePos;
     [SerializeField] Vector3 offsetCameraEditMode;
     [SerializeField] Vector3 cameraStartPos;
+    [SerializeField] Quaternion cameraStartRotation;
     [SerializeField] GameObject[] objectsToActivate;
 
     public static GameManager instance;
@@ -166,6 +167,11 @@ public class GameManager : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    private void Start() {
+        cameraStartPos = Camera.main.transform.position;
+        cameraStartRotation = Camera.main.transform.rotation;
     }
 
     private void Update() {
@@ -311,20 +317,24 @@ public class GameManager : MonoBehaviour {
     public void SellHome() {
         int sellValue = 0;
         //Comprobamos el estado de la casa actual del jugador.
-        switch (currentHomeData.state)
-        {
-            case HomeState.Bad: sellValue = currentHomeData.playerPrice + currentHomeData.badSellValue;
+        switch(currentHomeData.state) {
+            case HouseScoreEnum.bad:
+                sellValue = currentHomeData.playerPrice + currentHomeData.badSellValue;
                 break;
-            case HomeState.Neutral: sellValue = currentHomeData.playerPrice + currentHomeData.normalSellValue;
+            case HouseScoreEnum.good:
+                sellValue = currentHomeData.playerPrice + currentHomeData.normalSellValue;
                 break;
-            case HomeState.Good: sellValue = currentHomeData.playerPrice + currentHomeData.goodSellValue;
+            case HouseScoreEnum.excellent:
+                sellValue = currentHomeData.playerPrice + currentHomeData.goodSellValue;
                 break;
         }
 
 
         //Bureg.
         Debug.Log("Llamar a agregar dinero");
-        Camera.main.transform.position = cameraStartPos;
+
+        HouseScore.Instance.CalculateScore();
+        ExitEditHome();
         Destroy(tempHouse);
     }
 
@@ -338,25 +348,31 @@ public class GameManager : MonoBehaviour {
     }
 
     public void EditHome() {
-        cameraStartPos = Camera.main.transform.position;
         Camera.main.transform.position = instatiateHousePos.position + offsetCameraEditMode;
 
         //Hacemos que el skybox pase a ser de tipo color.
         Camera.main.clearFlags = CameraClearFlags.SolidColor;
 
-        foreach (GameObject objectToActivate in objectsToActivate) {
+        foreach(GameObject objectToActivate in objectsToActivate) {
             objectToActivate.SetActive(true);
         }
+
+        Camera.main.GetComponent<ScreenMovement>().enabled = true;
+
     }
 
     public void ExitEditHome() {
+        Camera.main.GetComponent<ScreenMovement>().enabled = false;
         Camera.main.transform.position = cameraStartPos;
+        Camera.main.transform.rotation = cameraStartRotation;
 
         //Hacemos que el skybox vuelva a la normalidad.
         Camera.main.clearFlags = CameraClearFlags.Skybox;
 
-        foreach (GameObject objectToActivate in objectsToActivate) {
+        foreach(GameObject objectToActivate in objectsToActivate) {
             objectToActivate.SetActive(false);
         }
+
+        Camera.main.fieldOfView = 60f;
     }
 }

@@ -9212,6 +9212,8 @@ MonoBehaviour:
   rotationSpeed: 100
   zoomSpeed: 100
   verticalSpeed: 10
+  minFOV: 20
+  maxFOV: 60
   center: {fileID: 527002506}
   rotator: {fileID: 527002506}
   camVerticalDir: 0

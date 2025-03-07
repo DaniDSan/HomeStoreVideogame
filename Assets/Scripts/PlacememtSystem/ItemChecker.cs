@@ -86,8 +86,9 @@ public class ItemChecker : MonoBehaviour {
 
         Debug.DrawRay(transform.position, -transform.forward * range, Color.blue);
         RaycastHit[] hits = Physics.RaycastAll(transform.position, -transform.forward, range);
+        RaycastHit[] hitsFloor = Physics.RaycastAll(transform.position, -transform.up, 6f);
 
-        if(hits.Length > 0) {
+        if(hits.Length > 0 && hitsFloor.Length > 0) {
             foreach(RaycastHit hit in hits) {
                 if(hit.collider.CompareTag("Wall")) {
                     canPlace = true;

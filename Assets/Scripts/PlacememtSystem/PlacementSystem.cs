@@ -36,6 +36,10 @@ public class PlacementSystem : MonoBehaviour {
         }
     }
 
+    private void OnEnable() {
+        house = GameObject.Find("House(Clone)");
+    }
+
     void Start() {
         cam = Camera.main;
     }
@@ -108,7 +112,7 @@ public class PlacementSystem : MonoBehaviour {
     private void PlaceItem() {
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.placeSFX);
         GameObject newItem = Instantiate(placeableItem.prefabItem,
-            new Vector3(tempItem.transform.position.x, placeableItem.prefabItem.transform.position.y, tempItem.transform.position.z),
+            tempItem.transform.position,
             tempItem.transform.rotation, house.transform);
 
         if(!isDragging) {

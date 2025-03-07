@@ -21,18 +21,25 @@ public class ZoneHandler : MonoBehaviour {
         if(!PlacementSystem.Instance.isSelectingKitchen && !PlacementSystem.Instance.isSelectingBathroom) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit hit, layerMask) && hit.collider.CompareTag("FloorBase")) {
-            ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
-            if(zoneChecker == null) return;
-            if(zoneChecker.zoneVisualInstance == null) {
-                // Instanciar el objeto solo si no hay uno ya
-                zoneChecker.zoneVisualInstance = Instantiate(zoneVisualRef, zoneChecker.transform.position, Quaternion.identity);
-            }
+        RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
+        foreach(RaycastHit hit in hits) {
+            if(((1 << hit.collider.gameObject.layer) & layerMask) != 0) {
+                if(hit.collider.CompareTag("FloorBase")) {
+                    ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
+                    if(zoneChecker == null) return;
 
-            if(PlacementSystem.Instance.isSelectingKitchen)
-                zoneChecker.ActivateZone(Zone.Kitchen);
-            else if(PlacementSystem.Instance.isSelectingBathroom)
-                zoneChecker.ActivateZone(Zone.Bathroom);
+                    if(zoneChecker.zoneVisualInstance == null) {
+                        zoneChecker.zoneVisualInstance = Instantiate(zoneVisualRef, zoneChecker.transform.position, Quaternion.identity);
+                    }
+
+                    if(PlacementSystem.Instance.isSelectingKitchen) {
+                        zoneChecker.ActivateZone(Zone.Kitchen);
+                    } else if(PlacementSystem.Instance.isSelectingBathroom) {
+                        zoneChecker.ActivateZone(Zone.Bathroom);
+                    }
+                    return;
+                }
+            }
         }
     }
 
@@ -50,15 +57,21 @@ public class ZoneHandler : MonoBehaviour {
         if(!PlacementSystem.Instance.isSelectingKitchen && !PlacementSystem.Instance.isSelectingBathroom) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out RaycastHit hit, layerMask) && hit.collider.CompareTag("FloorBase")) {
-            ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
-            if(zoneChecker != null) {
-                zoneChecker.ActivateZone(Zone.Other); // Activar Zone.Other
-            }
+        RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
+        foreach(RaycastHit hit in hits) {
+            if(((1 << hit.collider.gameObject.layer) & layerMask) != 0) {
+                if(hit.collider.CompareTag("FloorBase")) {
+                    ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
+                    if(zoneChecker != null) {
+                        zoneChecker.ActivateZone(Zone.Other); // Activar Zone.Other
+                    }
 
-            if(zoneChecker.zoneVisualInstance != null) {
-                // Instanciar el objeto solo si no hay uno ya
-                Destroy(zoneChecker.zoneVisualInstance);
+                    if(zoneChecker.zoneVisualInstance != null) {
+                        // Instanciar el objeto solo si no hay uno ya
+                        Destroy(zoneChecker.zoneVisualInstance);
+                    }
+                    return;
+                }
             }
         }
     }

@@ -12,7 +12,15 @@ public class HouseScore : MonoBehaviour {
     private HouseScoreEnum houseScore;
     [SerializeField] private int minItemsForExcellent;
 
-    void CalculateScore() {
+    public static HouseScore Instance;
+
+    private void Awake() {
+        if(Instance == null) {
+            Instance = this;
+        }
+    }
+
+    public void CalculateScore() {
         houseScore = GetHouseScore();
         PrintScoreMessage();
     }
@@ -28,7 +36,9 @@ public class HouseScore : MonoBehaviour {
 
         foreach(ItemData item in FindObjectsOfType<ItemData>()) {
             if(item.gameObject.layer == placeableLayer) {
-                itemCount++;
+                if(!item.CompareTag("Wall") && !item.CompareTag("Floor")) {
+                    itemCount++;
+                }
             }
         }
         return itemCount >= minItemsForExcellent ? HouseScoreEnum.excellent : HouseScoreEnum.good;
