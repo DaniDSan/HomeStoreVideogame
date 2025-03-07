@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,8 @@ public class ItemChecker : MonoBehaviour {
     private void Update() {
         if(CompareTag("WallObject")) {
             CheckWalls();
+        } else if(CompareTag("CeilingObject")) {
+            CheckCeiling();
         } else {
             CheckCollisions();
         }
@@ -92,6 +95,15 @@ public class ItemChecker : MonoBehaviour {
             }
         } else {
             canPlace = false;
+        }
+    }
+
+    private void CheckCeiling() {
+        Collider[] colliders = GetOverlapBox();
+
+        if(colliders.Length > 0) {
+            canPlace = false;
+            return;
         }
     }
 

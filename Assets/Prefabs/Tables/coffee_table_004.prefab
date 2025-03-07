@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2516473119074288599}
   - component: {fileID: 8870347720493314320}
   - component: {fileID: 6364945110460150922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,9 +79,9 @@ GameObject:
   - component: {fileID: 5940150988664496703}
   - component: {fileID: 1808328002137076703}
   - component: {fileID: 5860145832089096046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: coffee_table_004
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,6 +146,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: coffee_table_004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780455531705854588, guid: 1dc803090843c1142a6050276ce84e6e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780455531705854588, guid: 1dc803090843c1142a6050276ce84e6e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     - target: {fileID: 5268163003547693254, guid: 1dc803090843c1142a6050276ce84e6e,
         type: 3}

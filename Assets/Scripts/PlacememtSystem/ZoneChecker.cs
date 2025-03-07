@@ -21,10 +21,9 @@ public class ZoneChecker : MonoBehaviour {
 
     public void ActivateZone(Zone newZone) {
         zone = newZone;
-        StartRaycast();
     }
 
-    public void StartRaycast() {
+    public bool IsZoneValid() {
         Vector3 rayOrigin = transform.position + Vector3.down;
         Debug.DrawRay(rayOrigin, Vector3.up * 5f, Color.red);
 
@@ -32,10 +31,11 @@ public class ZoneChecker : MonoBehaviour {
 
         foreach(RaycastHit hit in hits) {
             ItemData parentData = hit.collider.GetComponentInParent<ItemData>();
-            if(parentData != null && IsValidCategory(parentData.shopItemSO.category)) {
-                print("A");
+            if(parentData != null && !IsValidCategory(parentData.shopItemSO.category)) {
+                return false;
             }
         }
+        return true;
     }
 
     private bool IsValidCategory(string category) {

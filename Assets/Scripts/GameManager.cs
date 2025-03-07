@@ -5,29 +5,25 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public enum ScreenName
-{
-    MainMenu,Pause,Options,CharacterSelector,World,Podium
+public enum ScreenName {
+    MainMenu, Pause, Options, CharacterSelector, World, Podium
 }
 
-public enum SurpriseType
-{
-    AddMoney,RemoveMoney,Optional
+public enum SurpriseType {
+    AddMoney, RemoveMoney, Optional
 }
 
-public enum HomeState
-{
-    Bad,Neutral,Good
+public enum HomeState {
+    Bad, Neutral, Good
 }
 
-public struct Surprise
-{
+public struct Surprise {
     [Header("DefaultData")]
     public SurpriseType type;
 
     public int amount;
 
-    [TextArea(2,5)]
+    [TextArea(2, 5)]
     public string text;
 
     [Header("Optional")]
@@ -45,8 +41,7 @@ public struct Surprise
 }
 
 [System.Serializable]
-public struct Screen
-{
+public struct Screen {
     //Id con el que controlamos el tipo de pantalla.
     public ScreenName name;
 
@@ -55,16 +50,14 @@ public struct Screen
 }
 
 [System.Serializable]
-public struct Character
-{
+public struct Character {
     public string name;
 
     public Sprite sprite;
 }
 
 [System.Serializable]
-public class HomeData
-{
+public class HomeData {
     //Referencia al punto en el que se encuentra esa casa en el mundo.
     public Image worldReference;
 
@@ -88,8 +81,7 @@ public class HomeData
     public HomeState state = HomeState.Bad;
 }
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     [Header("Dinero")]
     [SerializeField] private float currentMoney;
 
@@ -141,44 +133,43 @@ public class GameManager : MonoBehaviour
     [Header("EstadisticasJugador")]
     [SerializeField] private int sales;
 
+    [Header("Casa a instanciar")]
+    [SerializeField] GameObject[] houses;
+    [SerializeField] GameObject tempHouse;
+    [SerializeField] Transform instatiateHousePos;
+    [SerializeField] Vector3 offsetCameraEditMode;
+    [SerializeField] Vector3 cameraStartPos;
+    [SerializeField] GameObject[] objectsToActivate;
+
     public static GameManager instance;
 
-    private void Awake()
-    {
-        if(instance == null)
-        {
+    private void Awake() {
+        if(instance == null) {
             instance = this;
         }
 
         //Hacemos que por defecto se almacene en la currentScreen que este indicada en el enum.
-        foreach (Screen screen in screens)
-        {
-            if (screen.name == currentScreen.name)
-            {
+        foreach(Screen screen in screens) {
+            if(screen.name == currentScreen.name) {
                 currentScreen.reference = screen.reference;
                 return;
             }
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (buyHomePanel.activeInHierarchy) buyHomePanel.SetActive(false);
-            else if (sellHomePanel.activeInHierarchy) sellHomePanel.SetActive(false);
-            else if (currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
-            else if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
-            else if (currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            if(buyHomePanel.activeInHierarchy) buyHomePanel.SetActive(false);
+            else if(sellHomePanel.activeInHierarchy) sellHomePanel.SetActive(false);
+            else if(currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
+            else if(currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
+            else if(currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
         }
     }
 
-    public void ChangeScreen(ScreenName nextScreenName)
-    {
-        foreach (Screen screen in screens)
-        {
-            if(screen.name == nextScreenName)
-            {
+    public void ChangeScreen(ScreenName nextScreenName) {
+        foreach(Screen screen in screens) {
+            if(screen.name == nextScreenName) {
                 Debug.Log("Cambiando a pantalla " + nextScreenName.ToString());
 
                 //1.Activamos la nueva pantalla.
@@ -199,12 +190,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetCharacter(Sprite sprite)
-    {
-        foreach (Character character in characters)
-        {
-            if(sprite == character.sprite)
-            {
+    public void SetCharacter(Sprite sprite) {
+        foreach(Character character in characters) {
+            if(sprite == character.sprite) {
                 Debug.Log("Se ha elegido un personaje");
 
                 playerImage.sprite = character.sprite;
@@ -219,12 +207,9 @@ public class GameManager : MonoBehaviour
         ChangeScreen(ScreenName.World);
     }
 
-    public void ChangeScreen(string nextScreenName)
-    {
-        foreach (Screen screen in screens)
-        {
-            if(screen.name.ToString() == nextScreenName)
-            {
+    public void ChangeScreen(string nextScreenName) {
+        foreach(Screen screen in screens) {
+            if(screen.name.ToString() == nextScreenName) {
                 ChangeScreen(screen.name);
 
                 return;
@@ -233,80 +218,66 @@ public class GameManager : MonoBehaviour
         Debug.LogError("Se esta intentando acceder a una pantalla que no existe.");
     }
 
-    public void PauseGame(bool state)
-    {
-        if (state)
-        {
+    public void PauseGame(bool state) {
+        if(state) {
             Time.timeScale = 0f;
 
             ChangeScreen(ScreenName.Pause);
-        }
-        else
-        {
+        } else {
             Time.timeScale = 1f;
 
             ChangeScreen(ScreenName.World);
         }
     }
 
-    public void ReturnMainMenu()
-    {
+    public void ReturnMainMenu() {
         Time.timeScale = 1f;
 
         SceneManager.LoadScene(0);
     }
 
-    public void ExitGame()
-    {
+    public void ExitGame() {
         Debug.Log("Saliendo del videojuego");
 
         Application.Quit();
     }
 
-    public void AddMoney(int amount)
-    {
+    public void AddMoney(int amount) {
         currentMoney += amount;
 
         UpdateMoneyTexts();
     }
 
-    public void RemoveMoney(int amount)
-    {
+    public void RemoveMoney(int amount) {
         currentMoney -= amount;
 
         UpdateMoneyTexts();
     }
 
-    private void UpdateMoneyTexts()
-    {
+    private void UpdateMoneyTexts() {
         moneyText.text = currentMoney.ToString("N0") + "$";
     }
 
-    public HomeData GetHomeData(int tier)
-    {
+    public HomeData GetHomeData(int tier) {
         HomeData homeData = new HomeData();
 
-        switch (tier)
-        {
-            case 1: homeData.playerPrice = tier1Home[Random.Range(0, tier1Home.Count)].playerPrice;
+        switch(tier) {
+            case 1:
+                homeData.playerPrice = tier1Home[Random.Range(0, tier1Home.Count)].playerPrice;
                 break;
         }
         return homeData;
     }
 
-    public void ShowHomeData(HomeData homeData)
-    {
+    public void ShowHomeData(HomeData homeData) {
         currentHomeData = homeData;
 
         //Comprobamos si la casa a la que se quiere acceder ha sido comprada por el jugador.
-        if (homeData.bought)
-        {
+        if(homeData.bought) {
             costText.text = homeData.playerPrice.ToString("N0") + "$";
 
             sellHomePanel.SetActive(true);
-        }
-        else
-        {
+        } else {
             //Comprobamos si el jugador puede comprar la casa.
             buyButton.interactable = currentMoney >= homeData.playerPrice ? true : false;
 
@@ -316,8 +287,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void BuyHome()
-    {
+    public void BuyHome() {
         RemoveMoney(currentHomeData.playerPrice);
 
         currentHomeData.bought = true;
@@ -325,14 +295,33 @@ public class GameManager : MonoBehaviour
         InstantiateHome();
     }
 
-    public void SellHome()
-    {
-
+    public void SellHome() {
+        Debug.Log("Llamar a agregar dinero");
+        Camera.main.transform.position = cameraStartPos;
+        Destroy(tempHouse);
     }
 
     //Bureg
-    public void InstantiateHome()
-    {
-        Debug.Log("Se deberia instancia la casa");
+    public void InstantiateHome() {
+        cameraStartPos = Camera.main.transform.position;
+        Camera.main.transform.position = instatiateHousePos.position + offsetCameraEditMode;
+        int randomIndex = Random.Range(0, houses.Length);
+        tempHouse = Instantiate(houses[randomIndex], instatiateHousePos.position, Quaternion.identity);
+        EditHome();
+    }
+
+    public void EditHome() {
+        cameraStartPos = Camera.main.transform.position;
+        Camera.main.transform.position = instatiateHousePos.position + offsetCameraEditMode;
+        foreach(GameObject objectToActivate in objectsToActivate) {
+            objectToActivate.SetActive(true);
+        }
+    }
+
+    public void ExitEditHome() {
+        Camera.main.transform.position = cameraStartPos;
+        foreach(GameObject objectToActivate in objectsToActivate) {
+            objectToActivate.SetActive(false);
+        }
     }
 }

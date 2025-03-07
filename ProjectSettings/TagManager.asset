@@ -12,6 +12,7 @@ TagManager:
   - UpperFloor
   - Carpet
   - Zone Checker
+  - CeilingObject
   layers:
   - Default
   - TransparentFX

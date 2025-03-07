@@ -19,7 +19,7 @@ public class OutlineHandler : MonoBehaviour {
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit)) {
-            if(LayerMask.LayerToName(hit.collider.gameObject.layer) == "PlaceableObject") {
+            if(LayerMask.LayerToName(hit.collider.gameObject.layer) == "PlaceableObject" || LayerMask.LayerToName(hit.collider.gameObject.layer) == "DefaultObject") {
                 GameObject hitObject = hit.collider.gameObject;
                 GameObject parentObject = hitObject.GetComponentInParent<ItemData>()?.gameObject;
 

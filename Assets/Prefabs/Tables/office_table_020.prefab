@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1158511946204205937}
   - component: {fileID: -8188868690718688771}
   - component: {fileID: -112073069894620560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: office_table_020
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,9 +77,9 @@ GameObject:
   - component: {fileID: 2541401639571292171}
   - component: {fileID: 8613557112357764997}
   - component: {fileID: 1830013029588995755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +201,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: office_table_020
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197940088349202094, guid: 2d6276b1f60578344abf590db169fba9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197940088349202094, guid: 2d6276b1f60578344abf590db169fba9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Placeable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
