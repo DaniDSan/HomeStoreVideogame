@@ -6,10 +6,10 @@ public class PlacementSystem : MonoBehaviour {
     public GameObject placeHolderItem;
     public ShopItemSO placeableItem;
     public GameObject visualRef;
+    public GameObject house;
     private GameObject tempItem;
     private GameObject draggedItem;
     private Camera cam;
-    [SerializeField] GameObject house;
 
     bool isShowing = false;
     bool isDragging = false;

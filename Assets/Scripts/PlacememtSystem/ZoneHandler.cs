@@ -1,8 +1,9 @@
 using UnityEngine;
 
 public class ZoneHandler : MonoBehaviour {
-    [SerializeField]
-    GameObject zoneVisualRef;
+    [SerializeField] GameObject zoneVisualRef;
+    [SerializeField] Material kitchenMat;
+    [SerializeField] Material bathroomMat;
 
     [SerializeField] LayerMask layerMask;
 
@@ -28,14 +29,17 @@ public class ZoneHandler : MonoBehaviour {
                     ZoneChecker zoneChecker = hit.collider.GetComponentInParent<ZoneChecker>();
                     if(zoneChecker == null) return;
 
-                    if(zoneChecker.zoneVisualInstance == null) {
-                        zoneChecker.zoneVisualInstance = Instantiate(zoneVisualRef, zoneChecker.transform.position, Quaternion.identity);
-                    }
-
                     if(PlacementSystem.Instance.isSelectingKitchen) {
+                        zoneVisualRef.GetComponent<Renderer>().material = kitchenMat;
                         zoneChecker.ActivateZone(Zone.Kitchen);
                     } else if(PlacementSystem.Instance.isSelectingBathroom) {
+                        zoneVisualRef.GetComponent<Renderer>().material = bathroomMat;
                         zoneChecker.ActivateZone(Zone.Bathroom);
+                    }
+
+                    if(zoneChecker.zoneVisualInstance == null) {
+                        Transform visualRefsTransform = PlacementSystem.Instance.house.transform.Find("VisualRefs");
+                        zoneChecker.zoneVisualInstance = Instantiate(zoneVisualRef, zoneChecker.transform.position + new Vector3(0f, zoneVisualRef.transform.position.y, 0f), Quaternion.identity, visualRefsTransform);
                     }
                     return;
                 }
