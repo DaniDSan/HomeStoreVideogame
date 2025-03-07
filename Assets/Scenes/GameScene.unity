@@ -1641,12 +1641,15 @@ MonoBehaviour:
   playerImage: {fileID: 296804}
   playerName: {fileID: 1515388546}
   sales: 0
-  houses: []
+  houses:
+  - {fileID: 5858976103524434731, guid: 68ca2e6bfb23e9b4cad897a5046c8001, type: 3}
   tempHouse: {fileID: 0}
-  instatiateHousePos: {fileID: 0}
+  instatiateHousePos: {fileID: 816256288}
   offsetCameraEditMode: {x: 0, y: 0, z: 0}
   cameraStartPos: {x: 0, y: 0, z: 0}
-  objectsToActivate: []
+  objectsToActivate:
+  - {fileID: 1862149179}
+  - {fileID: 836797166}
 --- !u!1001 &87255331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21279,6 +21282,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 812189275}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816256287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816256288}
+  m_Layer: 0
+  m_Name: InstatiateHousePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &816256288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816256287}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -50, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &819257018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48232,37 +48266,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1501638153}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1509905973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1509905974}
-  m_Layer: 0
-  m_Name: HouseIntanciate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1509905974
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509905973}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513627674
 GameObject:
   m_ObjectHideFlags: 0
@@ -65170,6 +65173,6 @@ SceneRoots:
   - {fileID: 122274199}
   - {fileID: 874956719}
   - {fileID: 1471343988}
-  - {fileID: 1509905974}
   - {fileID: 1862149180}
   - {fileID: 836797172}
+  - {fileID: 816256288}
