@@ -1834,7 +1834,7 @@ MonoBehaviour:
   - {fileID: 5139213727128278639, guid: 044993af8b5ff974aaa46a488b5a8c53, type: 3}
   tempHouse: {fileID: 0}
   instatiateHousePos: {fileID: 816256288}
-  offsetCameraEditMode: {x: 0, y: 17, z: -10}
+  offsetCameraEditMode: {x: 0, y: 30, z: -10}
   cameraStartPos: {x: 0, y: 0, z: 0}
   cameraStartRotation: {x: 0, y: 0, z: 0, w: 0}
   objectsToActivate:

@@ -72,7 +72,7 @@ public class ScreenMovement : MonoBehaviour {
 
     private void MoveCamera() {
         Vector3 newPosition = cam.transform.position + Vector3.up * camVerticalDir * verticalSpeed * Time.deltaTime;
-        newPosition.y = Mathf.Clamp(newPosition.y, -43f, -30f);
+        newPosition.y = Mathf.Clamp(newPosition.y, -40f, -20f);
         cam.transform.position = newPosition;
     }
 }
