@@ -41,6 +41,10 @@ public class HouseScore : MonoBehaviour {
                 }
             }
         }
+
+        //Cantidad minima de objetos.
+        if (itemCount <= 5) return HouseScoreEnum.bad;
+
         return itemCount >= minItemsForExcellent ? HouseScoreEnum.excellent : HouseScoreEnum.good;
     }
 
