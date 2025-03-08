@@ -122,6 +122,8 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Transform topContainer;
 
+    [SerializeField] private RankingRequest[] rankingRequests;
+
     [Header("Compra casas")]
     [SerializeField] private int playerLevel = 1;
 
@@ -188,6 +190,8 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.W)) UpdateRanking();
+
         if(Input.GetKeyDown(KeyCode.Escape)) {
             if (buyHomePanel.activeInHierarchy)
             {
@@ -431,6 +435,12 @@ public class GameManager : MonoBehaviour {
 
     private void UpdateRanking()
     {
-        
+        foreach (RankingRequest rankingRequest in rankingRequests)
+        {
+            if(currentMoney <= rankingRequest.amount)
+            {
+
+            }
+        }
     }
 }

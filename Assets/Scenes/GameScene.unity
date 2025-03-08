@@ -1625,6 +1625,25 @@ MonoBehaviour:
   topText: {fileID: 212795902}
   topSprite: {fileID: 186490777}
   topContainer: {fileID: 2128962495}
+  rankingRequests:
+  - rankingPos: 9
+    amount: 150000
+  - rankingPos: 8
+    amount: 200000
+  - rankingPos: 7
+    amount: 250000
+  - rankingPos: 6
+    amount: 300000
+  - rankingPos: 5
+    amount: 400000
+  - rankingPos: 4
+    amount: 500000
+  - rankingPos: 3
+    amount: 750000
+  - rankingPos: 2
+    amount: 900000
+  - rankingPos: 1
+    amount: 1000000
   playerLevel: 0
   tier1Home:
   - worldReference: {fileID: 0}
@@ -1653,11 +1672,13 @@ MonoBehaviour:
     goodSellValue: 0
   sellHomePanel: {fileID: 1599630453}
   costText: {fileID: 1220123945}
+  surprises: []
   playerImage: {fileID: 296804}
   playerName: {fileID: 1515388546}
   sales: 0
   houses:
   - {fileID: 5858976103524434731, guid: 68ca2e6bfb23e9b4cad897a5046c8001, type: 3}
+  - {fileID: 5139213727128278639, guid: 044993af8b5ff974aaa46a488b5a8c53, type: 3}
   tempHouse: {fileID: 0}
   instatiateHousePos: {fileID: 816256288}
   offsetCameraEditMode: {x: 0, y: 17, z: -10}
