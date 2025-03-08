@@ -40760,8 +40760,8 @@ MonoBehaviour:
   uiSFX:
     clip: {fileID: 8300000, guid: 6daa95990d1f2a64a9a6f1412ddc4866, type: 3}
     pitch: 1
-    randomizeRange: 0.3
-    isRandomize: 1
+    randomizeRange: 0
+    isRandomize: 0
     soundVolume: 1
   placementSoundsEffects:
     rotateSFX:
