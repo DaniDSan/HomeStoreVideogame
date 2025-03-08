@@ -14,6 +14,15 @@ public enum SurpriseType {
     AddMoney, RemoveMoney, Optional
 }
 
+[System.Serializable]
+public struct RankingRequest
+{
+    public int rankingPos;
+
+    public int amount;
+}
+
+[System.Serializable]
 public struct Surprise {
     [Header("DefaultData")]
     public SurpriseType type;
@@ -344,13 +353,12 @@ public class GameManager : MonoBehaviour {
                 break;
         }
 
-
+        AddMoney(sellValue);
 
         //Bureg.
         Debug.Log("Llamar a agregar dinero");
 
         HouseScore.Instance.CalculateScore();
-        ExitEditHome();
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
         Destroy(tempHouse);
     }
@@ -419,5 +427,10 @@ public class GameManager : MonoBehaviour {
             yield return null;
         }
         Camera.main.nearClipPlane = targetNearClip;
+    }
+
+    private void UpdateRanking()
+    {
+        
     }
 }
