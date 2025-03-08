@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6467653911976891010}
   - component: {fileID: 7969556208187947724}
   - component: {fileID: 6576852370752284566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,9 +77,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 559869037762518588}
-  m_Layer: 0
+  - component: {fileID: -1227214417301839368}
+  - component: {fileID: -8627831047024166715}
+  m_Layer: 6
   m_Name: flowerpot_001
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +103,37 @@ Transform:
   - {fileID: 6467653911976891010}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1227214417301839368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016788657887202936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: 8dc4b0c9e89561141a241ed7b94723ba, type: 2}
+--- !u!114 &-8627831047024166715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016788657887202936}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &4305110496976275898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +201,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flower_017
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838919488366757118, guid: 68d6390bf16f8244983863cf9a120661,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -242,6 +280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowerpot_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839947532840813597, guid: 2faa599d0c4c4dc4a9cface310eb43e6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
