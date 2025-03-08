@@ -22,7 +22,9 @@ public struct SoundEffect {
     }
 
     public float GetRandomPitch() {
-        return pitch + Random.Range(-randomizeRange, randomizeRange);
+        if(isRandomize) {
+            return pitch + Random.Range(-randomizeRange, randomizeRange);
+        } else return pitch;
     }
 }
 

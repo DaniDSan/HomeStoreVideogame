@@ -315,6 +315,7 @@ public class GameManager : MonoBehaviour {
         currentHomeData.bought = true;
 
         InstantiateHome();
+        AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
     }
 
     public void SellHome() {
@@ -338,6 +339,7 @@ public class GameManager : MonoBehaviour {
 
         HouseScore.Instance.CalculateScore();
         ExitEditHome();
+        AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
         Destroy(tempHouse);
     }
 
