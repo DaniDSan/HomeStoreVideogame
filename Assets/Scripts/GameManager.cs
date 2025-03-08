@@ -345,6 +345,7 @@ public class GameManager : MonoBehaviour {
         }
 
 
+
         //Bureg.
         Debug.Log("Llamar a agregar dinero");
 
