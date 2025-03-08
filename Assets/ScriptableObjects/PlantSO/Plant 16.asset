@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a758fe096e7e93419645625f369cb27, type: 3}
   m_Name: Plant 16
   m_EditorClassIdentifier: 
-  prefabItem: {fileID: 0}
+  prefabItem: {fileID: 1838408149794897701, guid: fb84f47dcc90926459a306d8ddb40f63,
+    type: 3}
+  category: 
   price: 0
+  minPrice: 10
+  maxPrice: 100

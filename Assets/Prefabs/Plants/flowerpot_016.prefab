@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8611634232653229190}
   - component: {fileID: 2670936604459743004}
   - component: {fileID: 9213742989669797971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,9 +77,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7029427049844692150}
-  m_Layer: 0
+  - component: {fileID: 4089848169134835517}
+  - component: {fileID: -3936832742714370173}
+  m_Layer: 6
   m_Name: flowerpot_016
-  m_TagString: Untagged
+  m_TagString: Placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +103,37 @@ Transform:
   - {fileID: 8611634232653229190}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4089848169134835517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177478821289082545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6523e625870d48935c50f963ba33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemSO: {fileID: 11400000, guid: d038dcd50ef29d74da4b78116f988a15, type: 2}
+--- !u!114 &-3936832742714370173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6177478821289082545}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &913482962810505180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flowerpot_016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907755430062675532, guid: d88dbf0111d6e1447993f9ce66f964c7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
