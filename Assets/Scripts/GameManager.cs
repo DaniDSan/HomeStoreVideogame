@@ -62,6 +62,13 @@ public struct Character {
     public Sprite sprite;
 }
 
+public struct MapZone
+{
+    public List<GameObject> homes;
+
+
+}
+
 [System.Serializable]
 public class HomeData {
     //Referencia al punto en el que se encuentra esa casa en el mundo.
@@ -132,6 +139,12 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private int playerLevel = 1;
 
     [SerializeField] public List<HomeData> tier1Home;
+
+    public List<HomeData> tier2Home;
+
+    public List<HomeData> tier3Home;
+
+    public List<HomeData> tier4Home;
 
     [SerializeField] private GameObject buyHomePanel;
 
@@ -311,6 +324,9 @@ public class GameManager : MonoBehaviour {
         switch(tier) {
             case 1:
                 homeData.playerPrice = tier1Home[Random.Range(0, tier1Home.Count)].playerPrice;
+                break;
+            case 2:
+                homeData.playerPrice = Random.Range(tier2Home[Random.Range(0, tier2Home.Count)].minPrice, tier2Home[Random.Range(0, tier2Home.Count)].maxPrice);
                 break;
         }
         return homeData;
