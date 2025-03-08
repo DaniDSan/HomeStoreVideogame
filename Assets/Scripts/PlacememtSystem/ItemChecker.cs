@@ -45,27 +45,27 @@ public class ItemChecker : MonoBehaviour {
 
             foreach(Collider collider in colliders) {
                 if(CompareTag("UpperFloor")) {
-                    if(collider.CompareTag("UpperFloor")) {
+                    if(collider.CompareTag("UpperFloor") || collider.CompareTag("Wall")) {
                         canPlace = false;
                         return;
                     } else {
                         foundValidSurface = true;
                     }
                 } else if(CompareTag("Carpet")) {
-                    if(collider.CompareTag("Carpet")) {
+                    if(collider.CompareTag("Carpet") || collider.CompareTag("Wall")) {
                         canPlace = false;
                         return;
                     } else {
                         foundValidSurface = true;
                     }
                 } else if(CompareTag("Floor")) {
-                    if(collider.CompareTag("Floor")) {
+                    if(collider.CompareTag("Floor") || collider.CompareTag("Wall")) {
                         canPlace = false;
                         return;
                     } else {
                         foundValidSurface = true;
                     }
-                } else if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor") || collider.CompareTag("Zone Checker")) {
+                } else if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor")) {
                     foundValidSurface = true;
                 } else {
                     canPlace = false;

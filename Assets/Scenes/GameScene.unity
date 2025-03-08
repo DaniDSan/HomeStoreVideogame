@@ -2859,7 +2859,6 @@ MonoBehaviour:
   sales: 0
   houses:
   - {fileID: 5858976103524434731, guid: 68ca2e6bfb23e9b4cad897a5046c8001, type: 3}
-  - {fileID: 5139213727128278639, guid: 044993af8b5ff974aaa46a488b5a8c53, type: 3}
   tempHouse: {fileID: 0}
   instatiateHousePos: {fileID: 816256288}
   offsetCameraEditMode: {x: 0, y: 30, z: -10}
@@ -37227,7 +37226,7 @@ Transform:
   m_GameObject: {fileID: 794187599}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37271,7 +37270,7 @@ Light:
   m_Intensity: 200
   m_Range: 20.94
   m_SpotAngle: 179
-  m_InnerSpotAngle: 0
+  m_InnerSpotAngle: 179
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
