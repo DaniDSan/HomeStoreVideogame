@@ -1651,6 +1651,8 @@ MonoBehaviour:
   objectsToActivate:
   - {fileID: 1862149179}
   - {fileID: 836797166}
+  duration: 2
+  targetNearClip: 0.3
 --- !u!1001 &87255331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7650,6 +7652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneVisualRef: {fileID: 522351007764590385, guid: 0869f933cbdd341478f9416c4cb54b17,
     type: 3}
+  kitchenMat: {fileID: 2100000, guid: e8de22387c1879343a087e2d6fad592d, type: 2}
+  bathroomMat: {fileID: 2100000, guid: 834dba3f03f566e41a18bd03a5ad66b6, type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -18284,7 +18288,7 @@ GameObject:
   - component: {fileID: 712089101}
   - component: {fileID: 712089100}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ToggleBathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27503,7 +27507,7 @@ GameObject:
   - component: {fileID: 1019753432}
   - component: {fileID: 1019753431}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ToggleKitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

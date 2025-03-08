@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 3142872131597661908, guid: 0f876bbe80d34f84e9b36777cdf16290,
     type: 3}
-  price: 50
   category: bed
+  price: 264
+  minPrice: 130
+  maxPrice: 750

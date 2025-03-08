@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 6233935042330417973, guid: 5f3f8067fc9a5ad48abd81a10c3753f6,
     type: 3}
-  price: 0
   category: bathroom
+  price: 537
+  minPrice: 150
+  maxPrice: 550

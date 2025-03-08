@@ -15,6 +15,6 @@ MonoBehaviour:
   prefabItem: {fileID: 5040162370320398798, guid: 58d2dc8db4d355b41b7d9aa129307363,
     type: 3}
   category: 
-  price: 572
-  minPrice: 10
-  maxPrice: 648
+  price: 158
+  minPrice: 70
+  maxPrice: 310

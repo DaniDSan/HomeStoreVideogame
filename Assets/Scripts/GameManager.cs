@@ -152,6 +152,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Vector3 cameraStartPos;
     [SerializeField] Quaternion cameraStartRotation;
     [SerializeField] GameObject[] objectsToActivate;
+    [SerializeField] float duration;
+    [SerializeField] float targetNearClip;
 
     public static GameManager instance;
 
@@ -353,12 +355,13 @@ public class GameManager : MonoBehaviour {
         //Hacemos que el skybox pase a ser de tipo color.
         Camera.main.clearFlags = CameraClearFlags.SolidColor;
 
+        StartCoroutine(EditHomeAnimation());
+
         foreach(GameObject objectToActivate in objectsToActivate) {
             objectToActivate.SetActive(true);
         }
 
         Camera.main.GetComponent<ScreenMovement>().enabled = true;
-
     }
 
     public void ExitEditHome() {
@@ -374,5 +377,17 @@ public class GameManager : MonoBehaviour {
         }
 
         Camera.main.fieldOfView = 60f;
+    }
+
+    IEnumerator EditHomeAnimation() {
+        float startNearClip = 20f;
+        float elapsedTime = 0f;
+
+        while(elapsedTime < duration) {
+            Camera.main.nearClipPlane = Mathf.Lerp(startNearClip, targetNearClip, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        Camera.main.nearClipPlane = targetNearClip;
     }
 }
