@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
 
 public enum ScreenName {
-    MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode
+    MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode,Win,Lose
 }
 
 public enum SurpriseType {
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Image topSprite;
 
-    [SerializeField] private Transform topContainer;
+    [SerializeField] private Transform playerTop;
 
     [SerializeField] private RankingRequest[] rankingRequests;
 
@@ -439,8 +439,21 @@ public class GameManager : MonoBehaviour {
         {
             if(currentMoney <= rankingRequest.amount)
             {
-
+                
             }
         }
+
+        //Si no se ha salido de la función es porque el jugador esta en el top 1 por lo que lo colocamos en esa posición y ganamos el juego.
+
+    }
+
+    public void WinGame()
+    {
+        Debug.Log("El jugador es Top1");
+    }
+
+    public void LoseGame()
+    {
+        Debug.Log("El jugador no tiene dinero suficiente para seguir jugando");
     }
 }
