@@ -71,7 +71,7 @@ public class ShopManager : MonoBehaviour {
 
             // Configurar el panel
             ShopTemplate template = newPanel.GetComponent<ShopTemplate>();
-            template.priceTxt.text = shopItem.price.ToString() + "€";
+            template.priceTxt.text = shopItem.price.ToString() + " $";
             template.previewImg.texture = renderTextures[renderIndex];
             renderIndex = (renderIndex + 1) % renderTextures.Count;
 
