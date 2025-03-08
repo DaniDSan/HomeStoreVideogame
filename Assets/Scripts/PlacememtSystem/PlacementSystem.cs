@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -116,7 +117,7 @@ public class PlacementSystem : MonoBehaviour {
             tempItem.transform.rotation, house.transform);
 
         if(!isDragging) {
-            print("Llamar metodo restar dinero " + placeableItem.price);
+            GameManager.instance.RemoveMoney(newItem.GetComponent<ItemData>().shopItemSO.price);
         } else {
             CancelPreview();
             Destroy(draggedItem);
