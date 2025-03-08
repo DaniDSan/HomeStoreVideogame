@@ -1,11 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoneHandler : MonoBehaviour {
     [SerializeField] GameObject zoneVisualRef;
     [SerializeField] Material kitchenMat;
     [SerializeField] Material bathroomMat;
+    Transform visualRefsTransform;
 
     [SerializeField] LayerMask layerMask;
+
+    [SerializeField] Toggle SetRoomToggle;
+
+    private void Start() {
+        visualRefsTransform = PlacementSystem.Instance.house.transform.Find("VisualRefs");
+    }
 
     void Update() {
         if(Input.GetMouseButton(0)) {
@@ -38,7 +46,6 @@ public class ZoneHandler : MonoBehaviour {
                     }
 
                     if(zoneChecker.zoneVisualInstance == null) {
-                        Transform visualRefsTransform = PlacementSystem.Instance.house.transform.Find("VisualRefs");
                         zoneChecker.zoneVisualInstance = Instantiate(zoneVisualRef, zoneChecker.transform.position + new Vector3(0f, zoneVisualRef.transform.position.y, 0f), Quaternion.identity, visualRefsTransform);
                     }
                     return;
@@ -50,11 +57,13 @@ public class ZoneHandler : MonoBehaviour {
     public void ToggleKitchenSelection() {
         PlacementSystem.Instance.isSelectingKitchen = !PlacementSystem.Instance.isSelectingKitchen;
         PlacementSystem.Instance.isSelectingBathroom = false;
+        visualRefsTransform.gameObject.SetActive(PlacementSystem.Instance.isSelectingKitchen);
     }
 
     public void ToggleBathroomSelection() {
         PlacementSystem.Instance.isSelectingBathroom = !PlacementSystem.Instance.isSelectingBathroom;
         PlacementSystem.Instance.isSelectingKitchen = false;
+        visualRefsTransform.gameObject.SetActive(PlacementSystem.Instance.isSelectingBathroom);
     }
 
     private void SetToOther() {
@@ -77,6 +86,14 @@ public class ZoneHandler : MonoBehaviour {
                     return;
                 }
             }
+        }
+    }
+
+    public void SetOffRoomSelection() {
+        if(!SetRoomToggle.isOn) {
+            PlacementSystem.Instance.isSelectingKitchen = false;
+            PlacementSystem.Instance.isSelectingBathroom = false;
+            visualRefsTransform.gameObject.SetActive(false);
         }
     }
 }

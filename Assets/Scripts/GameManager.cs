@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] Vector3 offsetCameraEditMode;
     [SerializeField] Vector3 cameraStartPos;
     [SerializeField] Quaternion cameraStartRotation;
-    [SerializeField] GameObject[] objectsToActivate;
+    [SerializeField] GameObject[] objectsToChangeState;
     [SerializeField] float duration;
     [SerializeField] float targetNearClip;
 
@@ -357,8 +357,8 @@ public class GameManager : MonoBehaviour {
 
         StartCoroutine(EditHomeAnimation());
 
-        foreach(GameObject objectToActivate in objectsToActivate) {
-            objectToActivate.SetActive(true);
+        foreach(GameObject objectToChangeState in objectsToChangeState) {
+            objectToChangeState.SetActive(!objectToChangeState.activeSelf);
         }
 
         Camera.main.GetComponent<ScreenMovement>().enabled = true;
@@ -372,8 +372,8 @@ public class GameManager : MonoBehaviour {
         //Hacemos que el skybox vuelva a la normalidad.
         Camera.main.clearFlags = CameraClearFlags.Skybox;
 
-        foreach(GameObject objectToActivate in objectsToActivate) {
-            objectToActivate.SetActive(false);
+        foreach(GameObject objectToChangeState in objectsToChangeState) {
+            objectToChangeState.SetActive(!objectToChangeState.activeSelf);
         }
 
         Camera.main.fieldOfView = 60f;

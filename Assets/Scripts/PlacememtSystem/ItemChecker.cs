@@ -105,6 +105,8 @@ public class ItemChecker : MonoBehaviour {
         if(colliders.Length > 0) {
             canPlace = false;
             return;
+        } else {
+            canPlace = true;
         }
     }
 

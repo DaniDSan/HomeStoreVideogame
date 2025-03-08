@@ -39,6 +39,8 @@ public class AudioManager : MonoBehaviour {
 
     [SerializeField] private AudioSource sfxAS;
 
+    [SerializeField] SoundEffect uiSFX;
+
     public PlacementSoundsEffects placementSoundsEffects = new PlacementSoundsEffects();
 
     public static AudioManager instance;
@@ -53,5 +55,9 @@ public class AudioManager : MonoBehaviour {
         sfxAS.volume = soundEffect.soundVolume;
         sfxAS.pitch = soundEffect.GetRandomPitch();
         sfxAS.PlayOneShot(soundEffect.clip);
+    }
+
+    public void PlayUISFX() {
+        PlaySFX(uiSFX);
     }
 }
