@@ -360,6 +360,7 @@ public class GameManager : MonoBehaviour {
         Camera.main.transform.position = instatiateHousePos.position + offsetCameraEditMode;
         int randomIndex = Random.Range(0, houses.Length);
         tempHouse = Instantiate(houses[randomIndex], instatiateHousePos.position, Quaternion.identity);
+        tempHouse.name = "House(Clone)";
         EditHome();
     }
 
