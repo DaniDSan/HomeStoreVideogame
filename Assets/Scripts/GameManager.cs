@@ -7,16 +7,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
 
 public enum ScreenName {
-    MainMenu, Pause, Options, CharacterSelector, World, Podium
+    MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode
 }
 
 public enum SurpriseType {
     AddMoney, RemoveMoney, Optional
 }
-
-//public enum HomeState {
-//    Bad, Neutral, Good
-//}
 
 public struct Surprise {
     [Header("DefaultData")]
@@ -98,6 +94,8 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI moneyText;
 
+    [SerializeField] private TextMeshProUGUI editModeMoneyText;
+
     [Header("Screens")]
     [SerializeField] private List<Screen> screens;
 
@@ -156,6 +154,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField] float duration;
     [SerializeField] float targetNearClip;
 
+    //Variable pegote.
+    [SerializeField] private GameObject homeOptions;
+
     public static GameManager instance;
 
     private void Awake() {
@@ -179,11 +180,19 @@ public class GameManager : MonoBehaviour {
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            if(buyHomePanel.activeInHierarchy) buyHomePanel.SetActive(false);
-            else if(sellHomePanel.activeInHierarchy) sellHomePanel.SetActive(false);
-            else if(currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
-            else if(currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
-            else if(currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
+            if (buyHomePanel.activeInHierarchy)
+            {
+                buyHomePanel.SetActive(false);
+                homeOptions.SetActive(true);
+            }
+            else if (sellHomePanel.activeInHierarchy)
+            {
+                sellHomePanel.SetActive(false);
+                homeOptions.SetActive(true);
+            }
+            else if (currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
+            else if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
+            else if (currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
         }
     }
 
@@ -276,6 +285,7 @@ public class GameManager : MonoBehaviour {
 
     private void UpdateMoneyTexts() {
         moneyText.text = currentMoney.ToString("N0") + "$";
+        editModeMoneyText.text = currentMoney.ToString("N0") + "$";
     }
 
     public HomeData GetHomeData(int tier) {
@@ -315,6 +325,7 @@ public class GameManager : MonoBehaviour {
         currentHomeData.bought = true;
 
         InstantiateHome();
+
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
     }
 
@@ -369,6 +380,8 @@ public class GameManager : MonoBehaviour {
         }
 
         Camera.main.GetComponent<ScreenMovement>().enabled = true;
+
+        ChangeScreen(ScreenName.EditMode);
     }
 
     public void ExitEditHome() {
@@ -388,6 +401,10 @@ public class GameManager : MonoBehaviour {
         }
 
         Camera.main.fieldOfView = 60f;
+
+        homeOptions.SetActive(true);
+
+        ChangeScreen(ScreenName.World);
     }
 
     IEnumerator EditHomeAnimation() {
