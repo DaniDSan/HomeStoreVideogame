@@ -95,6 +95,10 @@ public class HomeData {
 
     //Cantidad que se suma al precio de la casa cuando se vende si esta en muy buen estado.
     public int goodSellValue = 50000;
+
+    public int minGoodSellValue = 50000;
+
+    public int maxGoodSellValue = 70000;
 }
 
 public class GameManager : MonoBehaviour {
@@ -353,7 +357,7 @@ public class GameManager : MonoBehaviour {
                 sellValue = currentHomeData.playerPrice + currentHomeData.normalSellValue;
                 break;
             case HouseScoreEnum.excellent:
-                sellValue = currentHomeData.playerPrice + currentHomeData.goodSellValue;
+                sellValue = currentHomeData.playerPrice + Random.Range(currentHomeData.minGoodSellValue, currentHomeData.maxGoodSellValue);
                 break;
         }
 
@@ -435,25 +439,46 @@ public class GameManager : MonoBehaviour {
 
     private void UpdateRanking()
     {
+        //Comprobamos si el jugador tiene dinero suficiente para seguir jugando.
+        if(currentMoney < 100000)
+        {
+            LoseGame();
+
+            return;
+        }
+
         foreach (RankingRequest rankingRequest in rankingRequests)
         {
             if(currentMoney <= rankingRequest.amount)
             {
-                
+                playerTop.SetSiblingIndex(rankingRequest.rankingPos);
+
+                return;
             }
         }
 
         //Si no se ha salido de la función es porque el jugador esta en el top 1 por lo que lo colocamos en esa posición y ganamos el juego.
+        playerTop.SetSiblingIndex(0);
 
+        WinGame();
     }
 
     public void WinGame()
     {
         Debug.Log("El jugador es Top1");
+
+        ChangeScreen(ScreenName.Win);
     }
 
     public void LoseGame()
     {
         Debug.Log("El jugador no tiene dinero suficiente para seguir jugando");
+
+        ChangeScreen(ScreenName.Lose);
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }
