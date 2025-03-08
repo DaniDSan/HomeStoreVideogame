@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Table 12
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 6963171065511232, guid: 429b1f595b50b7e4589b3e3657430584, type: 3}
-  price: 0
+  category: 
+  price: 602
+  minPrice: 100
+  maxPrice: 1000

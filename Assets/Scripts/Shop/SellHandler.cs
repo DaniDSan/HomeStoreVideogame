@@ -30,9 +30,11 @@ public class SellHandler : MonoBehaviour {
             if(LayerMask.LayerToName(hit.collider.gameObject.layer) == "PlaceableObject") {
                 sellIconCursor.GetComponent<Image>().sprite = changedImg;
                 if(Input.GetMouseButtonDown(0)) {
-                    // TODO: restar dinero
                     AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
-                    print(hit.collider.GetComponentInParent<ItemData>().shopItemSO.price);
+                    //print(hit.collider.GetComponentInParent<ItemData>().shopItemSO.price);
+                    int price = hit.collider.GetComponentInParent<ItemData>().shopItemSO.price * 50 / 100;
+                    //Añadimos al jugador el dinero por la venta, se le devuelve el 50% del coste del objeto.
+                    GameManager.instance.AddMoney(price);
                     Destroy(hit.collider.GetComponentInParent<ItemData>().gameObject);
                 }
             } else {

@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 1644369670999700069, guid: f1cac835547684c41995c672f16b7c80,
     type: 3}
-  price: 0
   category: kitchen
+  price: 230
+  minPrice: 100
+  maxPrice: 1000

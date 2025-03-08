@@ -15,6 +15,6 @@ MonoBehaviour:
   prefabItem: {fileID: 8355603994107605930, guid: e11b368a855d5b248b5277e187932cb9,
     type: 3}
   category: 
-  price: 15
+  price: 30
   minPrice: 10
   maxPrice: 100

@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabItem: {fileID: 2914340475945005045, guid: a693954ad3cc036499197d1a9eb09edb,
     type: 3}
-  price: 0
+  category: 
+  price: 543
+  minPrice: 100
+  maxPrice: 1000

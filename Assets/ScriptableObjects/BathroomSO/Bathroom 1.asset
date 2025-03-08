@@ -15,6 +15,6 @@ MonoBehaviour:
   prefabItem: {fileID: 691508323942974668, guid: ea138c18f53831b468fa6837b2b603f8,
     type: 3}
   category: bathroom
-  price: 267
+  price: 250
   minPrice: 150
   maxPrice: 550
