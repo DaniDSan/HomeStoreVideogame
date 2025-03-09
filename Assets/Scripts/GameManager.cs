@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEngine.Rendering.Universal;
 
 public enum ScreenName {
     MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode,Win,Lose
@@ -67,6 +66,8 @@ public struct MapZone
 {
     public int zoneIndex;
 
+    public string zoneName;
+
     public GameObject homeScreen;
 
     public List<GameObject> homes;
@@ -74,6 +75,8 @@ public struct MapZone
     public Vector3 cameraPos;
 
     public Vector3 cameraRot;
+
+    public Vector3 lightRot;
 }
 
 [System.Serializable]
@@ -142,14 +145,22 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private RankingRequest[] rankingRequests;
 
+    [SerializeField] private TextMeshProUGUI topWorldText;
+
     [Header("Zonas")]
     [SerializeField] private int currentZone;
 
     [SerializeField] private MapZone[] zones;
 
-    [Header("Compra casas")]
-    [SerializeField] private int playerLevel = 1;
+    [SerializeField] private TextMeshProUGUI zoneText;
 
+    [SerializeField] private Transform zoneLight;
+
+    [SerializeField] private GameObject nextZoneButton;
+
+    [SerializeField] private GameObject previousZoneButton;
+
+    [Header("Compra casas")]
     [SerializeField] public List<HomeData> tier1Home;
 
     public List<HomeData> tier2Home;
@@ -164,7 +175,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Button buyButton;
 
-    [SerializeField] private HomeData currentHomeData;
+    public HomeData currentHomeData;
 
     [Header("Venta casas")]
     [SerializeField] private GameObject sellHomePanel;
@@ -338,6 +349,9 @@ public class GameManager : MonoBehaviour {
             case 2:
                 homeData.playerPrice = Random.Range(tier2Home[Random.Range(0, tier2Home.Count)].minPrice, tier2Home[Random.Range(0, tier2Home.Count)].maxPrice);
                 break;
+            case 3:
+                homeData.playerPrice = Random.Range(tier3Home[Random.Range(0, tier3Home.Count)].minPrice, tier3Home[Random.Range(0, tier3Home.Count)].maxPrice);
+                break;
         }
         return homeData;
     }
@@ -387,14 +401,21 @@ public class GameManager : MonoBehaviour {
                 break;
         }
 
+        HouseScore.Instance.CalculateScore();
+
+        Debug.Log(currentHomeData.state.ToString());
+        Debug.Log(currentHomeData.playerPrice);
+        Debug.LogError(sellValue);
+
         AddMoney(sellValue);
 
         //Bureg.
-        Debug.Log("Llamar a agregar dinero");
 
-        HouseScore.Instance.CalculateScore();
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
         Destroy(tempHouse);
+
+        UnlockHomes();
+        UpdateRanking();
     }
 
     //Bureg
@@ -477,6 +498,8 @@ public class GameManager : MonoBehaviour {
         {
             if(currentMoney <= rankingRequest.amount)
             {
+                topWorldText.text = "Top" + (rankingRequest.rankingPos + 1).ToString();
+
                 playerTop.SetSiblingIndex(rankingRequest.rankingPos);
 
                 return;
@@ -485,6 +508,8 @@ public class GameManager : MonoBehaviour {
 
         //Si no se ha salido de la función es porque el jugador esta en el top 1 por lo que lo colocamos en esa posición y ganamos el juego.
         playerTop.SetSiblingIndex(0);
+
+        topWorldText.text = "Top1";
 
         WinGame();
     }
@@ -508,22 +533,76 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
-    public void ChangeZone(int zoneIndex)
+    public void ChangeZone(int dir)
     {
-        foreach (MapZone zone in zones)
-        {
-            //Comprobamos si esta es a la zona que tenemos que mover al jugador.
-            if (zoneIndex == zone.zoneIndex)
-            {
+        //Comprobamos que se pueda cambiar a esa dirección.
+        if (currentZone + dir < 0 || currentZone + dir >= zones.Length) return;
 
-                Camera.main.transform.position = zone.cameraPos;
-                Camera.main.transform.rotation = Quaternion.Euler(zone.cameraRot);
-            }
+        if (currentZone <= 0)
+        {
+            previousZoneButton.SetActive(true);
+        }
+        else if (currentZone >= zones.Length - 1)
+        {
+            nextZoneButton.SetActive(true);
+        }
+
+        //Zona anterior.
+        zones[currentZone].homeScreen.SetActive(false);
+
+        //Nueva zona.
+        currentZone += dir;
+        zoneText.text = zones[currentZone].zoneName;
+        zones[currentZone].homeScreen.SetActive(true);
+        Camera.main.transform.position = zones[currentZone].cameraPos;
+        Camera.main.transform.rotation = Quaternion.Euler(zones[currentZone].cameraRot);
+        zoneLight.rotation = Quaternion.Euler(zones[currentZone].lightRot);
+
+        if(currentZone <= 0)
+        {
+            previousZoneButton.SetActive(false);
+        }
+        else if(currentZone >= zones.Length - 1)
+        {
+            nextZoneButton.SetActive(false);
         }
     }
 
     public void UnlockHomes()
     {
+        //Buscamos la casa que acaba de vender el jugador para desactivarla.
+        for (int i = 0; i < zones[currentZone].homes.Count; i++)
+        {
+            if(zones[currentZone].homes[i] == currentHomeData.worldReference)
+            {
+                Debug.Log("Destruyendo objeto");
+                Destroy(zones[currentZone].homes[i]);
+                zones[currentZone].homes.RemoveAt(i);
+                break;
+            }
+        }
 
+        int unlockAmount = 0;
+
+        int minAmount = 3;
+
+        int maxAmount = 5;
+
+        //Desbloqueamos una cantidad de casas aleatorias por mapa.
+        foreach (MapZone mapZone in zones)
+        {
+            if(mapZone.homes.Count >= maxAmount)
+            {
+                unlockAmount = Random.Range(minAmount, maxAmount);
+            }
+
+            for (int i = 0; i < unlockAmount; i++)
+            {
+                if(mapZone.homes.Count > 0)
+                {
+                    mapZone.homes[Random.Range(0, mapZone.homes.Count)].SetActive(true);
+                }
+            }
+        }
     }
 }
