@@ -2858,7 +2858,7 @@ MonoBehaviour:
   playerName: {fileID: 1515388546}
   sales: 0
   houses:
-  - {fileID: 6975746397936930963, guid: e6a557c27613985469ce4a77388d5be0, type: 3}
+  - {fileID: 1259786925623317824, guid: c33ece7036d04b94c82240213952fc66, type: 3}
   tempHouse: {fileID: 0}
   instatiateHousePos: {fileID: 816256288}
   offsetCameraEditMode: {x: 0, y: 30, z: -10}
@@ -6971,7 +6971,7 @@ Transform:
   m_GameObject: {fileID: 160770125}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -49.98, z: 0}
+  m_LocalPosition: {x: 0, y: -49.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14567,7 +14567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc143c00e9dff849a2940c82ad15cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minItemsForExcellent: 15
+  minItemsForExcellent: 25
 --- !u!114 &317076587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28824,7 +28824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gimnasio
+  m_text: Gym
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e802cfd37cc937448b11bdf42af10ec9, type: 2}
   m_sharedMaterial: {fileID: 8701463183887066281, guid: e802cfd37cc937448b11bdf42af10ec9,
@@ -37266,7 +37266,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.56554824, g: 0.6698113, b: 0.63721406, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 50
   m_Range: 20.94
   m_SpotAngle: 179
@@ -37311,7 +37311,7 @@ Light:
   m_AreaSize: {x: 40, y: 40}
   m_BounceIntensity: 1
   m_ColorTemperature: 3596
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -54416,7 +54416,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 97db488c6d2d11942b4c59cb529f2929, type: 2}
     - {fileID: 11400000, guid: 33d1416ee06092f44b4f2705ae0bd83f, type: 2}
     - {fileID: 11400000, guid: 21a9011a25eb1704f987a66fa00d1666, type: 2}
-    - {fileID: 11400000, guid: 8f95b778b576ed74a95f432546086016, type: 2}
     - {fileID: 11400000, guid: 4b80000100c1e2d4eb2d4a119ab1b9c4, type: 2}
     - {fileID: 11400000, guid: d5a286ec5ceee274cbf19f87eb33f02b, type: 2}
     - {fileID: 11400000, guid: 28ded821044145847809b6759cd87734, type: 2}
@@ -54438,7 +54437,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c6604b82bd8c1bc4d90e4e9f8b8940f7, type: 2}
     - {fileID: 11400000, guid: 5923e83ae6d7d274fb69d7f3040e26b9, type: 2}
     - {fileID: 11400000, guid: ac041a2955a0eda469ddf124a39bbc6b, type: 2}
-    - {fileID: 11400000, guid: 4c2afc1a684d1fe47b2b6c3ff36b0cf2, type: 2}
     - {fileID: 11400000, guid: c7137d3c37fa09843ac881e0e1853a7b, type: 2}
     - {fileID: 11400000, guid: b00effffb7ae8af418a543dde9d7cd60, type: 2}
     - {fileID: 11400000, guid: 18111c4bc97870348a9f2da9b44b4d81, type: 2}
@@ -54468,7 +54466,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 8017c09722639dd4a993910d0c04b771, type: 2}
     - {fileID: 11400000, guid: 9ec6b621684bba24bae01e0c4473b8c5, type: 2}
     - {fileID: 11400000, guid: cfbf6eb62889cd446aa328ff992f1830, type: 2}
-    - {fileID: 11400000, guid: e1a387cf9f9759e4f9f646f5586faffe, type: 2}
     - {fileID: 11400000, guid: 0952501ab5e56d74c98442dbc645be41, type: 2}
     - {fileID: 11400000, guid: a08f29cb4e96b3d4582820f77d5b191c, type: 2}
     - {fileID: 11400000, guid: e51158cd5fa7ede4ba6880f1b8442892, type: 2}
@@ -80000,7 +79997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GYM
+  m_text: Ocio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e802cfd37cc937448b11bdf42af10ec9, type: 2}
   m_sharedMaterial: {fileID: 8701463183887066281, guid: e802cfd37cc937448b11bdf42af10ec9,

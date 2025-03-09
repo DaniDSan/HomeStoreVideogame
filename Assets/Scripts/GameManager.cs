@@ -442,7 +442,7 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator EditHomeAnimation() {
-        float startNearClip = 25f;
+        float startNearClip = 40f;
         float elapsedTime = 0f;
 
         while(elapsedTime < duration) {

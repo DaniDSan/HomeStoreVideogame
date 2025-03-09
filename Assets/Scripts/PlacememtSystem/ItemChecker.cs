@@ -79,9 +79,13 @@ public class ItemChecker : MonoBehaviour {
     void CheckWalls() {
         Collider[] colliders = GetOverlapBox();
 
-        if(colliders.Length > 0) {
-            canPlace = false;
-            return;
+        foreach(Collider collider in colliders) {
+            if(collider.CompareTag("FloorBase") || collider.CompareTag("Floor") || collider.CompareTag("Carpet") || collider.CompareTag("UpperFloor")) {
+                canPlace = true;
+            } else {
+                canPlace = false;
+                return;
+            }
         }
 
         Debug.DrawRay(transform.position, -transform.forward * range, Color.blue);
@@ -102,11 +106,18 @@ public class ItemChecker : MonoBehaviour {
     private void CheckCeiling() {
         Collider[] colliders = GetOverlapBox();
 
-        if(colliders.Length > 0) {
+        RaycastHit[] hitsFloor = Physics.RaycastAll(transform.position, -transform.up, 6f);
+
+        if(hitsFloor.Length > 0) {
+            if(colliders.Length > 0) {
+                canPlace = false;
+                return;
+            } else {
+                canPlace = true;
+            }
+        } else {
             canPlace = false;
             return;
-        } else {
-            canPlace = true;
         }
     }
 
