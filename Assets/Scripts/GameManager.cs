@@ -62,11 +62,18 @@ public struct Character {
     public Sprite sprite;
 }
 
+[System.Serializable]
 public struct MapZone
 {
+    public int zoneIndex;
+
+    public GameObject homeScreen;
+
     public List<GameObject> homes;
 
+    public Vector3 cameraPos;
 
+    public Vector3 cameraRot;
 }
 
 [System.Serializable]
@@ -134,6 +141,11 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private Transform playerTop;
 
     [SerializeField] private RankingRequest[] rankingRequests;
+
+    [Header("Zonas")]
+    [SerializeField] private int currentZone;
+
+    [SerializeField] private MapZone[] zones;
 
     [Header("Compra casas")]
     [SerializeField] private int playerLevel = 1;
@@ -207,8 +219,6 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.W)) UpdateRanking();
-
         if(Input.GetKeyDown(KeyCode.Escape)) {
             if (buyHomePanel.activeInHierarchy)
             {
@@ -496,5 +506,24 @@ public class GameManager : MonoBehaviour {
     public void ResetGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void ChangeZone(int zoneIndex)
+    {
+        foreach (MapZone zone in zones)
+        {
+            //Comprobamos si esta es a la zona que tenemos que mover al jugador.
+            if (zoneIndex == zone.zoneIndex)
+            {
+
+                Camera.main.transform.position = zone.cameraPos;
+                Camera.main.transform.rotation = Quaternion.Euler(zone.cameraRot);
+            }
+        }
+    }
+
+    public void UnlockHomes()
+    {
+
     }
 }
