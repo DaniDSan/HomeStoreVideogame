@@ -2858,7 +2858,7 @@ MonoBehaviour:
   playerName: {fileID: 1515388546}
   sales: 0
   houses:
-  - {fileID: 5858976103524434731, guid: 68ca2e6bfb23e9b4cad897a5046c8001, type: 3}
+  - {fileID: 6975746397936930963, guid: e6a557c27613985469ce4a77388d5be0, type: 3}
   tempHouse: {fileID: 0}
   instatiateHousePos: {fileID: 816256288}
   offsetCameraEditMode: {x: 0, y: 30, z: -10}
@@ -37267,7 +37267,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.56554824, g: 0.6698113, b: 0.63721406, a: 1}
-  m_Intensity: 200
+  m_Intensity: 50
   m_Range: 20.94
   m_SpotAngle: 179
   m_InnerSpotAngle: 179
