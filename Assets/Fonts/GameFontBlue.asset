@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: GameFontBlue
   m_EditorClassIdentifier: 
-  hashCode: 569892588
+  hashCode: 573313859
   material: {fileID: 8701463183887066281}
-  materialHashCode: 1458071756
+  materialHashCode: -1968832381
   m_Version: 1.1.0
   m_SourceFontFileGUID: 353bd77b5048f2841b1c614877abd457
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 353bd77b5048f2841b1c614877abd457,
@@ -2566,7 +2566,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.37
+    - _OutlineWidth: 0.23
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333

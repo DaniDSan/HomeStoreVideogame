@@ -489,6 +489,9 @@ public class GameManager : MonoBehaviour {
 
         ActivateZoneButtons();
 
+        StopAllCoroutines();
+        Camera.main.nearClipPlane = targetNearClip;
+
         ChangeScreen(ScreenName.World);
     }
 
