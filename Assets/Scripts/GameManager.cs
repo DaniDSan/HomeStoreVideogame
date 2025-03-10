@@ -452,6 +452,8 @@ public class GameManager : MonoBehaviour {
             objectToDeactivate.SetActive(false);
         }
 
+        ZoneHandler.Instance.GetRef();
+
         Camera.main.GetComponent<ScreenMovement>().enabled = true;
 
         ChangeScreen(ScreenName.EditMode);
@@ -471,6 +473,13 @@ public class GameManager : MonoBehaviour {
 
         foreach(GameObject objectToDeactivate in objectsToDeactivate) {
             objectToDeactivate.SetActive(true);
+        }
+
+        ZoneHandler.Instance.SetRoomToggle.isOn = false;
+        PlacementSystem.Instance.isSelectingKitchen = false;
+        PlacementSystem.Instance.isSelectingBathroom = false;
+        if(ZoneHandler.Instance.visualRefsTransform != null) {
+            ZoneHandler.Instance.visualRefsTransform.gameObject.SetActive(false);
         }
 
         Camera.main.fieldOfView = 60f;

@@ -9,7 +9,7 @@ public class ZoneHandler : MonoBehaviour {
 
     [SerializeField] LayerMask layerMask;
 
-    [SerializeField] Toggle SetRoomToggle;
+    public Toggle SetRoomToggle;
 
     public static ZoneHandler Instance;
 
@@ -68,14 +68,12 @@ public class ZoneHandler : MonoBehaviour {
     }
 
     public void ToggleKitchenSelection() {
-        GetRef();
         PlacementSystem.Instance.isSelectingKitchen = !PlacementSystem.Instance.isSelectingKitchen;
         PlacementSystem.Instance.isSelectingBathroom = false;
         visualRefsTransform.gameObject.SetActive(PlacementSystem.Instance.isSelectingKitchen);
     }
 
     public void ToggleBathroomSelection() {
-        GetRef();
         PlacementSystem.Instance.isSelectingBathroom = !PlacementSystem.Instance.isSelectingBathroom;
         PlacementSystem.Instance.isSelectingKitchen = false;
         visualRefsTransform.gameObject.SetActive(PlacementSystem.Instance.isSelectingBathroom);
