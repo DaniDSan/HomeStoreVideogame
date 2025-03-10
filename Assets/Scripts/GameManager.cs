@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public enum ScreenName {
-    MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode,Win,Lose
+    MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode,Win,Lose,ExtraLose
 }
 
 public enum SurpriseType {
@@ -208,6 +208,8 @@ public class GameManager : MonoBehaviour {
     //Variable pegote.
     [SerializeField] private GameObject homeOptions;
 
+    [SerializeField] private GameObject htp;
+
     public static GameManager instance;
 
     private void Awake() {
@@ -235,12 +237,15 @@ public class GameManager : MonoBehaviour {
             {
                 buyHomePanel.SetActive(false);
                 homeOptions.SetActive(true);
+                ActivateZoneButtons();
             }
             else if (sellHomePanel.activeInHierarchy)
             {
                 sellHomePanel.SetActive(false);
                 homeOptions.SetActive(true);
+                ActivateZoneButtons();
             }
+            else if (htp.activeSelf) htp.SetActive(false);
             else if (currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
             else if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
             else if (currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
@@ -250,8 +255,6 @@ public class GameManager : MonoBehaviour {
     public void ChangeScreen(ScreenName nextScreenName) {
         foreach(Screen screen in screens) {
             if(screen.name == nextScreenName) {
-                Debug.Log("Cambiando a pantalla " + nextScreenName.ToString());
-
                 //1.Activamos la nueva pantalla.
                 screen.reference.SetActive(true);
 
@@ -273,8 +276,6 @@ public class GameManager : MonoBehaviour {
     public void SetCharacter(Sprite sprite) {
         foreach(Character character in characters) {
             if(sprite == character.sprite) {
-                Debug.Log("Se ha elegido un personaje");
-
                 playerImage.sprite = character.sprite;
                 topSprite.sprite = character.sprite;
 
@@ -352,12 +353,20 @@ public class GameManager : MonoBehaviour {
             case 3:
                 homeData.playerPrice = Random.Range(tier3Home[Random.Range(0, tier3Home.Count)].minPrice, tier3Home[Random.Range(0, tier3Home.Count)].maxPrice);
                 break;
+            case 4:
+                homeData.playerPrice = Random.Range(tier4Home[Random.Range(0, tier4Home.Count)].minPrice, tier4Home[Random.Range(0, tier4Home.Count)].maxPrice);
+                break;
+
         }
         return homeData;
     }
 
-    public void ShowHomeData(HomeData homeData) {
+    public void ShowHomeData(HomeData homeData) 
+    {
         currentHomeData = homeData;
+
+        nextZoneButton.gameObject.SetActive(false);
+        previousZoneButton.gameObject.SetActive(false);
 
         //Comprobamos si la casa a la que se quiere acceder ha sido comprada por el jugador.
         if(homeData.bought) {
@@ -375,7 +384,20 @@ public class GameManager : MonoBehaviour {
     }
 
     public void BuyHome() {
-        Debug.Log("Comprando casa");
+        //Desactivamos todas las casas excepto la que ha comprado el jugador.
+        foreach (MapZone zone in zones)
+        {
+            foreach (GameObject home in zone.homes)
+            {
+                if (home != currentHomeData.worldReference.gameObject)
+                {
+                    if (home.activeSelf)
+                    {
+                        home.SetActive(false);
+                    }
+                }
+            }
+        }
 
         RemoveMoney(currentHomeData.playerPrice);
 
@@ -388,8 +410,11 @@ public class GameManager : MonoBehaviour {
 
     public void SellHome() {
         int sellValue = 0;
+
+        HouseScore.Instance.CalculateScore();
+
         //Comprobamos el estado de la casa actual del jugador.
-        switch(currentHomeData.state) {
+        switch (currentHomeData.state) {
             case HouseScoreEnum.bad:
                 sellValue = currentHomeData.playerPrice + currentHomeData.badSellValue;
                 break;
@@ -397,19 +422,12 @@ public class GameManager : MonoBehaviour {
                 sellValue = currentHomeData.playerPrice + currentHomeData.normalSellValue;
                 break;
             case HouseScoreEnum.excellent:
-                sellValue = currentHomeData.playerPrice + Random.Range(currentHomeData.minGoodSellValue, currentHomeData.maxGoodSellValue);
+                int extraPirce = Random.Range(currentHomeData.minGoodSellValue, currentHomeData.maxGoodSellValue);
+                sellValue = currentHomeData.playerPrice + extraPirce;
                 break;
         }
 
-        HouseScore.Instance.CalculateScore();
-
-        Debug.Log(currentHomeData.state.ToString());
-        Debug.Log(currentHomeData.playerPrice);
-        Debug.LogError(sellValue);
-
         AddMoney(sellValue);
-
-        //Bureg.
 
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
         Destroy(tempHouse);
@@ -468,6 +486,8 @@ public class GameManager : MonoBehaviour {
         Camera.main.fieldOfView = 60f;
 
         homeOptions.SetActive(true);
+
+        ActivateZoneButtons();
 
         ChangeScreen(ScreenName.World);
     }
@@ -573,9 +593,8 @@ public class GameManager : MonoBehaviour {
         //Buscamos la casa que acaba de vender el jugador para desactivarla.
         for (int i = 0; i < zones[currentZone].homes.Count; i++)
         {
-            if(zones[currentZone].homes[i] == currentHomeData.worldReference)
+            if (zones[currentZone].homes[i].gameObject == currentHomeData.worldReference.gameObject)
             {
-                Debug.Log("Destruyendo objeto");
                 Destroy(zones[currentZone].homes[i]);
                 zones[currentZone].homes.RemoveAt(i);
                 break;
@@ -588,9 +607,13 @@ public class GameManager : MonoBehaviour {
 
         int maxAmount = 5;
 
+        int homesAmount = 0;
+
         //Desbloqueamos una cantidad de casas aleatorias por mapa.
         foreach (MapZone mapZone in zones)
         {
+            homesAmount += mapZone.homes.Count;
+
             if(mapZone.homes.Count >= maxAmount)
             {
                 unlockAmount = Random.Range(minAmount, maxAmount);
@@ -603,6 +626,30 @@ public class GameManager : MonoBehaviour {
                     mapZone.homes[Random.Range(0, mapZone.homes.Count)].SetActive(true);
                 }
             }
+        }
+
+        if(homesAmount <= 0)
+        {
+            ChangeScreen(ScreenName.ExtraLose);
+
+            return;
+        }
+    }
+
+    public void ActivateZoneButtons()
+    {
+        if(currentZone == 0)
+        {
+            nextZoneButton.SetActive(true);
+        }
+        else if (currentZone == zones.Length - 1)
+        {
+            previousZoneButton.SetActive(true);
+        }
+        else
+        {
+            nextZoneButton.SetActive(true);
+            previousZoneButton.SetActive(true);
         }
     }
 }

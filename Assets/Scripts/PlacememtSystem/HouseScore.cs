@@ -62,15 +62,15 @@ public class HouseScore : MonoBehaviour {
     private void PrintScoreMessage() {
         switch(houseScore) {
             case HouseScoreEnum.bad:
-                Debug.Log("Malo, hay objetos en zonas incorrectas.");
+                Debug.LogWarning("Malo");
                 GameManager.instance.currentHomeData.state = houseScore;
                 break;
             case HouseScoreEnum.good:
-                Debug.Log("Bueno, la casa está bien organizada.");
+                Debug.LogWarning("Normal");
                 GameManager.instance.currentHomeData.state = houseScore;
                 break;
             case HouseScoreEnum.excellent:
-                Debug.Log("¡Excelente! La casa está perfectamente organizada.");
+                Debug.LogWarning("Bueno");
                 GameManager.instance.currentHomeData.state = houseScore;
                 break;
         }
