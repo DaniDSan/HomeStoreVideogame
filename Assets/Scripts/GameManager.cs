@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public enum ScreenName {
-    MainMenu, Pause, Options, CharacterSelector, World, Podium,EditMode,Win,Lose,ExtraLose
+    MainMenu, Pause, Options, CharacterSelector, World, Podium, EditMode, Win, Lose, ExtraLose
 }
 
 public enum SurpriseType {
@@ -14,8 +14,7 @@ public enum SurpriseType {
 }
 
 [System.Serializable]
-public struct RankingRequest
-{
+public struct RankingRequest {
     public int rankingPos;
 
     public int amount;
@@ -62,8 +61,7 @@ public struct Character {
 }
 
 [System.Serializable]
-public struct MapZone
-{
+public struct MapZone {
     public int zoneIndex;
 
     public string zoneName;
@@ -233,22 +231,18 @@ public class GameManager : MonoBehaviour {
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            if (buyHomePanel.activeInHierarchy)
-            {
+            if(buyHomePanel.activeInHierarchy) {
                 buyHomePanel.SetActive(false);
                 homeOptions.SetActive(true);
                 ActivateZoneButtons();
-            }
-            else if (sellHomePanel.activeInHierarchy)
-            {
+            } else if(sellHomePanel.activeInHierarchy) {
                 sellHomePanel.SetActive(false);
                 homeOptions.SetActive(true);
                 ActivateZoneButtons();
-            }
-            else if (htp.activeSelf) htp.SetActive(false);
-            else if (currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
-            else if (currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
-            else if (currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
+            } else if(htp.activeSelf) htp.SetActive(false);
+            else if(currentScreen.name == ScreenName.Podium) ChangeScreen(ScreenName.World);
+            else if(currentScreen.name == ScreenName.World) ChangeScreen(ScreenName.Pause);
+            else if(currentScreen.name == ScreenName.Pause) ChangeScreen(ScreenName.World);
         }
     }
 
@@ -361,8 +355,7 @@ public class GameManager : MonoBehaviour {
         return homeData;
     }
 
-    public void ShowHomeData(HomeData homeData) 
-    {
+    public void ShowHomeData(HomeData homeData) {
         currentHomeData = homeData;
 
         nextZoneButton.gameObject.SetActive(false);
@@ -385,14 +378,10 @@ public class GameManager : MonoBehaviour {
 
     public void BuyHome() {
         //Desactivamos todas las casas excepto la que ha comprado el jugador.
-        foreach (MapZone zone in zones)
-        {
-            foreach (GameObject home in zone.homes)
-            {
-                if (home != currentHomeData.worldReference.gameObject)
-                {
-                    if (home.activeSelf)
-                    {
+        foreach(MapZone zone in zones) {
+            foreach(GameObject home in zone.homes) {
+                if(home != currentHomeData.worldReference.gameObject) {
+                    if(home.activeSelf) {
                         home.SetActive(false);
                     }
                 }
@@ -414,7 +403,7 @@ public class GameManager : MonoBehaviour {
         HouseScore.Instance.CalculateScore();
 
         //Comprobamos el estado de la casa actual del jugador.
-        switch (currentHomeData.state) {
+        switch(currentHomeData.state) {
             case HouseScoreEnum.bad:
                 sellValue = currentHomeData.playerPrice + currentHomeData.badSellValue;
                 break;
@@ -430,6 +419,7 @@ public class GameManager : MonoBehaviour {
         AddMoney(sellValue);
 
         AudioManager.instance.PlaySFX(AudioManager.instance.placementSoundsEffects.sellSFX);
+        ZoneHandler.Instance.DeleteRef();
         Destroy(tempHouse);
 
         UnlockHomes();
@@ -507,20 +497,16 @@ public class GameManager : MonoBehaviour {
         Camera.main.nearClipPlane = targetNearClip;
     }
 
-    private void UpdateRanking()
-    {
+    private void UpdateRanking() {
         //Comprobamos si el jugador tiene dinero suficiente para seguir jugando.
-        if(currentMoney < 100000)
-        {
+        if(currentMoney < 100000) {
             LoseGame();
 
             return;
         }
 
-        foreach (RankingRequest rankingRequest in rankingRequests)
-        {
-            if(currentMoney <= rankingRequest.amount)
-            {
+        foreach(RankingRequest rankingRequest in rankingRequests) {
+            if(currentMoney <= rankingRequest.amount) {
                 topWorldText.text = "Top" + (rankingRequest.rankingPos + 1).ToString();
 
                 playerTop.SetSiblingIndex(rankingRequest.rankingPos);
@@ -537,36 +523,29 @@ public class GameManager : MonoBehaviour {
         WinGame();
     }
 
-    public void WinGame()
-    {
+    public void WinGame() {
         Debug.Log("El jugador es Top1");
 
         ChangeScreen(ScreenName.Win);
     }
 
-    public void LoseGame()
-    {
+    public void LoseGame() {
         Debug.Log("El jugador no tiene dinero suficiente para seguir jugando");
 
         ChangeScreen(ScreenName.Lose);
     }
 
-    public void ResetGame()
-    {
+    public void ResetGame() {
         SceneManager.LoadScene(0);
     }
 
-    public void ChangeZone(int dir)
-    {
+    public void ChangeZone(int dir) {
         //Comprobamos que se pueda cambiar a esa dirección.
-        if (currentZone + dir < 0 || currentZone + dir >= zones.Length) return;
+        if(currentZone + dir < 0 || currentZone + dir >= zones.Length) return;
 
-        if (currentZone <= 0)
-        {
+        if(currentZone <= 0) {
             previousZoneButton.SetActive(true);
-        }
-        else if (currentZone >= zones.Length - 1)
-        {
+        } else if(currentZone >= zones.Length - 1) {
             nextZoneButton.SetActive(true);
         }
 
@@ -581,23 +560,17 @@ public class GameManager : MonoBehaviour {
         Camera.main.transform.rotation = Quaternion.Euler(zones[currentZone].cameraRot);
         zoneLight.rotation = Quaternion.Euler(zones[currentZone].lightRot);
 
-        if(currentZone <= 0)
-        {
+        if(currentZone <= 0) {
             previousZoneButton.SetActive(false);
-        }
-        else if(currentZone >= zones.Length - 1)
-        {
+        } else if(currentZone >= zones.Length - 1) {
             nextZoneButton.SetActive(false);
         }
     }
 
-    public void UnlockHomes()
-    {
+    public void UnlockHomes() {
         //Buscamos la casa que acaba de vender el jugador para desactivarla.
-        for (int i = 0; i < zones[currentZone].homes.Count; i++)
-        {
-            if (zones[currentZone].homes[i].gameObject == currentHomeData.worldReference.gameObject)
-            {
+        for(int i = 0; i < zones[currentZone].homes.Count; i++) {
+            if(zones[currentZone].homes[i].gameObject == currentHomeData.worldReference.gameObject) {
                 Destroy(zones[currentZone].homes[i]);
                 zones[currentZone].homes.RemoveAt(i);
                 break;
@@ -613,44 +586,33 @@ public class GameManager : MonoBehaviour {
         int homesAmount = 0;
 
         //Desbloqueamos una cantidad de casas aleatorias por mapa.
-        foreach (MapZone mapZone in zones)
-        {
+        foreach(MapZone mapZone in zones) {
             homesAmount += mapZone.homes.Count;
 
-            if(mapZone.homes.Count >= maxAmount)
-            {
+            if(mapZone.homes.Count >= maxAmount) {
                 unlockAmount = Random.Range(minAmount, maxAmount);
             }
 
-            for (int i = 0; i < unlockAmount; i++)
-            {
-                if(mapZone.homes.Count > 0)
-                {
+            for(int i = 0; i < unlockAmount; i++) {
+                if(mapZone.homes.Count > 0) {
                     mapZone.homes[Random.Range(0, mapZone.homes.Count)].SetActive(true);
                 }
             }
         }
 
-        if(homesAmount <= 0)
-        {
+        if(homesAmount <= 0) {
             ChangeScreen(ScreenName.ExtraLose);
 
             return;
         }
     }
 
-    public void ActivateZoneButtons()
-    {
-        if(currentZone == 0)
-        {
+    public void ActivateZoneButtons() {
+        if(currentZone == 0) {
             nextZoneButton.SetActive(true);
-        }
-        else if (currentZone == zones.Length - 1)
-        {
+        } else if(currentZone == zones.Length - 1) {
             previousZoneButton.SetActive(true);
-        }
-        else
-        {
+        } else {
             nextZoneButton.SetActive(true);
             previousZoneButton.SetActive(true);
         }
